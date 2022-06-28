@@ -524,7 +524,7 @@ window.history.replaceState(null, null, addparam());
 picker.setDateRange(date1,date2)
   })
 	},		
-	});	
+
 		
 
 var precount = 0;	
