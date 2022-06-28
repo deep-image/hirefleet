@@ -536,7 +536,7 @@ bothpicker =  new Litepicker({
 				endDate: tomorrow,
 				tooltipNumber: (totalDays) => {
 				return totalDays - 1;
-				}
+				},
 		setup: (bothpicker) => {
   bothpicker.on('selected', (date1, date2) => {
 picker.setDateRange(date1,date2)
