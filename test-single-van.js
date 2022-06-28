@@ -506,26 +506,7 @@ window.history.replaceState(null, null, addparam());
   });	
 	},
 })
-
-	bothpicker =  new Litepicker({
-					element: document.getElementById('both-date'),
-				singleMode: false,
-				format: 'DD-MM-YYYY',
-				minDate: dayjs().format('MM/DD/YYYY'),
-				plugins: ['mobilefriendly'],
-				//allowRepick: true,   
-				maxDate: maxd,       startDate: today,
-				endDate: tomorrow,
-				tooltipNumber: (totalDays) => {
-				return totalDays - 1;
-				}
-		setup: (bothpicker) => {
-  bothpicker.on('selected', (date1, date2) => {
-picker.setDateRange(date1,date2)
-  })
-	},		
-})
-		
+	
 
 var precount = 0;	
    picker.on('preselect', (date1, date2) => {	   
@@ -543,6 +524,25 @@ precount = precount == 2 ? 0 : precount;
  console.log("clear")
 precount = 0;	  
   });
+	
+bothpicker =  new Litepicker({
+					element: document.getElementById('both-date'),
+				singleMode: false,
+				format: 'DD-MM-YYYY',
+				minDate: dayjs().format('MM/DD/YYYY'),
+				plugins: ['mobilefriendly'],
+				//allowRepick: true,   
+				maxDate: maxd,       startDate: today,
+				endDate: tomorrow,
+				tooltipNumber: (totalDays) => {
+				return totalDays - 1;
+				}
+		setup: (bothpicker) => {
+  bothpicker.on('selected', (date1, date2) => {
+picker.setDateRange(date1,date2)
+  })
+	},		
+})	
 
 dobpicker = new Litepicker({
 				element: document.getElementById('Date-Of-Birth'),
