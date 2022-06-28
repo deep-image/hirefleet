@@ -20,7 +20,7 @@ data.selected_additional_charges.forEach((singval) => {
 	'currency' : data.total.total_price.currency,	
 	'items': items
 	});
-	
+
 console.log({
 	'event': 'add_to_cart',
 	'value' : data.total.total_price.amount,	
@@ -219,7 +219,7 @@ var elemval = $('#'+ additcheck[x].id).is(':checked')
 $('#age-range').val() == '23' ? additioncharge.push(1) 	: '';	
 return additioncharge;
 }
-	
+
 
  function addparam()
  {	 
@@ -244,13 +244,13 @@ string = string + '&' + $('.additional').map(function() {
 string = string + '&coupon=' + $('#discount').val()	 
 	return string; 
  }
-	
+
 $('.item-overlay, .card-button').click(function(e) {
 e.preventDefault();	
 var paramstr = addparam();	
 window.location.href = e.currentTarget.href.split('?')[0] + paramstr;
 });
-	
+
 function updateparam() {
 var vandat = $('.van-collection');
 	for(var x=0;x< vandat.length; x++)
@@ -301,15 +301,15 @@ e.preventDefault();
 additionalpostcall();
 });
 
-	
+
 $( document ).ready(function() {
-	
+
 var picker;	
 var vanavailable = false;
 var dobpicker;
 var primdobpicker;	
 
-	
+
         // after the page elements are all loaded, then run the script
         // Set each input field with unique ID # to a value
         $("#Rental-Type").val('daily');
@@ -471,7 +471,7 @@ var today = dayjs().format('DD/MM/YYYY'); //set the start / end date to today
 var tomorrow = dayjs().add(1, 'day').format('DD/MM/YYYY'); } //set the start / end date to today
 picker = new Litepicker({
 				element: document.getElementById('start-date'),
-  			//elementEnd: document.getElementById('end-date'),
+  			elementEnd: document.getElementById('end-date'),
   			singleMode: false,
   			format: 'DD-MM-YYYY',
   			minDate: dayjs().format('MM/DD/YYYY'),
@@ -499,7 +499,7 @@ window.history.replaceState(null, null, addparam());
 	},
 })
 
-	
+
 var precount = 0;	
    picker.on('preselect', (date1, date2) => {	   
 precount = precount + 1;	   
@@ -511,7 +511,7 @@ console.log("git pre select");
 } 
 precount = precount == 2 ? 0 : precount;	   
   });
-  
+
   picker.on('hide', () => {
  console.log("clear")
 precount = 0;	  
@@ -549,8 +549,8 @@ $('.summ-extras-div > .extras-text').length == 0 ? $('.summary-div').hide() : ''
 });
 	},
 })
-	
-	
+
+
 primdobpicker = new Litepicker({
 				element: document.getElementById('Primary-Driver-Date-Of-Birth'),
         dropdowns: {
@@ -582,15 +582,15 @@ $('.summ-extras-div > .extras-text').length == 0 ? $('.summary-div').hide() : ''
 }	
 });
 	},	
-	
+
 })
 
-	
+
 var additionalcount = 0;
 $('#start-time, #end-time').change(function() {
 makecall('','');	
 });
-	
+
 $('#start-time, #end-time, #age-range').change(function() {
 subdetectchange()
 });
@@ -602,20 +602,15 @@ var young_driver_cost =0;
 function additionalpostcall()
 {
 $('#extra-text').hide();
-$('.summ-div-child').empty();	
-
-var datval = $('#start-date').val();
-var stval = datval.split(" ")[0];
-var endval = datval.split(" ")[2];		
-	
+$('.summ-div-child').empty();	 	
 $.ajax({
     type: "POST",
     url: "https://hirefleet-328113.nw.r.appspot.com/api/additionalcharges-post",
     // The key needs to match your method's input parameter (case-sensitive).
     data: JSON.stringify({
-	    pick_up_date: stval,
+	    pick_up_date: $('#start-date').val(),
 pick_up_time: $('#start-time :selected').val(),
-return_date : endval,
+return_date : $('#end-date').val(),
 return_time : $('#end-time :selected').val(),
 pick_up_location : 2,
 return_location : 2,
@@ -634,7 +629,7 @@ coupon_code : ""
 	    console.log("additional-post-res")
 		console.log(data);
 	    var data = data.data;	 
-   
+
 	    ///////////////////////this needs sorting (updated)//////////////// 
 $('.summ-div-child').empty();
 data.selected_additional_charges.forEach((singval,index) => { 
@@ -645,7 +640,7 @@ data.selected_additional_charges.length > 0 ? $('.summary-div').show() : '';
 $('.summ-extras-div > .extras-text').length == 0 ? $('.summary-div').hide() : '';	    
 agechangeonsimilar();
 	    //////////////////////this needs sorting/////////////////
-	    
+
 $('#subtotal, #subtotal-mobile').text(data.selected_vehicle_class.price.base_price_with_taxes.amount_for_display);
 $('#total-price, #total-price-mobile, #hidd-total-price').text(data.total.total_price.amount_for_display);
 $('#hidd-total-price').text(data.total.total_price.amount);
@@ -680,9 +675,9 @@ pricearr[x].innerText = '£' + tot.toFixed(2);
 }
 }
 	}	
-	
-	
-	
+
+
+
 function subdetectchange() {
 console.log("change")	
 additionalpostcall()
@@ -691,7 +686,7 @@ $('#subtotal').text("---");
 $('#total-price-mobile').text("---")
 $('#subtotal-mobile').text("---");	
 }
-	
+
 const observer2 = new MutationObserver((mutations, obs) => {
   //const hello = document.getElementById('Extra-Driver');
   if ($('.extras-div').length > 1) {
@@ -714,34 +709,31 @@ $('#total-price-mobile').text("---")
 $('#subtotal-mobile').text("---");
 });
 }
-	
-	
-		
-	
 
-	
+
+
+
+
+
+
+
 var nexavailcount = 0;
 function makecall(date1,date2) {
 $('.van-collection').hide();
-
-var datval = $('#start-date').val();
-var stval = datval.split(" ")[0];
-var endval = datval.split(" ")[2];	
-	
 $.ajax({
     type: "POST",
     url: "https://hirefleet-328113.nw.r.appspot.com/api",
     // The key needs to match your method's input parameter (case-sensitive).
     data: JSON.stringify({
-pick_up_date: stval,
+pick_up_date: $('#start-date').val(),
 pick_up_time: $('#start-time').val() == null ? '06:00' : $('#start-time').val(),
-return_date : endval,
+return_date : $('#end-date').val(),
 return_time : $('#end-time').val() == null ? '00:00' : $('#end-time').val(),
 pick_up_location : 2,
 return_location : 2,
 brand_id : 1,
 coupon_code : "",
-	    
+
 
 	    ///////////////////////this needs sorting//////////////// 
 
@@ -797,16 +789,16 @@ for(x=loopcount; x< lckcount; x++) {
             break;
     }  
 }
-  
+
  }	  
-	 
+
 picker.setDateRange(nextavail,tomnextavail) 
 $('#end-time').val() == null ? $('#end-time').val($('#end-time option:first').val()) : ''	
 $('#start-time').val($('#start-time option:first').val()).change()
 getsinglevan();		
 }
-		
-	
+
+
 function setupunavailable(vehicledata)
 	{
 	vehicledata.forEach(singval => { 
@@ -861,30 +853,25 @@ document.getElementsByClassName('limited')[x+1].style.display = 'block';
 }
 })
 }	
-	
-	
+
+
 var callcount = 0; 	
 function getsinglevan() {
 $('#extra-text').hide();
-
-var datval = $('#start-date').val();
-var stval = datval.split(" ")[0];
-var endval = datval.split(" ")[2];	
-		
 $.ajax({
     type: "POST",
     url: "https://hirefleet-328113.nw.r.appspot.com/api/additionalcharges",
     // The key needs to match your method's input parameter (case-sensitive).
     data: JSON.stringify({
-	    pick_up_date: stval,
+	    pick_up_date: $('#start-date').val(),
 pick_up_time: $('#start-time :selected').val(),
-return_date : endval,
+return_date : $('#end-date').val(),
 return_time : $('#end-time :selected').val(),
 pick_up_location : 2,
 return_location : 2,
 brand_id : 1,
 vehicle_class_id : $('#class-id').text(),
-	    
+
 
 	    ///////////////////////this needs sorting//////////////// 
 
@@ -965,16 +952,16 @@ subdetectchange()
 })		 		 
 }
 
-	
+
 function agechecked() {  
     if (window.location.href.indexOf("age") > -1) {   
 $('#age-range').val(getParam('age'));
     }	
 }	
 
-	
 
-	
+
+
 function applyextraparam() {
 $('.addit-check').each(function(singelem) {
     if(getParam(this.id) == 1) {
@@ -1005,7 +992,7 @@ window.history.replaceState(null, null, addparam());
     });
 });	
 	}
-		
+
 //end code here 	
 });
 ///////////////////////////////////////////////////////////////////////
@@ -1046,12 +1033,8 @@ function observeElement(element, property, callback, delay = 0) {
 
 function addActivityItem() {
     // To set the date and time variables
-var datval = $('#start-date').val();
-var stval = datval.split(" ")[0];
-var endval = datval.split(" ")[2];	
-	
-var r = stval;
-var s = endval;
+var r = document.getElementById('start-date').value;
+var s = document.getElementById('end-date').value;
 var t = document.getElementById('start-time').value;
 var u = document.getElementById('end-time').value;
 var v = r + '08:01';
