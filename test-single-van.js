@@ -503,6 +503,8 @@ picker = new Litepicker({
   },
 setup: (picker) => {
   picker.on('selected', (date1, date2) => {
+	console.log(date1) 
+	  console.log(date2)
  if($('#start-time').val() != null && $('#end-time').val() != null) { 
 console.log('make call without time')	 
 	  setTimeout( function() {	  
