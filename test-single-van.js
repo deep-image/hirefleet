@@ -1,4 +1,3 @@
-
 function gtagaddtocart(data) {
 var data = data.data;	
 window.dataLayer = window.dataLayer || [];
