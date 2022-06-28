@@ -308,6 +308,7 @@ var picker;
 var vanavailable = false;
 var dobpicker;
 var primdobpicker;	
+var bothpicker;	
 
 
         // after the page elements are all loaded, then run the script
@@ -469,6 +470,22 @@ var tomorrow = dayjs().add(2, 'day').format('DD/MM/YYYY'); } //set the start /
 var today = dayjs().format('DD/MM/YYYY'); //set the start / end date to today
 //var todays = dayjs().format('MM/DD/YYYY'); //set the start / end date to today
 var tomorrow = dayjs().add(1, 'day').format('DD/MM/YYYY'); } //set the start / end date to today
+	
+	bothpicker =  new Litepicker({
+					element: document.getElementById('both-date'),
+				singleMode: false,
+				format: 'DD-MM-YYYY',
+				minDate: dayjs().format('MM/DD/YYYY'),
+				plugins: ['mobilefriendly'],
+				//allowRepick: true,   
+				maxDate: maxd,       startDate: today,
+				endDate: tomorrow,
+				tooltipNumber: (totalDays) => {
+				return totalDays - 1;
+				}
+	});	
+	
+	
 picker = new Litepicker({
 				element: document.getElementById('start-date'),
   			elementEnd: document.getElementById('end-date'),
