@@ -26,7 +26,8 @@ $( document ).ready(function() {
         var firstdate;
         var lastdate;
         var age = '';
-				var picker;
+var picker;
+var bothpicker
 
         setTimeout(function() {
        postadditional();
@@ -117,7 +118,26 @@ if($('#start-time').val() != null && $('#end-time').val() != null) {
    	   }, 300);
   }
 });
-
+	if($('#both-date').length > 0) { 
+      bothpicker =  new Litepicker({
+                element: document.getElementById('both-date'),
+              singleMode: false,
+              format: 'DD-MM-YYYY',
+              minDate: dayjs().format('MM/DD/YYYY'),
+              plugins: ['mobilefriendly'],
+              //allowRepick: true,   
+                startDate: today,
+        endDate: tomorrow,
+              tooltipNumber: (totalDays) => {
+              return totalDays - 1;
+              },
+          setup: (bothpicker) => {
+        bothpicker.on('selected', (date1, date2) => {
+      picker.setDateRange(date1,date2)
+        })
+        },		
+      });
+   }	
 });
 
 $('#start-time').change(function() {
