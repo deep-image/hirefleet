@@ -602,15 +602,20 @@ var young_driver_cost =0;
 function additionalpostcall()
 {
 $('#extra-text').hide();
-$('.summ-div-child').empty();	 	
+$('.summ-div-child').empty();	
+
+var datval = $('#start-date').val();
+var stval = datval.split(" ")[0];
+var endval = datval.split(" ")[2];		
+	
 $.ajax({
     type: "POST",
     url: "https://hirefleet-328113.nw.r.appspot.com/api/additionalcharges-post",
     // The key needs to match your method's input parameter (case-sensitive).
     data: JSON.stringify({
-	    pick_up_date: $('#start-date').val(),
+	    pick_up_date: stval,
 pick_up_time: $('#start-time :selected').val(),
-return_date : $('#end-date').val(),
+return_date : endval,
 return_time : $('#end-time :selected').val(),
 pick_up_location : 2,
 return_location : 2,
@@ -714,20 +719,23 @@ $('#subtotal-mobile').text("---");
 		
 	
 
-
-
 	
 var nexavailcount = 0;
 function makecall(date1,date2) {
 $('.van-collection').hide();
+
+var datval = $('#start-date').val();
+var stval = datval.split(" ")[0];
+var endval = datval.split(" ")[2];	
+	
 $.ajax({
     type: "POST",
     url: "https://hirefleet-328113.nw.r.appspot.com/api",
     // The key needs to match your method's input parameter (case-sensitive).
     data: JSON.stringify({
-pick_up_date: $('#start-date').val(),
+pick_up_date: stval,
 pick_up_time: $('#start-time').val() == null ? '06:00' : $('#start-time').val(),
-return_date : $('#end-date').val(),
+return_date : endval,
 return_time : $('#end-time').val() == null ? '00:00' : $('#end-time').val(),
 pick_up_location : 2,
 return_location : 2,
@@ -858,14 +866,19 @@ document.getElementsByClassName('limited')[x+1].style.display = 'block';
 var callcount = 0; 	
 function getsinglevan() {
 $('#extra-text').hide();
+
+var datval = $('#start-date').val();
+var stval = datval.split(" ")[0];
+var endval = datval.split(" ")[2];	
+		
 $.ajax({
     type: "POST",
     url: "https://hirefleet-328113.nw.r.appspot.com/api/additionalcharges",
     // The key needs to match your method's input parameter (case-sensitive).
     data: JSON.stringify({
-	    pick_up_date: $('#start-date').val(),
+	    pick_up_date: stval,
 pick_up_time: $('#start-time :selected').val(),
-return_date : $('#end-date').val(),
+return_date : endval,
 return_time : $('#end-time :selected').val(),
 pick_up_location : 2,
 return_location : 2,
@@ -1033,8 +1046,12 @@ function observeElement(element, property, callback, delay = 0) {
 
 function addActivityItem() {
     // To set the date and time variables
-var r = document.getElementById('start-date').value;
-var s = document.getElementById('end-date').value;
+var datval = $('#start-date').val();
+var stval = datval.split(" ")[0];
+var endval = datval.split(" ")[2];	
+	
+var r = stval;
+var s = endval;
 var t = document.getElementById('start-time').value;
 var u = document.getElementById('end-time').value;
 var v = r + '08:01';
