@@ -471,25 +471,8 @@ var today = dayjs().format('DD/MM/YYYY'); //set the start / end date to today
 //var todays = dayjs().format('MM/DD/YYYY'); //set the start / end date to today
 var tomorrow = dayjs().add(1, 'day').format('DD/MM/YYYY'); } //set the start / end date to today
 	
-	bothpicker =  new Litepicker({
-					element: document.getElementById('both-date'),
-				singleMode: false,
-				format: 'DD-MM-YYYY',
-				minDate: dayjs().format('MM/DD/YYYY'),
-				plugins: ['mobilefriendly'],
-				//allowRepick: true,   
-				maxDate: maxd,       startDate: today,
-				endDate: tomorrow,
-				tooltipNumber: (totalDays) => {
-				return totalDays - 1;
-				}
-		setup: (bothpicker) => {
-  bothpicker.on('selected', (date1, date2) => {
-picker.setDateRange(date1,date2)
-  })
-	},		
-	});	
-	
+
+  	
 	
 picker = new Litepicker({
 				element: document.getElementById('start-date'),
@@ -523,6 +506,25 @@ window.history.replaceState(null, null, addparam());
 	},
 })
 
+	bothpicker =  new Litepicker({
+					element: document.getElementById('both-date'),
+				singleMode: false,
+				format: 'DD-MM-YYYY',
+				minDate: dayjs().format('MM/DD/YYYY'),
+				plugins: ['mobilefriendly'],
+				//allowRepick: true,   
+				maxDate: maxd,       startDate: today,
+				endDate: tomorrow,
+				tooltipNumber: (totalDays) => {
+				return totalDays - 1;
+				}
+		setup: (bothpicker) => {
+  bothpicker.on('selected', (date1, date2) => {
+picker.setDateRange(date1,date2)
+  })
+	},		
+	});	
+		
 
 var precount = 0;	
    picker.on('preselect', (date1, date2) => {	   
