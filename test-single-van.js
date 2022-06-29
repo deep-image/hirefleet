@@ -449,8 +449,7 @@ if (window.location.href.indexOf("start-date") > -1) {
     var paramValue = getParam(this.id).replace(/\b[a-z]/g, function(txtVal) {
     return txtVal.toUpperCase().replace(/%20/g, " "); // replace %20 with real space
 		});  // end make each word uppercase and remove %20
-		if(this.value == "" && paramValue != "") this.value = paramValue;
-		if(this.value == "" && paramValue != "") console.log(this.value,paramValue);		 
+		if(this.value == "" && paramValue != "") this.value = paramValue;	 
     var start = getParam("start-time").replace(/\b[a-z]/g, function(txtVal) {
     return txtVal.toUpperCase().replace(/%20/g, " "); // replace %20 with real space
 		});  // end make each word uppercase and remove %20
@@ -473,10 +472,7 @@ var tomorrow = dayjs().add(2, 'day').format('DD/MM/YYYY'); } //set the start /
 var today = dayjs().format('DD/MM/YYYY'); //set the start / end date to today
 //var todays = dayjs().format('MM/DD/YYYY'); //set the start / end date to today
 var tomorrow = dayjs().add(1, 'day').format('DD/MM/YYYY'); } //set the start / end date to today
-	
-
-  	
-	
+	console.log("litepciker")
 picker = new Litepicker({
 				element: document.getElementById('start-date'),
   			elementEnd: document.getElementById('end-date'),
