@@ -225,8 +225,10 @@ return additioncharge;
  {	 
 var string = "";
   string = '?' + $('#booking-form').find('input, select, textarea').map(function() {
+	  if(this.name != 'both-date') {
     var key = encodeURIComponent((this.name || this.id).trim());
-    return key ? key + '=' + encodeURIComponent($(this).val()) : null;
+    return key ? key + '=' + encodeURIComponent($(this).val()) : null; 
+	  }
   }).get().join('&');
 
 string = string + '&' + $('.addit-check').map(function() {
