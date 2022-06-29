@@ -462,6 +462,7 @@ if (window.location.href.indexOf("start-date") > -1) {
     var agerange = getParam("age").replace(/\b[a-z]/g, function(txtVal) {
     return txtVal.toUpperCase().replace(/%20/g, " "); // replace %20 with real space
 		});  // end make each word uppercase and remove %20     
+ $('#both-date').val(start + " -" + end)
  });
     }
 // if the time is after 10am then set the pickup day to tomorrow
