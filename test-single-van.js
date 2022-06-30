@@ -530,8 +530,8 @@ bothpicker =  new Litepicker({
 				minDate: dayjs().format('MM/DD/YYYY'),
 				plugins: ['mobilefriendly'],
 				//allowRepick: true,   
-				maxDate: maxd,       startDate: today,
-				endDate: tomorrow,
+				maxDate: maxd,       startDate: picker.getStartDate(),
+				endDate: picker.getEndDateDate(),
 				tooltipNumber: (totalDays) => {
 				return totalDays - 1;
 				},
