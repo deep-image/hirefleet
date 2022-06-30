@@ -11,8 +11,10 @@ $('.card-button').click(function(){
  {
  var string = "";
   string = '?' + $('#booking-form').find('input, select, textarea').map(function() {
+	  if(this.name != 'both-date') {  
     var key = encodeURIComponent((this.name || this.id).trim());
     return key ? key + '=' + encodeURIComponent($(this).val()) : null;
+	  }			  
   }).get().join('&');
 return string;
  }
@@ -67,6 +69,7 @@ if (window.location.href.indexOf("start-date") > -1) {
     if (age == 'On' || age == 25) {
     $("#age").val("25");
         } 
+$('#both-date').length > 0 ?  $('#both-date').val($('#start-date').val() + " - " + $('#end-date').val()) : '';	
 }
     
     else{ var today = dayjs().format('DD/MM/YYYY'); 
