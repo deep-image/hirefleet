@@ -306,12 +306,8 @@ if(singval.vehicle_class_id == $('.van-class-id')[x].innerHTML)
 {
 if(singval.availability.quantity > 0) {
 var agecheck = age == 'On';
+('.price-amount')[x].innerHTML =  '£' +  agecheck ? singval.price.base_price_with_taxes.amount_for_display : Number(singval.price.base_price_with_taxes.amount_for_display.slice(1).replace(/,/g, '.')) + Number(young_driver_cost) ;
 
-$('.price-amount')[x].innerHTML =  '£' + Number(singval.price.base_price_with_taxes.amount.replace('.',',')).toFixed(2);
-//$('.price-amount')[x].innerHTML =  '£' + $('#age').val() == '25' ? singval.price.base_price_with_taxes.amount.replace('.',',') : '£' +  Number(singval.price.base_price_with_taxes.amount + young_driver_cost).toFixed(2).replace('.',',');
-//'.price-amount')[x].innerHTML =  '£' +  agecheck ? singval.price.base_price_with_taxes.amount_for_display : Number(singval.price.base_price_with_taxes.amount_for_display.slice(1).replace(/,/g, '.')) + Number(young_driver_cost) ;
-//make change in first condition
-//$('.price-amount')[x].innerHTML =  '£' +  agecheck ? 25 : 50;
 var days = singval.price.total_days;
 var paramstr = addparam();
 let butturl =document.getElementsByClassName('card-button')[x].href.split("?")[0];
