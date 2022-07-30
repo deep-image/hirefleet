@@ -33,7 +33,7 @@ var bothpicker;
 
         setTimeout(function() {
        postadditional();
-}, 500);
+}, 200);
 
 // auto populate form from url parameter
 function getParam(name) { 
