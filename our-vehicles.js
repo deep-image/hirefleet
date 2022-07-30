@@ -1,5 +1,4 @@
 
-
 var vichHref = ''; 
 
 $('.card-button').click(function(){
