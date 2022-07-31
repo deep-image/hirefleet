@@ -152,6 +152,18 @@ makecall(picker.getStartDate().toDateString(),picker.getEndDate().toDateString()
 	window.history.replaceState(null, null, addparam());
 });
 
+$('#end-time').change(function() {
+  var strt = $('#start-time :selected').val();
+  var endt = $('#end-time :selected').val();
+  age = $('#age :selected').val() == '25' ? 'On' : 'off';
+ var tod = new Date();
+var tom = new Date(tod.getTime() + (24 * 60 * 60 * 1000));
+var daytom = new Date(tom.getTime() + (24 * 60 * 60 * 1000)); 
+makecall(picker.getStartDate().toDateString(),picker.getEndDate().toDateString(),strt,endt,age);	
+window.history.replaceState(null, null, addparam());
+});
+
+
 $('#age').change(function() {
   var strt = $('#start-time :selected').val();
   var endt = $('#end-time :selected').val();
@@ -183,15 +195,6 @@ document.getElementsByClassName('card-button')[x].href = butturl + paramstr;
 $('.item-overlay')[x].href = butturl + paramstr;
 }
 
-$('#end-time').change(function() {
-  var strt = $('#start-time :selected').val();
-  var endt = $('#end-time :selected').val();
-  age = $('#age :selected').val() == '25' ? 'On' : 'off';
- var tod = new Date();
-var tom = new Date(tod.getTime() + (24 * 60 * 60 * 1000));
-var daytom = new Date(tom.getTime() + (24 * 60 * 60 * 1000)); 
-	window.history.replaceState(null, null, addparam());
-});
 
 
 var young_driver_cost = 35;	
