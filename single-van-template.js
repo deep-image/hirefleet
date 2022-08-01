@@ -493,7 +493,7 @@ additionalpostcall()
 $('#total-price, #total-price-mobile, #subtotal, #subtotal-mobile').text("---")	  
 makecall(date1.toDateString(),date2.toDateString());
 window.history.replaceState(null, null, addparam());		  		  
-	   }, 300);
+	   }, 450);
  }	 
   });	
 	},
