@@ -493,7 +493,7 @@ additionalpostcall()
 $('#total-price, #total-price-mobile, #subtotal, #subtotal-mobile').text("---")	  
 makecall(date1.toDateString(),date2.toDateString());
 window.history.replaceState(null, null, addparam());		  		  
-	   }, 450);
+	   }, 350);
  }	 
   });	
 	},
@@ -592,7 +592,9 @@ makecall('','');
 });
 	
 $('#start-time, #end-time, #age-range').change(function() {
-subdetectchange()
+	setTimeout(function()  {  
+	subdetectchange()
+	}, 300);
 });
 
 
