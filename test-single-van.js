@@ -483,6 +483,7 @@ var today = dayjs().format('DD/MM/YYYY'); //set the start / end date to today
 //var todays = dayjs().format('MM/DD/YYYY'); //set the start / end date to today
 var tomorrow = dayjs().add(1, 'day').format('DD/MM/YYYY'); } //set the start / end date to today
 	console.log("litepciker")
+console.log(today)	
 picker = new Litepicker({
 				element: document.getElementById('start-date'),
   			elementEnd: document.getElementById('end-date'),
