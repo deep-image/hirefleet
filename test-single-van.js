@@ -618,7 +618,9 @@ makecall('','');
 });
 
 $('#start-time, #end-time, #age-range').change(function() {
-subdetectchange()
+	setTimeout(function() { 	
+	subdetectchange()
+	    }, 300);	
 });
 
 
