@@ -85,6 +85,7 @@ var strt = $('#start-time :selected').val();
      console.log("sec make call");   
     } 
  
+	
  picker = new Litepicker({
 				element: document.getElementById('start-date'),
   			elementEnd: document.getElementById('end-date'),
