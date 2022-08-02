@@ -620,7 +620,7 @@ makecall('','');
 $('#start-time, #end-time, #age-range').change(function() {
 	setTimeout(function() { 	
 	subdetectchange()
-	    }, 300);	
+	    }, 600);	
 });
 
 
