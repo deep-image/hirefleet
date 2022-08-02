@@ -618,16 +618,24 @@ makecall('','');
 });
 
 $('#start-time, #end-time, #age-range').change(function() {
-	setTimeout(function() { 
-	console.log($('#age-range').val() == '25' ? 1 : '')	
+	//setTimeout(function() { 
+//	console.log($('#age-range').val() == '25' ? 1 : '')	
 	subdetectchange()
-	    }, 1600);	
+	//    }, 1600);	
 });
 
 
 
 var coup_amo = 0;
 var young_driver_cost =0;
+
+	let additageval = '';
+	if(getParam('age') == '') {
+	 additageval = $('#age-range').val() == '25' ? 1 : '';
+	}
+	else {
+	additageval = getParam('age') == '25' ? 1 : '';
+	}	
 function additionalpostcall()
 {
 $('#extra-text').hide();
@@ -647,7 +655,7 @@ brand_id : 1,
 vehicle_class_id : $('#class-id').text(),	    
 
 	    ///////////////////////this needs sorting//////////////// 
-	    additional_charges : $('#age-range').val() == '25' ? 1 : '', // this needs to be the full lis of selected extras
+	    additional_charges : additageval, // this needs to be the full lis of selected extras
 	    ///////////////////////this needs sorting//////////////// 
 additional_charges : getextras(),
 coupon_code : ""	    
