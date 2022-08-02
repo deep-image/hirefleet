@@ -208,7 +208,7 @@ if(getParam('age') == '') {
 console.log(additageval)	
 }
 else {
-additageval = getParam('age') == '25' ? false : true;
+additageval = getParam('age') == '25' ? true : false;
 console.log(additageval)		
 }		
 var additsel = $('.addit-select');
