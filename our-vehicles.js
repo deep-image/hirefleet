@@ -94,8 +94,8 @@ var strt = $('#start-time :selected').val();
   			minDate: dayjs().format('MM/DD/YYYY'),
   			plugins: ['mobilefriendly'],
   			allowRepick: false,       
-      startDate: today,
-        endDate: tomorrow,
+	startDate: today,
+	endDate: tomorrow,
 // shows one day less
   tooltipNumber: (totalDays) => {
     return totalDays - 1;
