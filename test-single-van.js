@@ -200,6 +200,13 @@ $('select').on('change', function(){
 	    ///////////////////////this needs sorting//////////////// 
 
 var additioncharge = [];
+	let additageval = false;
+	if(getParam('age') == '') {
+	 additageval = $('#age-range').val() == '25' ? false : true;
+	}
+	else {
+	additageval = getParam('age') == '25' ? false : true;
+	}
 function getextras() {
 additioncharge = [];	
 var additsel = $('.addit-select');
@@ -216,7 +223,7 @@ var elemval = $('#'+ additcheck[x].id).is(':checked')
 	 additioncharge.push($('#'+ additcheck[x].id).attr('idattr'))
 	}
 }
-$('#age-range').val() == '23' ? additioncharge.push(1) 	: '';	
+additageval ? additioncharge.push(1) : '';	
 return additioncharge;
 }
 
@@ -628,14 +635,7 @@ $('#start-time, #end-time, #age-range').change(function() {
 
 var coup_amo = 0;
 var young_driver_cost =0;
-
-	let additageval = '';
-	if(getParam('age') == '') {
-	 additageval = $('#age-range').val() == '25' ? 1 : '';
-	}
-	else {
-	additageval = getParam('age') == '25' ? 1 : '';
-	}	
+	
 function additionalpostcall()
 {
 $('#extra-text').hide();
@@ -655,7 +655,7 @@ brand_id : 1,
 vehicle_class_id : $('#class-id').text(),	    
 
 	    ///////////////////////this needs sorting//////////////// 
-	    additional_charges : additageval, // this needs to be the full lis of selected extras
+	 //   additional_charges : additageval, // this needs to be the full lis of selected extras
 	    ///////////////////////this needs sorting//////////////// 
 additional_charges : getextras(),
 coupon_code : ""	    
