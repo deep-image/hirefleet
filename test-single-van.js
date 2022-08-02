@@ -202,10 +202,12 @@ $('select').on('change', function(){
 var additioncharge = [];
 	let additageval = false;
 	if(getParam('age') == '') {
-	 additageval = $('#age-range').val() == '25' ? false : true;
+	 additageval = $('#age-range').val() ? false : true;
+	console.log(additageval)	
 	}
 	else {
 	additageval = getParam('age') == '25' ? false : true;
+	console.log(additageval)		
 	}
 function getextras() {
 additioncharge = [];	
