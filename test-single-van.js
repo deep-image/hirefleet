@@ -621,7 +621,7 @@ $('#start-time, #end-time, #age-range').change(function() {
 	setTimeout(function() { 
 	console.log($('#age-range').val() == '25' ? 1 : '')	
 	subdetectchange()
-	    }, 800);	
+	    }, 1600);	
 });
 
 
