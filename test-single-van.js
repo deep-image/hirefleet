@@ -204,7 +204,7 @@ function getextras() {
 additioncharge = [];
 let additageval = false;
 if(getParam('age') == '') {
- additageval = $('#age-range').val() ? false : true;
+ additageval = $('#age-range').val() == '25' ? false : true;
 console.log(additageval)	
 }
 else {
