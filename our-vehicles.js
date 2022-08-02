@@ -130,8 +130,8 @@ if($('#start-time').val() != null && $('#end-time').val() != null) {
 	      minDate: dayjs().format('MM/DD/YYYY'),
 	      plugins: ['mobilefriendly'],
 	      //allowRepick: true,   
-      startDate: tomorrow,
-	endDate: daytomorrow,
+      startDate: today,
+	endDate: tomorrow,
 	      tooltipNumber: (totalDays) => {
 	      return totalDays - 1;
 	      },
