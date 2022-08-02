@@ -200,17 +200,17 @@ $('select').on('change', function(){
 	    ///////////////////////this needs sorting//////////////// 
 
 var additioncharge = [];
-	let additageval = false;
-	if(getParam('age') == '') {
-	 additageval = $('#age-range').val() ? false : true;
-	console.log(additageval)	
-	}
-	else {
-	additageval = getParam('age') == '25' ? false : true;
-	console.log(additageval)		
-	}
 function getextras() {
-additioncharge = [];	
+additioncharge = [];
+let additageval = false;
+if(getParam('age') == '') {
+ additageval = $('#age-range').val() ? false : true;
+console.log(additageval)	
+}
+else {
+additageval = getParam('age') == '25' ? false : true;
+console.log(additageval)		
+}		
 var additsel = $('.addit-select');
 for (var x=0; x<additsel.length; x++){
 var elemval = $('#'+ additsel[x].id).find(":selected").val()
