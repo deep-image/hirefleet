@@ -474,10 +474,11 @@ if (window.location.href.indexOf("start-date") > -1) {
 $('#both-date').val($('#start-date').val() + " - " + $('#end-date').val())
     }
 // if the time is after 10am then set the pickup day to tomorrow
-    else if (time >= 10){
+ /*   else if (time >= 10){
 var today = dayjs().add(1, 'day').format('DD/MM/YYYY'); //set the start / end date to today
 //var todays = dayjs().add(1, 'day').format('MM/DD/YYYY'); //set the start / end date to today
 var tomorrow = dayjs().add(2, 'day').format('DD/MM/YYYY'); } //set the start /
+*/
     else{ 
 var today = dayjs().format('DD/MM/YYYY'); //set the start / end date to today
 //var todays = dayjs().format('MM/DD/YYYY'); //set the start / end date to today
