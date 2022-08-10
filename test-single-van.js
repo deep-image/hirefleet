@@ -548,7 +548,6 @@ bothpicker =  new Litepicker({
 				},
 		setup: (bothpicker) => {
   bothpicker.on('selected', (date1, date2) => {
-console.log("both picker chng")	  
 picker.setDateRange(date1,date2)
   })
 	},		
