@@ -517,17 +517,6 @@ window.history.replaceState(null, null, addparam());
 })
 	
 
-var precount = 0;	
-   picker.on('preselect', (date1, date2) => {	   
-precount = precount + 1;	   
-	   if(precount == 2) {
-	  setTimeout( function() {	 		   
-console.log("git pre select"); 	  
-//getsinglevan();
-	   }, 300);			  
-} 
-precount = precount == 2 ? 0 : precount;	   
-  });
 
   picker.on('hide', () => {
  console.log("clear")
@@ -553,6 +542,20 @@ picker.setDateRange(date1,date2)
 	},		
 })	
 
+var precount = 0;	
+   picker.on('preselect', (date1, date2) => {	   
+precount = precount + 1;	   
+	   if(precount == 2) {
+	  setTimeout( function() {	 		   
+console.log("git pre select"); 	  
+//getsinglevan();
+	   }, 300);			  
+} 
+precount = precount == 2 ? 0 : precount;	   
+  });
+	
+	
+	
 dobpicker = new Litepicker({
 				element: document.getElementById('Date-Of-Birth'),
         dropdowns: {
