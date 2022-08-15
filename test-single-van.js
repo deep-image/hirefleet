@@ -627,7 +627,9 @@ $('.summ-extras-div > .extras-text').length == 0 ? $('.summary-div').hide() : ''
 
 var additionalcount = 0;
 $('#start-time, #end-time').change(function() {
-makecall('','');	
+	setTimeout(function() { 
+	makecall('','');
+	}, 200);	
 });
 
 $('#start-time, #end-time, #age-range').change(function() {
