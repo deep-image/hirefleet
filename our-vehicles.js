@@ -145,12 +145,14 @@ if($('#start-time').val() != null && $('#end-time').val() != null) {
 });
 
 $('#start-time').change(function() {
+	setTimeout(function() { 
   var strt = $('#start-time :selected').val();
   var endt = $('#end-time :selected').val();
   age = $('#age :selected').val() == '25' ? 'On' : 'off';
       console.log("thir make call");   
 makecall(picker.getStartDate().toDateString(),picker.getEndDate().toDateString(),strt,endt,age);
 	window.history.replaceState(null, null, addparam());
+    }, 100);			
 });
 
 $('#end-time').change(function() {
