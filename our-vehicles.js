@@ -319,6 +319,8 @@ let butturl =document.getElementsByClassName('card-button')[x].href.split("?")[0
 $('.item-overlay')[x].href = butturl + paramstr;
 document.getElementsByClassName('card-button')[x].href = butturl + paramstr;
 days > 1 ? $('.days')[x].innerHTML = days + ' days' :  $('.days')[x].innerHTML = days + ' day'
+//adding text for filter
+$('.hid-available-text')[x]  ?  $('.hid-available-text')[x].text('avilable') : ''	
 }
 else
 {
@@ -334,6 +336,7 @@ document.getElementsByClassName('card-button')[x].style.color = '#3a78ae';
 document.getElementsByClassName('card-button')[x].style.backgroundColor = 'white';
 document.getElementsByClassName('card-button')[x].innerHTML = 'Enquire now';
 document.getElementsByClassName('limited')[x].style.display = 'block';
+$('.hid-available-text')[x]  ?  $('.hid-available-text')[x].text('limited-avilable') : ''		
 }
 }
 }
