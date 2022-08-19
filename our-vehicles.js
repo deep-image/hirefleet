@@ -337,7 +337,7 @@ document.getElementsByClassName('card-button')[x].style.color = '#3a78ae';
 document.getElementsByClassName('card-button')[x].style.backgroundColor = 'white';
 document.getElementsByClassName('card-button')[x].innerHTML = 'Enquire now';
 document.getElementsByClassName('limited')[x].style.display = 'block';
-$('.hid-available-text').eq(x).text('limited') 		
+$('.hid-available-text').eq(x).text('soldout') 		
 }
 }
 }
