@@ -261,7 +261,7 @@ brand_id : 1
         }
     },
     error: function(error) {
-      $('.van-collection').toggle('300');
+    //  $('.van-collection').toggle('300');
     }
 });
 }
