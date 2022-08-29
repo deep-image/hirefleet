@@ -257,11 +257,11 @@ brand_id : 1
        } else {
         nexavailcount = 0;	  	       
     var res = data.data;
-  //  applypricing(res.applicable_classes);
+    applypricing(res.applicable_classes);
         }
     },
     error: function(error) {
-    //  $('.van-collection').toggle('300');
+      $('.van-collection').toggle('300');
     }
 });
 }
