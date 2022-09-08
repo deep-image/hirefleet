@@ -874,6 +874,7 @@ var paramstr = addparam();
 let butturl =document.getElementsByClassName('card-button')[x].href.split("?")[0]; 
 document.getElementsByClassName('card-button')[x].href = butturl + paramstr;
 $('.item-overlay')[x].href = butturl + paramstr;
+document.getElementsByClassName('available')[x+1].style.display = 'block';
 days > 1 ? $('.days')[x].innerHTML = days + ' days' :  $('.days')[x].innerHTML = days + ' day'
 }
 else
