@@ -319,7 +319,8 @@ var paramstr = addparam();
 let butturl =document.getElementsByClassName('card-button')[x].href.split("?")[0];
 $('.item-overlay')[x].href = butturl + paramstr;
 document.getElementsByClassName('card-button')[x].href = butturl + paramstr;
-document.getElementsByClassName('available')[x].style.display = 'block';
+//document.getElementsByClassName('available')[x].style.display = 'block';
+document.getElementsByClassName('limited')[x].innerHTML = "Booking Available"
 days > 1 ? $('.days')[x].innerHTML = days + ' days' :  $('.days')[x].innerHTML = days + ' day'
 //adding text for filter
    $('.hid-available-text').eq(x).text('available') 
@@ -337,7 +338,8 @@ document.getElementsByClassName('card-button')[x].href = butturl + paramstr;
 document.getElementsByClassName('card-button')[x].style.color = '#3a78ae';
 document.getElementsByClassName('card-button')[x].style.backgroundColor = 'white';
 document.getElementsByClassName('card-button')[x].innerHTML = 'Enquire now';
-document.getElementsByClassName('limited')[x].style.display = 'block';
+document.getElementsByClassName('limited')[x].innerHTML = "Limited Availability"
+//document.getElementsByClassName('limited')[x].style.display = 'block';
 $('.hid-available-text').eq(x).text('soldout') 		
 }
 }
