@@ -338,7 +338,7 @@ document.getElementsByClassName('card-button')[x].style.color = '#3a78ae';
 document.getElementsByClassName('card-button')[x].style.backgroundColor = 'white';
 document.getElementsByClassName('card-button')[x].innerHTML = 'Enquire now';
 document.getElementsByClassName('limited')[x].style.display = 'block';
- $('.filt-available').length > 0 ? $('.filt-available')[x].innerHTML = 'instock' : ''		
+ $('.filt-available').length > 0 ? $('.filt-available')[x].innerHTML = 'sold' : ''		
 }
 }
 }
