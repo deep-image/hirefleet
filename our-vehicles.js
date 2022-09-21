@@ -322,6 +322,7 @@ document.getElementsByClassName('card-button')[x].href = butturl + paramstr;
 document.getElementsByClassName('available')[x].style.display = 'block';
 days > 1 ? $('.days')[x].innerHTML = days + ' days' :  $('.days')[x].innerHTML = days + ' day'
 //adding text for filter
+console.log($('.filt-available')[x].innerHTML))	
  $('.filt-available').length > 0 ? $('.filt-available')[x].innerHTML = 'instock' : ''	
 }
 else
