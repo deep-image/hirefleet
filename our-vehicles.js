@@ -261,7 +261,7 @@ brand_id : 1
         }
     },
     error: function(error) {
-      $('.van-collection').toggle('300');
+    //  $('.van-collection').toggle('300');
     }
 });
 }
@@ -294,7 +294,7 @@ for(x=loopcount; x< lckcount; x++) {
 } 
  }	  
 	 
-picker.setDateRange(nextavail,tomnextavail) 
+//picker.setDateRange(nextavail,tomnextavail) 
 bothpicker.setDateRange(nextavail,tomnextavail)
 	
  $('#end-time').val() == null ? $('#end-time').val($('#end-time option:first').val()) : ''	
