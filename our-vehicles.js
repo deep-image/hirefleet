@@ -356,6 +356,11 @@ function resetpriceslider() {
 	slidearr.push(Number(singpr.substring(1)))    
 	})
 	slidearr = slidearr.sort(function(a, b){return b - a})
+	var prslide = $(".js-range-slider").data("ionRangeSlider")
+	prslide.options.min = slidearr[slidearr.length - 1]
+	prslide.options.max = slidearr[0]
+	prslide.update({ from: (slidearr[slidearr.length - 1) , to: slidearr[0] })
+
 	console.log(slidearr)
   }
 
