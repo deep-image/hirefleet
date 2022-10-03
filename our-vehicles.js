@@ -355,6 +355,7 @@ function resetpriceslider() {
 	let singpr = $('.price-amount').eq(index).text()
 	slidearr.push(Number(singpr.substring(1)))    
 	})
+	slidearr.sort(function(a, b){return b - a})
 	console.log(slidearr)
   }
 
