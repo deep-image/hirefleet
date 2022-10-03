@@ -344,9 +344,19 @@ document.getElementsByClassName('limited')[x].style.display = 'block';
 }
 }
 })
+resetpriceslider();	
 addparam();
 }
 
+
+function resetpriceslider() {
+	var pricearr = []
+	$('.price-amount').each((index) => {
+	let singpr = $('.price-amount').eq(index).text()
+	pricearr.push(Number(singpr.substring(1)))    
+	})
+	console.log(pricearr)
+  }
 
 
 $('#booking-form').submit(function() {
