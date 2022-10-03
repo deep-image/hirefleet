@@ -350,12 +350,12 @@ addparam();
 
 
 function resetpriceslider() {
-	var pricearr = []
+	var slidearr = []
 	$('.price-amount').each((index) => {
 	let singpr = $('.price-amount').eq(index).text()
-	pricearr.push(Number(singpr.substring(1)))    
+	slidearr.push(Number(singpr.substring(1)))    
 	})
-	console.log(pricearr)
+	console.log(slidearr)
   }
 
 
