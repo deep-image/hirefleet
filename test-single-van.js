@@ -677,7 +677,9 @@ coupon_code : ""
 
 	    ///////////////////////this needs sorting (updated)//////////////// 
 $('.summ-div-child').empty();
-	    
+	  
+	 $('.sing-features-block .div-block-47').remove()
+$('.sing-features-block .div-block-45').remove()   
  data.selected_vehicle_class.vehicle_class.features.forEach((feature) => {
    let fabval = getunicode(feature.icon)[1] == true ? 'fab' : ''
    $('.sing-features-block').eq(0).append('</span></i><div class="div-block-47"><div class="similar fa ' + fabval + '">'+getunicode(feature.icon)[0] +'</div><div class="similar left">'+ feature.label +'</div></div>')
@@ -897,8 +899,8 @@ function applypricing(appdata)
 var loopdata = appdata;	
 $('.van-collection').toggle('300');
 var vandat = $('.van-collection');
-$('.div-block-47').remove()
-$('.div-block-45').hide()	
+$('.features-block .div-block-47').remove()
+$('.features-block .div-block-45').remove()	
 loopdata.forEach(singval => { 
 for(var x=0;x< vandat.length; x++)
 {
