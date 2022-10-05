@@ -677,6 +677,19 @@ coupon_code : ""
 
 	    ///////////////////////this needs sorting (updated)//////////////// 
 $('.summ-div-child').empty();
+	    
+ data.selected_vehicle_class.vehicle_class.features.forEach((feature) => {
+   let fabval = getunicode(feature.icon)[1] == true ? 'fab' : ''
+   $('.sing-features-block').eq(0).append('</span></i><div class="div-block-47"><div class="similar fa ' + fabval + '">'+getunicode(feature.icon)[0] +'</div><div class="similar left">'+ feature.label +'</div></div>')
+   })
+$('.sing-dimensions-block').eq(0).find('#F405').text(Number(data.selected_vehicle_class.vehicle_class.f405).toFixed(0)) 
+$('.sing-dimensions-block').eq(0).find('#F407').text(Number(data.selected_vehicle_class.vehicle_class.f407).toFixed(0)) 
+$('.sing-dimensions-block').eq(0).find('#F409').text(Number(data.selected_vehicle_class.vehicle_class.f409).toFixed(0)) 
+$('.sing-dimensions-block').eq(0).find('#F411').text(Number(data.selected_vehicle_class.vehicle_class.f411).toFixed(0)) 
+$('.sing-dimensions-block').eq(0).find('#F414').text(Number(data.selected_vehicle_class.vehicle_class.f414).toFixed(0)) 
+
+	    
+	    
 data.selected_additional_charges.forEach((singval,index) => { 
 young_driver_cost = singval.id == 1  ? Number(singval.total_price_with_taxes.amount) : 0;  	
  $('.summ-div-child').append('<div class="summ-extras-div"><div class="extras-text">'+singval.label+'<span class="extra-id" style="display:none">'+singval.id +'</span> <span class="extra-quant">x'+  singval.selected_quantity+' </span></div><div class="extras-pricing">'+singval.total_price_with_taxes.amount_for_display+'</div></div>')
