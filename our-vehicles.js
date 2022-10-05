@@ -302,15 +302,55 @@ $('#start-time').val($('#start-time option:first').val()).change()
 }
 
 
+
+function getunicode(icclass) {	 
+   if(icclass == 'fad fa-chess-pawn') {
+      return ['&#xf443;' , false]
+   }
+	  else if(icclass == 'far fa-level-up-alt') {
+      return ['&#xf3bf;' , false ]
+   }
+     else if(icclass == 'fab fa-autoprefixer') {
+      return ['&#xf41c;' , true ]
+   }
+      else if(icclass == 'fab fa-linux') {
+      return ['&#xf17c;' , true ]
+   }
+   else if(icclass == 'fas fa-radio') {
+      return ['&#xf8d7;' , false ]
+   }
+    else if(icclass == 'fas fa-steering-wheel') {
+      return ['&#xf622;' , false ]
+   }
+    else if(icclass == 'far fa-arrow-alt-from-left') {
+      return ['&#xf347;' , false ]
+   }
+}
+
+
 function applypricing(data)
 {
 $('.van-collection').toggle('300');
 var vandat = $('.van-collection');
+
+$('.div-block-47').remove()
+$('.div-block-45').hide()	
+	
 data.forEach(singval => { 
 for(var x=0;x< vandat.length; x++)
 {
 if(singval.vehicle_class_id == $('.van-class-id')[x].innerHTML)
 {
+	  singval.vehicle_class.features.forEach((feature) => {
+	let fabval = getunicode(feature.icon)[1] == true ? 'fab' : ''
+	$('.features-block').eq(x).append('</span></i><div class="div-block-47"><div class="similar fa ' + fabval + '">'+getunicode(feature.icon)[0] +'</div><div class="similar left">'+ feature.label +'</div></div>')
+	})
+	$('.dimensions-block').eq(x).find('#F405').text(Number(singval.vehicle_class.f405).toFixed(0)) 
+	$('.dimensions-block').eq(x).find('#F407').text(Number(singval.vehicle_class.f407).toFixed(0)) 
+	$('.dimensions-block').eq(x).find('#F409').text(Number(singval.vehicle_class.f409).toFixed(0)) 
+	$('.dimensions-block').eq(x).find('#F411').text(Number(singval.vehicle_class.f411).toFixed(0)) 
+	$('.dimensions-block').eq(x).find('#F414').text(Number(singval.vehicle_class.f414).toFixed(0)) 
+
 if(singval.availability.quantity > 0) {
 var agecheck = age == 'On';
 $('.price-amount')[x].innerHTML = agecheck ? singval.price.base_price_with_taxes.amount_for_display :  '£' + (Number(singval.price.base_price_with_taxes.amount_for_display.slice(1).replace(/,/g, '.')) + young_driver_cost).toFixed(2);
