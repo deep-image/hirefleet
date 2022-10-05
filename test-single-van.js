@@ -98,6 +98,10 @@ console.log({
 
 
 $(document).ready(function () {
+
+ $('.sing-features-block .div-block-47').remove()
+$('.sing-features-block .div-block-45').remove()   	
+
 var extra = $('#Extra-Driver');
             if (extra.val() === '0') {
                 alert("Please select an item from the list and then proceed!");
@@ -678,8 +682,7 @@ coupon_code : ""
 	    ///////////////////////this needs sorting (updated)//////////////// 
 $('.summ-div-child').empty();
 	  
-	 $('.sing-features-block .div-block-47').remove()
-$('.sing-features-block .div-block-45').remove()   
+
  data.selected_vehicle_class.vehicle_class.features.forEach((feature) => {
    let fabval = getunicode(feature.icon)[1] == true ? 'fab' : ''
    $('.sing-features-block').eq(0).append('</span></i><div class="div-block-47"><div class="similar fa ' + fabval + '">'+getunicode(feature.icon)[0] +'</div><div class="similar left">'+ feature.label +'</div></div>')
