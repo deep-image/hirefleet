@@ -691,8 +691,8 @@ $('.sing-dimensions-block').eq(0).find('#F405').text(Number(data.selected_vehicl
 $('.sing-dimensions-block').eq(0).find('#F407').text(Number(data.selected_vehicle_class.vehicle_class.f407).toFixed(0)) 
 $('.sing-dimensions-block').eq(0).find('#F409').text(Number(data.selected_vehicle_class.vehicle_class.f409).toFixed(0)) 
 $('.sing-dimensions-block').eq(0).find('#F411').text(Number(data.selected_vehicle_class.vehicle_class.f411).toFixed(0)) 
-$('.sing-dimensions-block').eq(0).find('#F414').text(Number(data.selected_vehicle_class.vehicle_class.f414).toFixed(0)) 
-$('.sing-dimensions-block').eq(0).find('#F449').text(Number(data.selected_vehicle_class.vehicle_class.f449).toFixed(0))
+$('.sing-dimensions-block').eq(0).find('#F414').text(Number(data.selected_vehicle_class.vehicle_class.f414).toFixed(0),"-") 
+$('.sing-dimensions-block').eq(0).find('#F449').text(Number(data.selected_vehicle_class.vehicle_class.f449).toFixed(0),"mpg")
 	    
 	    
 data.selected_additional_charges.forEach((singval,index) => { 
