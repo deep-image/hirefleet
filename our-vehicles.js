@@ -350,7 +350,7 @@ if(singval.vehicle_class_id == $('.van-class-id')[x].innerHTML)
 	$('.dimensions-block').eq(x).find('#F407').text(Number(singval.vehicle_class.f407).toFixed(0)) 
 	$('.dimensions-block').eq(x).find('#F409').text(Number(singval.vehicle_class.f409).toFixed(0)) 
 	$('.dimensions-block').eq(x).find('#F411').text(Number(singval.vehicle_class.f411).toFixed(0)) 
-	$('.dimensions-block').eq(x).find('#F414').text(Number(singval.vehicle_class.f414).toFixed(0)) 
+	$('.dimensions-block').eq(x).find('#F448').text(Number(singval.vehicle_class.f448).toFixed(0)) 
 
 if(singval.availability.quantity > 0) {
 var agecheck = age == 'On';
