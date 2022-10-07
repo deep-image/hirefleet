@@ -393,7 +393,7 @@ function resetpriceslider() {
 	var slidearr = []
 	$('.price-amount').each((index) => {
 	let singpr = $('.price-amount').eq(index).text()
-	slidearr.push(Number(singpr.substring(1).replace('.','').replace(',','')))    
+	slidearr.push(Number(singpr.substring(1).replace(',','')))    
 	})
 	slidearr = slidearr.sort(function(a, b){return b - a})
 	var prslide = $(".js-range-slider").data("ionRangeSlider")
