@@ -691,7 +691,7 @@ $('.sing-dimensions-block').eq(0).find('#F405').text(Number(data.selected_vehicl
 $('.sing-dimensions-block').eq(0).find('#F407').text(Number(data.selected_vehicle_class.vehicle_class.f407).toFixed(0)) 
 $('.sing-dimensions-block').eq(0).find('#F409').text(Number(data.selected_vehicle_class.vehicle_class.f409).toFixed(0)) 
 $('.sing-dimensions-block').eq(0).find('#F411').text(Number(data.selected_vehicle_class.vehicle_class.f411).toFixed(0)) 
-$('.sing-dimensions-block').eq(0).find('#F414').text(Number(data.selected_vehicle_class.vehicle_class.f414).toFixed(0)) 
+$('.sing-dimensions-block').eq(0).find('#F448').text(Number(data.selected_vehicle_class.vehicle_class.f448).toFixed(0)) 
 
 	    
 	    
@@ -917,7 +917,7 @@ if(singval.vehicle_class_id == $('.van-class-id')[x].innerHTML)
 	$('.dimensions-block').eq(x).find('#F407').text(Number(singval.vehicle_class.f407).toFixed(0)) 
 	$('.dimensions-block').eq(x).find('#F409').text(Number(singval.vehicle_class.f409).toFixed(0)) 
 	$('.dimensions-block').eq(x).find('#F411').text(Number(singval.vehicle_class.f411).toFixed(0)) 
-	$('.dimensions-block').eq(x).find('#F414').text(Number(singval.vehicle_class.f414).toFixed(0)) 
+	$('.dimensions-block').eq(x).find('#F448').text(Number(singval.vehicle_class.f448).toFixed(0)) 
 	
 if(singval.availability.quantity > 0) {
 var agecheck = $('#age-range').val() == '25';
