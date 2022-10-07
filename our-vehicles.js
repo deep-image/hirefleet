@@ -67,6 +67,7 @@ if (window.location.href.indexOf("start-date") > -1) {
     return txtVal.toUpperCase().replace(/%20/g, " "); // replace %20 with real space
 		});
   });     
+  console.log($("#age").val())		
     if (age == 'On' || age == 25) {
     $("#age").val("25");
         } 
