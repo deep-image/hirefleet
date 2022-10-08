@@ -710,7 +710,7 @@ agechangeonsimilar();
 //$('#total-price, #total-price-mobile, #hidd-total-price').text(data.total.total_price.amount_for_display);
 
 $('#subtotal, #subtotal-mobile').text( Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(data.selected_vehicle_class.price.base_price_with_taxes.amount) );
-$('#total-price, #total-price-mobile').text( Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(data.selected_vehicle_class.price.base_price_with_taxes.amount) );
+$('#total-price, #total-price-mobile').text( Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(data.total.total_price.amount) );
 	    
 	    $('#hidd-total-price').text(data.total.total_price.amount);
 $('#inclusive-miles, #inclusive-miles-mobile').text(data.selected_vehicle_class.distance_limits.distance_allowed);
