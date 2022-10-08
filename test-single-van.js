@@ -704,9 +704,14 @@ $('.summ-extras-div > .extras-text').length == 0 ? $('.summary-div').hide() : ''
 agechangeonsimilar();
 	    //////////////////////this needs sorting/////////////////
 
-$('#subtotal, #subtotal-mobile').text(data.selected_vehicle_class.price.base_price_with_taxes.amount_for_display);
-$('#total-price, #total-price-mobile, #hidd-total-price').text(data.total.total_price.amount_for_display);
-$('#hidd-total-price').text(data.total.total_price.amount);
+//$('#subtotal, #subtotal-mobile').text(data.selected_vehicle_class.price.base_price_with_taxes.amount_for_display);
+	    //Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(data.selected_vehicle_class.price.base_price_with_taxes.amount)
+//$('#total-price, #total-price-mobile, #hidd-total-price').text(data.total.total_price.amount_for_display);
+
+$('#subtotal, #subtotal-mobile').text( Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(data.selected_vehicle_class.price.base_price_with_taxes.amount) );
+$('#total-price, #total-price-mobile').text( Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(data.selected_vehicle_class.price.base_price_with_taxes.amount) );
+	    
+	    $('#hidd-total-price').text(data.total.total_price.amount);
 $('#inclusive-miles, #inclusive-miles-mobile').text(data.selected_vehicle_class.distance_limits.distance_allowed);
 $('#security_deposit_excess').text(data.total.security_deposit_excess.amount_for_display);
 $('#security_deposit').text(data.total.security_deposit.amount_for_display);
@@ -922,8 +927,8 @@ if(singval.vehicle_class_id == $('.van-class-id')[x].innerHTML)
 	
 if(singval.availability.quantity > 0) {
 var agecheck = $('#age-range').val() == '25';
-$('.price-amount')[x].innerHTML = agecheck ? singval.price.base_price_with_taxes.amount_for_display : Number(singval.price.base_price_with_taxes.amount_for_display.slice(1).replace(/,/g, '.')) + young_driver_cost ;
-//$('.price-amount')[x].innerHTML =  singval.price.base_price_with_taxes.amount ;
+//$('.price-amount')[x].innerHTML = agecheck ? singval.price.base_price_with_taxes.amount_for_display : Number(singval.price.base_price_with_taxes.amount_for_display.slice(1).replace(/,/g, '.')) + young_driver_cost ;
+$('.price-amount')[x].innerHTML = agecheck ?  Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(singval.price.base_price_with_taxes.amount) :   Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format((Number(singval.price.base_price_with_taxes.amount) + young_driver_cost));
 var days = singval.price.total_days;
 var paramstr = addparam();
 let butturl =document.getElementsByClassName('card-button')[x].href.split("?")[0]; 
@@ -936,9 +941,9 @@ else
 {
 var days = singval.price.total_days;
 var agecheck = $('#age-range').val() == '25';
-$('.price-amount')[x].innerHTML = agecheck ? singval.price.base_price_with_taxes.amount_for_display : Number(singval.price.base_price_with_taxes.amount_for_display.slice(1).replace(/,/g, '.')) + young_driver_cost ;	
+//$('.price-amount')[x].innerHTML = agecheck ? singval.price.base_price_with_taxes.amount_for_display : Number(singval.price.base_price_with_taxes.amount_for_display.slice(1).replace(/,/g, '.')) + young_driver_cost ;	
+$('.price-amount')[x].innerHTML = agecheck ?  Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(singval.price.base_price_with_taxes.amount) :   Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format((Number(singval.price.base_price_with_taxes.amount) + young_driver_cost));
 days > 1 ? $('.days')[x].innerHTML = days + ' days' :  $('.days')[x].innerHTML = days + ' day'
-//$('.price-amount')[x].innerHTML =  singval.price.base_price_with_taxes.amount;
 //document.getElementsByClassName('card-button')[x].style.backgroundColor = '#a5a5a5';
 //document.getElementsByClassName('card-button')[x].href = '#'
 var paramstr = addparam();	
