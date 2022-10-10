@@ -350,7 +350,7 @@ if(singval.vehicle_class_id == $('.van-class-id')[x].innerHTML)
 	$('.dimensions-block').eq(x).find('#F407').text(Number(singval.vehicle_class.f407).toFixed(0)) 
 	$('.dimensions-block').eq(x).find('#F409').text(Number(singval.vehicle_class.f409).toFixed(0)) 
 	let loadheig = Number(singval.vehicle_class.f411).toFixed(0)
-	loadheig == 0 ? $('.dimensions-block').eq(x).find('.dimension').remove() : $('.dimensions-block').eq(x).find('#F411').text(Number(singval.vehicle_class.f411).toFixed(0)) 
+	loadheig == 0 ? $('.dimensions-block').eq(x).find('.dimension')[3].remove() : $('.dimensions-block').eq(x).find('#F411').text(Number(singval.vehicle_class.f411).toFixed(0)) 
 	$('.dimensions-block').eq(x).find('#F414').text(Number(singval.vehicle_class.f414).toFixed(0)) 
 	$('.dimensions-block').eq(x).find('#F449').text(Number(singval.vehicle_class.f449).toFixed(0))
 
