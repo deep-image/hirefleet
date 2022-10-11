@@ -304,7 +304,7 @@ $('#start-time').val($('#start-time option:first').val()).change()
 
 
 
-function getunicode(icclass) {	 
+function getunicode(icclass) { 
    if(icclass == 'fad fa-chess-pawn') {
       return ['&#xf443;' , false]
    }
@@ -325,6 +325,12 @@ function getunicode(icclass) {
    }
     else if(icclass == 'far fa-arrow-alt-from-left') {
       return ['&#xf347;' , false ]
+   }
+    else if(icclass == 'far fa-arrow-alt-down') {
+      return ['&#xf063;' , false ]
+   }
+   else {
+   return ['' , false ]
    }
 }
 
