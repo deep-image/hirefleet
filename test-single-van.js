@@ -901,6 +901,12 @@ function getunicode(icclass) {
     else if(icclass == 'far fa-arrow-alt-from-left') {
       return ['&#xf347;' , false ]
    }
+    else if(icclass == 'far fa-arrow-alt-down') {
+      return ['&#xf063;' , false ]
+   }
+   else {
+   return ['' , false ]
+   }
 }	
 	
 function applypricing(appdata)
