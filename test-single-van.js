@@ -575,6 +575,7 @@ dobpicker = new Litepicker({
 	format: {
    parse(date) {
   console.log(date)
+	   return date
    }
 },   
 	
