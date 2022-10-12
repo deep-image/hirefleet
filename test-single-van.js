@@ -572,6 +572,11 @@ dobpicker = new Litepicker({
   			format: 'DD-MM-YYYY',
   			maxDate: dayjs().subtract(23, 'year').format('MM/DD/YYYY'),
   			plugins: ['mobilefriendly'],
+	format: {
+   parse(date) {
+  console.log(date)
+},   
+	
 	setup: (dobpicker) => {
 	dobpicker.on('selected', (date1) => {	
 $('#age-range').attr("disabled", true);		
