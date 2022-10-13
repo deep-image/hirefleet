@@ -1315,7 +1315,8 @@ subcallbooking();
 $("#booking-butt").click(function(event) {
 	
 	let dobval = $('#Date-Of-Birth').val()
-	if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
+	if( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) ) 
+	//if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
  	
 	let mindate = dayjs().subtract(23, 'year')
 	let maxdate = dayjs().subtract(76, 'year') 
