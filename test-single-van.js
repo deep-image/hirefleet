@@ -1313,9 +1313,22 @@ subcallbooking();
 });
 
 $("#booking-butt").click(function(event) {
-console.log(getcharges())
-subcallbooking();
-event.preventDefault();
+let dobval = $('#Date-Of-Birth').val()
+if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
+ 	
+	let mindate = dayjs().subtract(23, 'year')
+	let maxdate = dayjs().subtract(76, 'year') 
+	let inputdate = dayjs('dobval')
+	if (inputdate.isBefore(mindate) || inputdate.isSame(mindate) ) && (inputdate.isAfter(maxdate) || inputdate.isSame(maxdate) ) {
+	dobpicker.setDate(inputdate)
+		subcallbooking();
+	event.preventDefault();
+	}
+
+ }
+	else {
+	dobpicker.clearSelection()
+	}
 });
 
 function subcallbooking() {
