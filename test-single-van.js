@@ -384,7 +384,7 @@ coupon_code : ""
 	    ///////////////////////this needs sorting (updated)//////////////// 
 $('.summ-div-child').empty();
 	  
-
+$('.sing-features-block').empty()
  data.selected_vehicle_class.vehicle_class.features.forEach((feature) => {
    let fabval = getunicode(feature.icon)[1] == true ? 'fab' : ''
    $('.sing-features-block').eq(0).append('</span></i><div class="div-block-47"><div class="similar fa ' + fabval + '">'+getunicode(feature.icon)[0] +'</div><div class="similar left">'+ feature.label +'</div></div>')
