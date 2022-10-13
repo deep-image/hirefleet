@@ -316,6 +316,107 @@ e.preventDefault();
 additionalpostcall();
 });
 
+var coup_amo = 0;
+var young_driver_cost =0;
+	
+function additionalpostcall()
+{
+$('#extra-text').hide();
+$('.summ-div-child').empty();	 	
+$.ajax({
+    type: "POST",
+    url: "https://hirefleet-328113.nw.r.appspot.com/api/additionalcharges-post",
+    // The key needs to match your method's input parameter (case-sensitive).
+    data: JSON.stringify({
+	    pick_up_date: $('#start-date').val(),
+pick_up_time: $('#start-time :selected').val(),
+return_date : $('#end-date').val(),
+return_time : $('#end-time :selected').val(),
+pick_up_location : 2,
+return_location : 2,
+brand_id : 1,
+vehicle_class_id : $('#class-id').text(),	    
+
+	    ///////////////////////this needs sorting//////////////// 
+	 //   additional_charges : additageval, // this needs to be the full lis of selected extras
+	    ///////////////////////this needs sorting//////////////// 
+additional_charges : getextras(),
+coupon_code : ""	    
+    }),
+    contentType: "application/json",
+    dataType: "json",
+    success: function(data){
+	    console.log("additional-post-res")
+		console.log(data);
+	    var data = data.data;	 
+
+	    ///////////////////////this needs sorting (updated)//////////////// 
+$('.summ-div-child').empty();
+	  
+
+ data.selected_vehicle_class.vehicle_class.features.forEach((feature) => {
+   let fabval = getunicode(feature.icon)[1] == true ? 'fab' : ''
+   $('.sing-features-block').eq(0).append('</span></i><div class="div-block-47"><div class="similar fa ' + fabval + '">'+getunicode(feature.icon)[0] +'</div><div class="similar left">'+ feature.label +'</div></div>')
+   })
+$('.sing-dimensions-block').eq(0).find('#F405').text(Number(data.selected_vehicle_class.vehicle_class.f405).toFixed(0)) 
+$('.sing-dimensions-block').eq(0).find('#F407').text(Number(data.selected_vehicle_class.vehicle_class.f407).toFixed(0)) 
+$('.sing-dimensions-block').eq(0).find('#F409').text(Number(data.selected_vehicle_class.vehicle_class.f409).toFixed(0)) 
+$('.sing-dimensions-block').eq(0).find('#F411').text(Number(data.selected_vehicle_class.vehicle_class.f411).toFixed(0)) 
+$('.sing-dimensions-block').eq(0).find('#F414').text(Number(data.selected_vehicle_class.vehicle_class.f414).toFixed(0)) 
+$('.sing-dimensions-block').eq(0).find('#F449').text(Number(data.selected_vehicle_class.vehicle_class.f449).toFixed(0))
+	    
+	    
+data.selected_additional_charges.forEach((singval,index) => { 
+young_driver_cost = singval.id == 1  ? Number(singval.total_price_with_taxes.amount) : 0;  	
+let extraprice =  Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(singval.total_price_with_taxes.amount)	
+$('.summ-div-child').append('<div class="summ-extras-div"><div class="extras-text">'+singval.label+'<span class="extra-id" style="display:none">'+singval.id +'</span> <span class="extra-quant">x'+  singval.selected_quantity+' </span></div><div class="extras-pricing">'+extraprice+'</div></div>')
+})	
+data.selected_additional_charges.length > 0 ? $('.summary-div').show() : '';
+$('.summ-extras-div > .extras-text').length == 0 ? $('.summary-div').hide() : '';	    
+agechangeonsimilar();
+	    //////////////////////this needs sorting/////////////////
+
+//$('#subtotal, #subtotal-mobile').text(data.selected_vehicle_class.price.base_price_with_taxes.amount_for_display);
+	    //Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(data.selected_vehicle_class.price.base_price_with_taxes.amount)
+//$('#total-price, #total-price-mobile, #hidd-total-price').text(data.total.total_price.amount_for_display);
+
+$('#subtotal, #subtotal-mobile').text( Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(data.selected_vehicle_class.price.base_price_with_taxes.amount) );
+$('#total-price, #total-price-mobile').text( Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(data.total.total_price.amount) );
+	    
+	    $('#hidd-total-price').text(data.total.total_price.amount);
+$('#inclusive-miles, #inclusive-miles-mobile').text(data.selected_vehicle_class.distance_limits.distance_allowed);
+$('#security_deposit_excess').text(data.total.security_deposit_excess.amount_for_display);
+$('#security_deposit').text(data.total.security_deposit.amount_for_display);
+$('#mileage-price, #mileage-price-mobile').text(data.selected_vehicle_class.distance_limits.distance_extra_price_with_tax.amount_for_display);
+var dayscount = data.selected_vehicle_class.price.total_days;
+dayscount = dayscount > 1  ? dayscount + " days hire" : dayscount + " day hire";	
+$('#duration, #duration-mobile').text(dayscount);
+$('#discount').val().length  > 0 ? appdisc(data) : '';
+    },
+});
+}	
+
+function agechangeonsimilar()
+	{
+	var pricearr = document.getElementsByClassName('price-amount');
+if($('#age-range').val() == '25') {
+for(var x=0; x < pricearr.length; x++) {
+var tot = Number(pricearr[x].innerText.slice(1).replaceAll(',','.')) + Number(young_driver_cost)
+pricearr[x].innerText = '£' + tot.toFixed(2);
+addageparam(x);
+}
+}
+else
+{
+for(var x=0; x < pricearr.length; x++) {
+addageparam(x);
+var tot = Number(pricearr[x].innerText.slice(1).replaceAll(',','.')) - Number(young_driver_cost)
+pricearr[x].innerText = '£' + tot.toFixed(2);
+}
+}
+	}	
+
+
 
 $( document ).ready(function() {
 
@@ -653,105 +754,6 @@ $('#start-time, #end-time, #age-range').change(function() {
 
 
 
-var coup_amo = 0;
-var young_driver_cost =0;
-	
-function additionalpostcall()
-{
-$('#extra-text').hide();
-$('.summ-div-child').empty();	 	
-$.ajax({
-    type: "POST",
-    url: "https://hirefleet-328113.nw.r.appspot.com/api/additionalcharges-post",
-    // The key needs to match your method's input parameter (case-sensitive).
-    data: JSON.stringify({
-	    pick_up_date: $('#start-date').val(),
-pick_up_time: $('#start-time :selected').val(),
-return_date : $('#end-date').val(),
-return_time : $('#end-time :selected').val(),
-pick_up_location : 2,
-return_location : 2,
-brand_id : 1,
-vehicle_class_id : $('#class-id').text(),	    
-
-	    ///////////////////////this needs sorting//////////////// 
-	 //   additional_charges : additageval, // this needs to be the full lis of selected extras
-	    ///////////////////////this needs sorting//////////////// 
-additional_charges : getextras(),
-coupon_code : ""	    
-    }),
-    contentType: "application/json",
-    dataType: "json",
-    success: function(data){
-	    console.log("additional-post-res")
-		console.log(data);
-	    var data = data.data;	 
-
-	    ///////////////////////this needs sorting (updated)//////////////// 
-$('.summ-div-child').empty();
-	  
-
- data.selected_vehicle_class.vehicle_class.features.forEach((feature) => {
-   let fabval = getunicode(feature.icon)[1] == true ? 'fab' : ''
-   $('.sing-features-block').eq(0).append('</span></i><div class="div-block-47"><div class="similar fa ' + fabval + '">'+getunicode(feature.icon)[0] +'</div><div class="similar left">'+ feature.label +'</div></div>')
-   })
-$('.sing-dimensions-block').eq(0).find('#F405').text(Number(data.selected_vehicle_class.vehicle_class.f405).toFixed(0)) 
-$('.sing-dimensions-block').eq(0).find('#F407').text(Number(data.selected_vehicle_class.vehicle_class.f407).toFixed(0)) 
-$('.sing-dimensions-block').eq(0).find('#F409').text(Number(data.selected_vehicle_class.vehicle_class.f409).toFixed(0)) 
-$('.sing-dimensions-block').eq(0).find('#F411').text(Number(data.selected_vehicle_class.vehicle_class.f411).toFixed(0)) 
-$('.sing-dimensions-block').eq(0).find('#F414').text(Number(data.selected_vehicle_class.vehicle_class.f414).toFixed(0)) 
-$('.sing-dimensions-block').eq(0).find('#F449').text(Number(data.selected_vehicle_class.vehicle_class.f449).toFixed(0))
-	    
-	    
-data.selected_additional_charges.forEach((singval,index) => { 
-young_driver_cost = singval.id == 1  ? Number(singval.total_price_with_taxes.amount) : 0;  	
-let extraprice =  Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(singval.total_price_with_taxes.amount)	
-$('.summ-div-child').append('<div class="summ-extras-div"><div class="extras-text">'+singval.label+'<span class="extra-id" style="display:none">'+singval.id +'</span> <span class="extra-quant">x'+  singval.selected_quantity+' </span></div><div class="extras-pricing">'+extraprice+'</div></div>')
-})	
-data.selected_additional_charges.length > 0 ? $('.summary-div').show() : '';
-$('.summ-extras-div > .extras-text').length == 0 ? $('.summary-div').hide() : '';	    
-agechangeonsimilar();
-	    //////////////////////this needs sorting/////////////////
-
-//$('#subtotal, #subtotal-mobile').text(data.selected_vehicle_class.price.base_price_with_taxes.amount_for_display);
-	    //Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(data.selected_vehicle_class.price.base_price_with_taxes.amount)
-//$('#total-price, #total-price-mobile, #hidd-total-price').text(data.total.total_price.amount_for_display);
-
-$('#subtotal, #subtotal-mobile').text( Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(data.selected_vehicle_class.price.base_price_with_taxes.amount) );
-$('#total-price, #total-price-mobile').text( Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(data.total.total_price.amount) );
-	    
-	    $('#hidd-total-price').text(data.total.total_price.amount);
-$('#inclusive-miles, #inclusive-miles-mobile').text(data.selected_vehicle_class.distance_limits.distance_allowed);
-$('#security_deposit_excess').text(data.total.security_deposit_excess.amount_for_display);
-$('#security_deposit').text(data.total.security_deposit.amount_for_display);
-$('#mileage-price, #mileage-price-mobile').text(data.selected_vehicle_class.distance_limits.distance_extra_price_with_tax.amount_for_display);
-var dayscount = data.selected_vehicle_class.price.total_days;
-dayscount = dayscount > 1  ? dayscount + " days hire" : dayscount + " day hire";	
-$('#duration, #duration-mobile').text(dayscount);
-$('#discount').val().length  > 0 ? appdisc(data) : '';
-    },
-});
-}	
-
-function agechangeonsimilar()
-	{
-	var pricearr = document.getElementsByClassName('price-amount');
-if($('#age-range').val() == '25') {
-for(var x=0; x < pricearr.length; x++) {
-var tot = Number(pricearr[x].innerText.slice(1).replaceAll(',','.')) + Number(young_driver_cost)
-pricearr[x].innerText = '£' + tot.toFixed(2);
-addageparam(x);
-}
-}
-else
-{
-for(var x=0; x < pricearr.length; x++) {
-addageparam(x);
-var tot = Number(pricearr[x].innerText.slice(1).replaceAll(',','.')) - Number(young_driver_cost)
-pricearr[x].innerText = '£' + tot.toFixed(2);
-}
-}
-	}	
 
 
 
