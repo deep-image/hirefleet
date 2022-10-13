@@ -311,7 +311,7 @@ $('#discount').val('')
   addparam();	
 });
 
-$("#apply-discount").click(function() {
+$("#apply-discount").click(function(e) {
 e.preventDefault();		
 additionalpostcall();
 });
