@@ -316,6 +316,37 @@ e.preventDefault();
 additionalpostcall();
 });
 
+
+function getunicode(icclass) { 
+   if(icclass == 'fad fa-chess-pawn') {
+      return ['&#xf443;' , false]
+   }
+	  else if(icclass == 'far fa-level-up-alt') {
+      return ['&#xf3bf;' , false ]
+   }
+     else if(icclass == 'fab fa-autoprefixer') {
+      return ['&#xf41c;' , true ]
+   }
+      else if(icclass == 'fab fa-linux') {
+      return ['&#xf17c;' , true ]
+   }
+   else if(icclass == 'fas fa-radio') {
+      return ['&#xf8d7;' , false ]
+   }
+    else if(icclass == 'fas fa-steering-wheel') {
+      return ['&#xf622;' , false ]
+   }
+    else if(icclass == 'far fa-arrow-alt-from-left') {
+      return ['&#xf347;' , false ]
+   }
+    else if(icclass == 'far fa-arrow-alt-down') {
+      return ['&#xf063;' , false ]
+   }
+   else {
+   return ['' , false ]
+   }
+}	
+
 var coup_amo = 0;
 var young_driver_cost =0;
 	
@@ -889,35 +920,7 @@ vanavailable == true ? $('#booking-butt').val('Check Availability') :  $('#booki
 })
      }	
 
-function getunicode(icclass) { 
-   if(icclass == 'fad fa-chess-pawn') {
-      return ['&#xf443;' , false]
-   }
-	  else if(icclass == 'far fa-level-up-alt') {
-      return ['&#xf3bf;' , false ]
-   }
-     else if(icclass == 'fab fa-autoprefixer') {
-      return ['&#xf41c;' , true ]
-   }
-      else if(icclass == 'fab fa-linux') {
-      return ['&#xf17c;' , true ]
-   }
-   else if(icclass == 'fas fa-radio') {
-      return ['&#xf8d7;' , false ]
-   }
-    else if(icclass == 'fas fa-steering-wheel') {
-      return ['&#xf622;' , false ]
-   }
-    else if(icclass == 'far fa-arrow-alt-from-left') {
-      return ['&#xf347;' , false ]
-   }
-    else if(icclass == 'far fa-arrow-alt-down') {
-      return ['&#xf063;' , false ]
-   }
-   else {
-   return ['' , false ]
-   }
-}	
+
 	
 function applypricing(appdata)
 {
