@@ -1313,8 +1313,9 @@ subcallbooking();
 });
 
 $("#booking-butt").click(function(event) {
-let dobval = $('#Date-Of-Birth').val()
-if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
+	
+	let dobval = $('#Date-Of-Birth').val()
+	if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
  	
 	let mindate = dayjs().subtract(23, 'year')
 	let maxdate = dayjs().subtract(76, 'year') 
@@ -1324,10 +1325,14 @@ if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
 	//subcallbooking();
 	event.preventDefault();
 	}
-
+	else {
+	dobpicker.clearSelection()
+	event.preventDefault();
+	}
  }
 	else {
 	dobpicker.clearSelection()
+	event.preventDefault();
 	}
 });
 
