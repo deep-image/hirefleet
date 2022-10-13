@@ -1319,7 +1319,7 @@ if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
 	let mindate = dayjs().subtract(23, 'year')
 	let maxdate = dayjs().subtract(76, 'year') 
 	let inputdate = dayjs('dobval')
-	if (inputdate.isBefore(mindate) || inputdate.isSame(mindate) ) && (inputdate.isAfter(maxdate) || inputdate.isSame(maxdate) ) {
+	if ( (inputdate.isBefore(mindate) || inputdate.isSame(mindate) ) && (inputdate.isAfter(maxdate) || inputdate.isSame(maxdate)) ) {
 	dobpicker.setDate(inputdate)
 		subcallbooking();
 	event.preventDefault();
