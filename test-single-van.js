@@ -790,12 +790,6 @@ $('#subtotal-mobile').text("---");
 }
 
 
-
-
-
-
-
-
 var nexavailcount = 0;
 function makecall(date1,date2) {
 $('.van-collection').hide();
@@ -1310,9 +1304,15 @@ subcallbooking();
 });
 
 $("#booking-butt").click(function(event) {
-console.log(getcharges())
-subcallbooking();
-event.preventDefault();
+let dobval = $('#Date-Of-Birth').val()	
+	if(dayjs('dobval','DD-MM-YYYY',true).isValid()) {
+	dobpicker.setDate(dayjs(dobval))
+	subcallbooking();
+	event.preventDefault();
+	}	
+	else {
+	dobpicker.clearSelection()
+	}
 });
 
 function subcallbooking() {
