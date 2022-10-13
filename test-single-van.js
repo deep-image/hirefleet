@@ -1247,7 +1247,7 @@ document.getElementById('to-time').textContent = u;
             }
         });
     });
-/*
+
 //webflow page code 
 $( document ).ready(function() {
 
@@ -1570,4 +1570,4 @@ error: function(error) {
 }
 });
 
-*/
+
