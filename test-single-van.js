@@ -1321,7 +1321,7 @@ $("#booking-butt").click(function(event) {
 	let maxdate = dayjs().subtract(76, 'year') 
 	let inputdate = dayjs(dobval)
 	if ( (inputdate.isBefore(mindate) || inputdate.isSame(mindate) ) && (inputdate.isAfter(maxdate) || inputdate.isSame(maxdate)) ) {
-	 dobpicker.getDate() != null ? dobpicker.setDate(inputdate) : ''
+	 dobpicker.getDate() == null ? dobpicker.setDate(inputdate) : ''
 	//subcallbooking();
 	event.preventDefault();
 	}
