@@ -1338,7 +1338,7 @@ $("#Date-Of-Birth").focusout(function(){
 */	
 });	
 
-subdatereformate(pickerid,pickername,errclass) {
+function subdatereformate(pickerid,pickername,errclass) {
 
 		$(errclass).hide()	
 	let dobval = $(pickerid).val()
