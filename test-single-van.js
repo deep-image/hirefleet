@@ -822,11 +822,6 @@ $('#subtotal-mobile').text("---");
 
 
 
-
-
-
-
-
 var nexavailcount = 0;
 function makecall(date1,date2) {
 $('.van-collection').hide();
@@ -1315,29 +1310,59 @@ subcallbooking();
 });
 	
 $("#Date-Of-Birth").focusout(function(){
-$('#dob-error').hide()	
-let dobval = $('#Date-Of-Birth').val()
-if( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) ) {
-//if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
+	
+	subdatereformate('#Date-Of-Birth' ,'dobpicker','#dob-error')
+/*
+	$('#dob-error').hide()	
+	let dobval = $('#Date-Of-Birth').val()
+	if( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) ) {
+	//if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
 
-let mindate = dayjs().subtract(23, 'year')
-let maxdate = dayjs().subtract(76, 'year') 
-let inputdate = dayjs(dobval)
-	if ( (inputdate.isBefore(mindate) || inputdate.isSame(mindate) ) && (inputdate.isAfter(maxdate) || inputdate.isSame(maxdate)) ) {
-	 dobpicker.getDate() == null ? dobpicker.setDate(inputdate) : ''
-	}
-		else {
-		dobpicker.clearSelection()
-		$('#dob-error').text('Age range: 23-75')
-		$('#dob-error').show()	
+	let mindate = dayjs().subtract(23, 'year')
+	let maxdate = dayjs().subtract(76, 'year') 
+	let inputdate = dayjs(dobval)
+		if ( (inputdate.isBefore(mindate) || inputdate.isSame(mindate) ) && (inputdate.isAfter(maxdate) || inputdate.isSame(maxdate)) ) {
+		 dobpicker.getDate() == null ? dobpicker.setDate(inputdate) : ''
 		}
+			else {
+			dobpicker.clearSelection()
+			$('#dob-error').text('Age range: 23-75')
+			$('#dob-error').show()	
+			}
+		}
+	else {
+	$('#dob-error').text('Bad Date Format')	
+	dobpicker.clearSelection()
+	$('#dob-error').show()	
 	}
-else {
-$('#dob-error').text('Bad Date Format')	
-dobpicker.clearSelection()
-$('#dob-error').show()	
-}
+*/	
 });	
+
+subdatereformate(pickerid,pickername,errclass) {
+
+		$(errclass).hide()	
+	let dobval = $(pickerid).val()
+	if( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) ) {
+	//if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
+	let mindate = dayjs().subtract(23, 'year')
+	let maxdate = dayjs().subtract(76, 'year') 
+	let inputdate = dayjs(dobval)
+		if ( (inputdate.isBefore(mindate) || inputdate.isSame(mindate) ) && (inputdate.isAfter(maxdate) || inputdate.isSame(maxdate)) ) {
+		 eval(pickername).getDate() == null ? dobpicker.setDate(inputdate) : ''
+		}
+			else {
+			 eval(pickername).clearSelection()
+			$(errclass).text('Age range: 23-75')
+			$(errclass).show()	
+			}
+		}
+	else {
+	$(errclass).text('Bad Date Format')	
+	eval(pickername).clearSelection()
+	$(errclass).show()	
+	}
+	
+}
 	
 $("#booking-butt").click(function(event) {
 console.log(getcharges())
