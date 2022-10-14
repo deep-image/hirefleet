@@ -229,7 +229,7 @@ var elemval = $('#'+ additcheck[x].id).is(':checked')
 	 additioncharge.push($('#'+ additcheck[x].id).attr('idattr'))
 	}
 }
-additageval ? additioncharge.push(1) : '';	
+additageval ? additioncharge.push(3) : '';	
 return additioncharge;
 }
 
