@@ -1326,10 +1326,12 @@ let inputdate = dayjs(dobval)
 	}
 		else {
 		dobpicker.clearSelection()
-		$('#dob-error').show()
+		$('#dob-error').text('Age range: 23-75')
+		$('#dob-error').show()	
 		}
 	}
 else {
+$('#dob-error').text('Bad Date Format')	
 dobpicker.clearSelection()
 $('#dob-error').show()	
 }
