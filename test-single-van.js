@@ -1273,6 +1273,8 @@ var lastdigits = "";
 var entitity=1;
 var vt = $('#vantitle').text();
 
+$('#dob-error').hide()		
+	
 $('input[type=radio]').on('change', function() {
 switch ($(this).val()) {     
 case 'Personal': 
