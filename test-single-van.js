@@ -1311,7 +1311,33 @@ $("#send-quote").click(function() {
 sendquote = true;
 subcallbooking();
 });
+	
+$("#Date-Of-Birth").focusout(function(){
+let dobval = $('#Date-Of-Birth').val()
+if( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) ) {
+//if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
 
+let mindate = dayjs().subtract(23, 'year')
+let maxdate = dayjs().subtract(76, 'year') 
+let inputdate = dayjs(dobval)
+	if ( (inputdate.isBefore(mindate) || inputdate.isSame(mindate) ) && (inputdate.isAfter(maxdate) || inputdate.isSame(maxdate)) ) {
+	 dobpicker.getDate() == null ? dobpicker.setDate(inputdate) : ''
+	}
+		else {
+		dobpicker.clearSelection()
+		}
+	}
+else {
+dobpicker.clearSelection()
+}
+});	
+	
+$("#booking-butt").click(function(event) {
+console.log(getcharges())
+subcallbooking();
+event.preventDefault();
+});
+	/*
 $("#booking-butt").click(function(event) {
 	
 	let dobval = $('#Date-Of-Birth').val()
@@ -1336,6 +1362,7 @@ $("#booking-butt").click(function(event) {
 	event.preventDefault();
 	}
 });
+*/
 
 function subcallbooking() {
 additioncharge = [];
