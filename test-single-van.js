@@ -398,7 +398,7 @@ $('.sing-dimensions-block').eq(0).find('#F449').text(Number(data.selected_vehicl
 	    
 	    
 data.selected_additional_charges.forEach((singval,index) => { 
-young_driver_cost = singval.id == 1  ? Number(singval.total_price_with_taxes.amount) : 0;  	
+young_driver_cost = singval.id == 3  ? Number(singval.total_price_with_taxes.amount) : 0;  	
 let extraprice =  Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(singval.total_price_with_taxes.amount)	
 $('.summ-div-child').append('<div class="summ-extras-div"><div class="extras-text">'+singval.label+'<span class="extra-id" style="display:none">'+singval.id +'</span> <span class="extra-quant">x'+  singval.selected_quantity+' </span></div><div class="extras-pricing">'+extraprice+'</div></div>')
 })	
