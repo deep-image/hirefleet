@@ -1309,6 +1309,11 @@ sendquote = true;
 subcallbooking();
 });
 	
+$("#Primary-Driver-Date-Of-Birth").focusout(function(){
+	subdatereformate('#Primary-Driver-Date-Of-Birth' ,'primdobpicker','#dob-error2')	
+})
+	
+	
 $("#Date-Of-Birth").focusout(function(){
 	
 	subdatereformate('#Date-Of-Birth' ,'dobpicker','#dob-error')
