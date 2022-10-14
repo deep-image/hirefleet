@@ -1313,6 +1313,7 @@ subcallbooking();
 });
 	
 $("#Date-Of-Birth").focusout(function(){
+$('#dob-error').hide()	
 let dobval = $('#Date-Of-Birth').val()
 if( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) ) {
 //if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
@@ -1325,10 +1326,12 @@ let inputdate = dayjs(dobval)
 	}
 		else {
 		dobpicker.clearSelection()
+		$('#dob-error').show()
 		}
 	}
 else {
 dobpicker.clearSelection()
+$('#dob-error').show()	
 }
 });	
 	
