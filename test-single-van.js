@@ -1496,6 +1496,7 @@ body.style.overflow = "auto";
 $('#gp-error').show()
 $('#rxp-frame-1').remove()
 $('#pay-wrap').hide();
+callcancelemail()	
 }
 },
 jsonFromServerSdk
@@ -1518,6 +1519,28 @@ $("#rxp-frame-1", window.parent.document).height(windchng.iframe.height);
 });
 }
 
+function callcancelemail() {
+	
+	$.ajax({  type: "POST",
+url: "https://hirefleet-328113.nw.r.appspot.com/api/cancelemail",
+data: JSON.stringify({
+name : $('#First-Name').val(),
+email : $('#email').val(),	
+phone : $('#phone').val(),	
+start_date : $('#start-date').val(),
+start_time : $('#start-time').val(),
+end_date : $('#end-date').val(),
+end_time : $('#end-time').val(),
+vehicle : $('#class-id').text(),
+extras :getcharges()	
+}),
+contentType: "application/json",
+dataType: "json",
+success: function(data){
+console.log(data)
+});
+}
+	
 function callbooking() {
 var country = getCountryCodeOrName($('#addr_country').val())[0];
 $.ajax({  type: "POST",
