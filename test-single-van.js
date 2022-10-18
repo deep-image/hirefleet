@@ -1537,8 +1537,10 @@ extras :getcharges()
 contentType: "application/json",
 dataType: "json",
 success: function(data){
-console.log(data)
+console.log(data)	
+}	
 });
+	
 }
 	
 function callbooking() {
