@@ -1491,6 +1491,7 @@ $('#pay-wrap').hide();
 userid == '' ? callbooking() : updateuserdet(); 
 }
 else{
+console.log("global pay failed")	
 body.style.overflow = "auto";
 $('#gp-error').show()
 $('#rxp-frame-1').remove()
