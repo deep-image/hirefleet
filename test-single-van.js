@@ -1370,7 +1370,8 @@ function subdatereformate(pickerid,pickername,errclass) {
 }
 	
 $("#booking-butt").click(function(event) {
-console.log(getcharges())
+$('.payment-container').css('opacity' , 100)
+$('.payment-wrapper').css('opacity' , 100)	
 subcallbooking();
 event.preventDefault();
 });
