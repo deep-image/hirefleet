@@ -33,7 +33,7 @@ var picker;
 var bothpicker;
 
 $('.features-block').hide()
-
+$('.price-amount').attr('data-id', '')
 
         setTimeout(function() {
        postadditional();
@@ -341,6 +341,7 @@ var vandat = $('.van-collection');
 $('.div-block-47').remove()
 $('.div-block-45').hide()	
 $('.features-block').show()
+$('.price-amount').attr('data-id', 'price')
 	
 data.forEach(singval => { 
 for(var x=0;x< vandat.length; x++)
