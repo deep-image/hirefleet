@@ -351,7 +351,7 @@ if(singval.vehicle_class_id == $('.van-class-id')[x].innerHTML)
 	$('.dimensions-block').eq(x).find('#F407').text(Number(singval.vehicle_class.f407).toFixed(0)) 
 	$('.dimensions-block').eq(x).find('#F409').text(Number(singval.vehicle_class.f409).toFixed(0)) 
 	let loadheig = Number(singval.vehicle_class.f411).toFixed(0)
-	loadheig == 0 ? $('.dimensions-block').eq(x).find('.dimension')[3].remove() : $('.dimensions-block').eq(x).find('#F411').text(Number(singval.vehicle_class.f411).toFixed(0)) 
+	loadheig == 0 ? $('.dimensions-block').eq(x).find('.dimension')[3].hide() : $('.dimensions-block').eq(x).find('#F411').text(Number(singval.vehicle_class.f411).toFixed(0)) 
 	$('.dimensions-block').eq(x).find('#F414').text(Number(singval.vehicle_class.f414).toFixed(0)) 
 	$('.dimensions-block').eq(x).find('#F449').text(Number(singval.vehicle_class.f449).toFixed(0))
 
@@ -367,7 +367,6 @@ document.getElementsByClassName('card-button')[x].href = butturl + paramstr;
 document.getElementsByClassName('available')[x].style.display = 'block';
 days > 1 ? $('.days')[x].innerHTML = days + ' days' :  $('.days')[x].innerHTML = days + ' day'
 //adding text for filter
-console.log($('.filt-available')[x].innerHTML)	
  $('.filt-available').length > 0 ? $('.filt-available')[x].innerHTML = 'instock' : ''	
 }
 else
@@ -407,7 +406,6 @@ function resetpriceslider() {
 	prslide.options.max = slidearr[0]
 	prslide.update({ from: (slidearr[slidearr.length - 1] ) , to: slidearr[0] })
 
-	console.log(slidearr)
   }
 
 
