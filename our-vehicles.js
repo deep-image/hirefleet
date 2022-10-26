@@ -222,8 +222,6 @@ vehicle_class_id : 6,
     contentType: "application/json",
     dataType: "json",
     success: function(data){
-    console.log(data);
-	    console.log("post-additional");
 	   young_driver_cost = Number(data.data.selected_additional_charges[0].base_price_with_taxes.amount);  
     },
       error: function(error) {
@@ -235,7 +233,7 @@ vehicle_class_id : 6,
 var nexavailcount = 0;
 function makecall(date1,date2,start,end,age) {
 
-$('.van-collection').hide();
+//$('.van-collection').hide();
 $.ajax({
     type: "POST",
     url: "https://hirefleet-328113.nw.r.appspot.com/api",
@@ -268,7 +266,6 @@ brand_id : 1
 }
 
 function nextavailfunc() {
-console.log("next run again ")	
 var lockdays = picker.options.lockDays		    
 var loopcount = 0
 var nextavail = dayjs();
@@ -295,7 +292,6 @@ for(x=loopcount; x< lckcount; x++) {
 } 
  }	  
 	 
-//picker.setDateRange(nextavail,tomnextavail) 
 bothpicker.setDateRange(nextavail,tomnextavail)
 	
  $('#end-time').val() == null ? $('#end-time').val($('#end-time option:first').val()) : ''	
@@ -337,7 +333,6 @@ function getunicode(icclass) {
 
 function applypricing(data)
 {
-$('.van-collection').toggle('300');
 var vandat = $('.van-collection');
 
 $('.div-block-47').remove()
