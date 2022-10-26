@@ -236,6 +236,7 @@ vehicle_class_id : 6,
 var nexavailcount = 0;
 function makecall(date1,date2,start,end,age) {
 $('.price-amount').text('-----')
+$('.price-amount').attr('data-id', '')	
 //$('.van-collection').hide();
 $.ajax({
     type: "POST",
