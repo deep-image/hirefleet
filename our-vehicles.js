@@ -32,6 +32,9 @@ $( document ).ready(function() {
 var picker;
 var bothpicker;
 
+$('.features-block').hide()
+
+
         setTimeout(function() {
        postadditional();
 }, 500);
@@ -337,6 +340,7 @@ var vandat = $('.van-collection');
 
 $('.div-block-47').remove()
 $('.div-block-45').hide()	
+$('.features-block').show()
 	
 data.forEach(singval => { 
 for(var x=0;x< vandat.length; x++)
