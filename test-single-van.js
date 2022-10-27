@@ -909,7 +909,7 @@ vanavailable == true ? $('#booking-butt').val('Check Availability') :  $('#booki
 
 
 	
-async function applypricing(appdata)
+ function applypricing(appdata)
 {
 var loopdata = appdata;	
 //$('.van-collection').toggle('300');
@@ -922,7 +922,7 @@ for(var x=0;x< vandat.length; x++)
 {
 if(singval.vehicle_class_id == $('.van-class-id')[x].innerHTML)
 {
-	singval.vehicle_class.features.forEach(async (feature) => {
+	singval.vehicle_class.features.forEach((feature) => {
 	let fabval = getunicode(feature.icon)[1] == true ? 'fab' : ''
 	$('.features-block').eq(x).append('</span></i><div class="div-block-47"><div class="similar fa ' + fabval + '">'+getunicode(feature.icon)[0] +'</div><div class="similar left">'+ feature.label +'</div></div>')
 	})
@@ -936,7 +936,7 @@ if(singval.vehicle_class_id == $('.van-class-id')[x].innerHTML)
 if(singval.availability.quantity > 0) {
 var agecheck = $('#age-range').val() == '25';
 //$('.price-amount')[x].innerHTML = agecheck ? singval.price.base_price_with_taxes.amount_for_display : Number(singval.price.base_price_with_taxes.amount_for_display.slice(1).replace(/,/g, '.')) + young_driver_cost ;
-let formprice  = await Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(singval.price.base_price_with_taxes.amount)
+let formprice  =  Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(singval.price.base_price_with_taxes.amount)
 $('.price-amount')[x].innerHTML = agecheck ?  formprice :   Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format((Number(singval.price.base_price_with_taxes.amount) + young_driver_cost));
 var days = singval.price.total_days;
 var paramstr = addparam();
