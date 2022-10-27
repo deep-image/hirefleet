@@ -429,8 +429,10 @@ function agechangeonsimilar()
 		}
 		else
 		{
-		for(var x=0; x < pricearr.length; x++) {
+		pricearr = document.getElementsByClassName('price-amount');
+		for(var x=0; x < pricearr.length; x++) {	
 		var tot = Number(pricearr[x].innerText.slice(1).replaceAll(',','.')) + Number(young_driver_cost)
+		console.log(tot.toFixed(2))
 		pricearr[x].innerText = '£' + tot.toFixed(2);
 		addageparam(x);	
 		}
