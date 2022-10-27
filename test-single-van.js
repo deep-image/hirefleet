@@ -52,12 +52,7 @@ window.dataLayer.push({
 'items': items
 });	
 
-console.log({
-'event': 'add_to_wishlist',
-"value" : data.reservation.total_price.amount,
-"currency" : data.reservation.total_price.currency,	
-'items': items
-})		
+		
   }
 
 function gtagpurchase(data,ORDER_ID) {
@@ -84,14 +79,6 @@ function gtagpurchase(data,ORDER_ID) {
 	"currency" : data.reservation.total_price.currency,
 	"coupon" : data.applicable_discounts.name == undefined ? '' : data.applicable_discounts.name
 	});	
-console.log({
-	'event': 'purchase',
-	"transaction_id" : ORDER_ID,
-	"value" : data.reservation.total_price.amount,
-	"tax" : data.applicable_taxes[0].total_amount.amount,
-	"currency" : data.reservation.total_price.currency,
-	"coupon" : data.applicable_discounts.name == undefined ? '' : data.applicable_discounts.name
-	})	
 }
 
 
@@ -101,7 +88,9 @@ $(document).ready(function () {
 
  $('.sing-features-block .div-block-47').remove()
 $('.sing-features-block .div-block-45').remove()   	
-
+$('.features-block').hide()
+$('.days').hide()	
+	
 var extra = $('#Extra-Driver');
             if (extra.val() === '0') {
                 alert("Please select an item from the list and then proceed!");
@@ -824,7 +813,10 @@ $('#subtotal-mobile').text("---");
 
 var nexavailcount = 0;
 function makecall(date1,date2) {
-$('.van-collection').hide();
+//$('.van-collection').hide();
+	$('.price-amount').text('-----')
+	$('.price-amount').attr('data-id', '')
+	$('.days').hide()	
 $.ajax({
     type: "POST",
     url: "https://hirefleet-328113.nw.r.appspot.com/api",
@@ -920,10 +912,15 @@ vanavailable == true ? $('#booking-butt').val('Check Availability') :  $('#booki
 function applypricing(appdata)
 {
 var loopdata = appdata;	
-$('.van-collection').toggle('300');
+//$('.van-collection').toggle('300');
 var vandat = $('.van-collection');
 $('.features-block .div-block-47').remove()
 $('.features-block .div-block-45').remove()	
+
+$('.features-block').show()
+$('.price-amount').attr('data-id', 'price')
+$('.days').show()		
+	
 loopdata.forEach(singval => { 
 for(var x=0;x< vandat.length; x++)
 {
