@@ -422,7 +422,7 @@ function agechangeonsimilar()
 	if($('.price-amount').eq(0).text() != '-----') {		
 		if($('#age-range').val() == '25') {
 		for(var x=0; x < pricearr.length; x++) {
-		var tot = Number(pricearr[x].innerText.slice(1).replaceAll(',','.')) 
+		var tot = Number(pricearr[x].innerText.slice(1).replaceAll(',','.')) - Number(young_driver_cost)
 		pricearr[x].innerText = '£' + tot.toFixed(2);
 		addageparam(x);
 		}
