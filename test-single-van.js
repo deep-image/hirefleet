@@ -393,7 +393,7 @@ $('.summ-div-child').append('<div class="summ-extras-div"><div class="extras-tex
 })	
 data.selected_additional_charges.length > 0 ? $('.summary-div').show() : '';
 $('.summ-extras-div > .extras-text').length == 0 ? $('.summary-div').hide() : '';	    
-agechangeonsimilar();
+//agechangeonsimilar();
 	    //////////////////////this needs sorting/////////////////
 
 //$('#subtotal, #subtotal-mobile').text(data.selected_vehicle_class.price.base_price_with_taxes.amount_for_display);
@@ -421,7 +421,7 @@ function agechangeonsimilar()
 	var pricearr = document.getElementsByClassName('price-amount');
 if($('#age-range').val() == '25') {
 for(var x=0; x < pricearr.length; x++) {
-var tot = Number(pricearr[x].innerText.slice(1).replaceAll(',','.')) + Number(young_driver_cost)
+var tot = Number(pricearr[x].innerText.slice(1).replaceAll(',','.')) 
 pricearr[x].innerText = '£' + tot.toFixed(2);
 addageparam(x);
 }
@@ -430,7 +430,7 @@ else
 {
 for(var x=0; x < pricearr.length; x++) {
 addageparam(x);
-var tot = Number(pricearr[x].innerText.slice(1).replaceAll(',','.')) - Number(young_driver_cost)
+var tot = Number(pricearr[x].innerText.slice(1).replaceAll(',','.')) + Number(young_driver_cost)
 pricearr[x].innerText = '£' + tot.toFixed(2);
 }
 }
