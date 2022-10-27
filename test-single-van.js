@@ -939,7 +939,7 @@ var agecheck = $('#age-range').val() == '25';
 let formprice  =  Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(singval.price.base_price_with_taxes.amount)
 setTimeout(function()  {  
 $('.price-amount')[x].innerHTML = agecheck ?  formprice :   Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format((Number(singval.price.base_price_with_taxes.amount) + young_driver_cost));
-	}, 200);
+	}, 400);
 var days = singval.price.total_days;
 var paramstr = addparam();
 let butturl =document.getElementsByClassName('card-button')[x].href.split("?")[0]; 
