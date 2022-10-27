@@ -393,7 +393,7 @@ $('.summ-div-child').append('<div class="summ-extras-div"><div class="extras-tex
 })	
 data.selected_additional_charges.length > 0 ? $('.summary-div').show() : '';
 $('.summ-extras-div > .extras-text').length == 0 ? $('.summary-div').hide() : '';	    
-agechangeonsimilar();
+//agechangeonsimilar();
 	    //////////////////////this needs sorting/////////////////
 
 //$('#subtotal, #subtotal-mobile').text(data.selected_vehicle_class.price.base_price_with_taxes.amount_for_display);
@@ -770,6 +770,7 @@ $('#start-time, #end-time').change(function() {
 $('#start-time, #end-time, #age-range').change(function() {
 	
 	setTimeout(function() { 
+	agechangeonsimilar()	
 //	console.log($('#age-range').val() == '25' ? 1 : '')	
 	subdetectchange()
 	    }, 350);	
