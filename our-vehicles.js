@@ -34,6 +34,8 @@ var bothpicker;
 
 $('.features-block').hide()
 $('.price-amount').attr('data-id', '')
+$('.days').hide()
+
 
         setTimeout(function() {
        postadditional();
@@ -343,6 +345,7 @@ $('.div-block-47').remove()
 $('.div-block-45').hide()	
 $('.features-block').show()
 $('.price-amount').attr('data-id', 'price')
+$('.days').show()	
 	
 data.forEach(singval => { 
 for(var x=0;x< vandat.length; x++)
