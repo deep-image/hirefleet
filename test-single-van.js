@@ -767,7 +767,6 @@ $('#start-time, #end-time').change(function() {
 
 $('#start-time, #end-time, #age-range').change(function() {
 	setTimeout(function() { 
-	agechangeonsimilar()	
 //	console.log($('#age-range').val() == '25' ? 1 : '')	
 	subdetectchange()
 	    }, 350);	
