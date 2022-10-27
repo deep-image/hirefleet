@@ -917,9 +917,7 @@ var vandat = $('.van-collection');
 $('.features-block .div-block-47').remove()
 $('.features-block .div-block-45').remove()	
 
-$('.features-block').show()
-$('.price-amount').attr('data-id', 'price')
-$('.days').show()		
+	
 	
 loopdata.forEach(singval => { 
 for(var x=0;x< vandat.length; x++)
@@ -970,6 +968,11 @@ document.getElementsByClassName('limited')[x+1].style.display = 'block';
 }
 }
 })
+
+	$('.features-block').show()
+	$('.price-amount').attr('data-id', 'price')
+	$('.days').show()	
+
 }	
 
 
