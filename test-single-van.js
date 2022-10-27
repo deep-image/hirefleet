@@ -816,7 +816,8 @@ function makecall(date1,date2) {
 //$('.van-collection').hide();
 	$('.price-amount').text('-----')
 	$('.price-amount').attr('data-id', '')
-	$('.days').hide()	
+	$('.days').hide()
+	$('.price-amount').hide()
 $.ajax({
     type: "POST",
     url: "https://hirefleet-328113.nw.r.appspot.com/api",
@@ -969,6 +970,7 @@ document.getElementsByClassName('limited')[x+1].style.display = 'block';
 	$('.features-block').show()
 	$('.price-amount').attr('data-id', 'price')
 	$('.days').show()	
+	$('.price-amount').show()
 
 }	
 
