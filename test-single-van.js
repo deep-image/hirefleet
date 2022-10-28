@@ -361,7 +361,7 @@ vehicle_class_id : $('#class-id').text(),
 	 //   additional_charges : additageval, // this needs to be the full lis of selected extras
 	    ///////////////////////this needs sorting//////////////// 
 additional_charges : getextras(),
-coupon_code : ""	    
+coupon_code : $('#discount').val()	    
     }),
     contentType: "application/json",
     dataType: "json",
