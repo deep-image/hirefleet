@@ -1040,7 +1040,7 @@ var additelem = '<div class="extras-div"><div class="extras-detail"><div class="
 	$('.extra-js-accordion-body').append(additelem);
 }
 else {
-var additelem = '<div class="extras-div"><div class="extras-detail"><div class="extras-text">'+singval.label+'</div><div class="extras-detail-text">'+singval.short_description+'</div></div> <p style="margin-right:3px;">(daily) </p>  <label class="w-checkbox checkbox-field-2"><div class="w-checkbox-input w-checkbox-input--inputType-custom checkboxes"></div><input idattr='+ singval.id +'  indexatt="'+ elemid  + index + '" id='+ singval.label.replace(/\s+/g, '-') + ' type="checkbox" class="addit-check"  style="opacity:0;position:absolute;z-index:-1"><span class="radio-label w-form-label">'+singval.label+'</span><div class="extras-button-pricing">&pound;'+Number(singval.base_price_with_taxes.amount)+'</div></label></div>'
+var additelem = '<div class="extras-div"><div class="extras-detail"><div class="extras-text">'+singval.label+'</div><div class="extras-detail-text">'+singval.short_description+'</div></div> <p style="margin-right:3px;">' + (singval.charge_type == "daily"  ?  '(daily)'  : '(one time)' ) +  '</p>  <label class="w-checkbox checkbox-field-2"><div class="w-checkbox-input w-checkbox-input--inputType-custom checkboxes"></div><input idattr='+ singval.id +'  indexatt="'+ elemid  + index + '" id='+ singval.label.replace(/\s+/g, '-') + ' type="checkbox" class="addit-check"  style="opacity:0;position:absolute;z-index:-1"><span class="radio-label w-form-label">'+singval.label+'</span><div class="extras-button-pricing">&pound;'+Number(singval.base_price_with_taxes.amount)+'</div></label></div>'
 	$('.extra-js-accordion-body').append(additelem);
 }
 })	
