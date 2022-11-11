@@ -209,7 +209,7 @@ for (var x=0; x<additsel.length; x++){
 var elemval = $('#'+ additsel[x].id).find(":selected").val()
     if(elemval != '') {
     additioncharge.push(Number($('#'+ additsel[x].id).attr('idattr')) + "_" + elemval)
-      extstr = extstr + ', '  + $('#'+ additsel[x].id).find(":selected").parent().parent().parent().find('.extras-text').text() + " (" + elemval + " )"
+      extstr = extstr + ', '  + $('#'+ additsel[x].id).find(":selected").parent().parent().parent().find('.extras-text').text() + " (" + elemval + ")"
     }
 }
 var additcheck = $('.addit-check');
