@@ -193,12 +193,12 @@ $('select').on('change', function(){
 	    ///////////////////////this needs sorting//////////////// 
 
 var additioncharge = [];
+var extstr = ""
 function getextras() {
 additioncharge = [];
 let additageval = false;
 if(getParam('age') == '') {
- additageval = $('#age-range').val() == '25' ? false : true;
-console.log(additageval)	
+ additageval = $('#age-range').val() == '25' ? false : true;	
 }
 else {
 additageval = getParam('age') == '25' ? false : true;
@@ -209,16 +209,20 @@ for (var x=0; x<additsel.length; x++){
 var elemval = $('#'+ additsel[x].id).find(":selected").val()
     if(elemval != '') {
     additioncharge.push(Number($('#'+ additsel[x].id).attr('idattr')) + "_" + elemval)
+      extstr = extstr + ', '  + $('#'+ additsel[1].id).find(":selected").parent().parent().parent().find('.extras-text').text()
     }
 }
 var additcheck = $('.addit-check');
 for (var x=0; x< additcheck.length; x++){
 var elemval = $('#'+ additcheck[x].id).is(':checked')
 	if(elemval) {
+	extstr = extstr + ', '  + $('#'+ additcheck[0].id).parent().parent().find('.radio-label').text()	
 	 additioncharge.push($('#'+ additcheck[x].id).attr('idattr'))
 	}
 }
-additageval ? additioncharge.push(3) : '';	
+additageval ? additioncharge.push(3) : '';
+additageval ? extstr = (extstr + ', ' + 'Young Driver Surcharge') : '';	
+extstr.substr(2)	
 return additioncharge;
 }
 
@@ -1321,30 +1325,6 @@ $("#Primary-Driver-Date-Of-Birth").focusout(function(){
 $("#Date-Of-Birth").focusout(function(){
 	
 	subdatereformate('#Date-Of-Birth' ,'dobpicker','#dob-error')
-/*
-	$('#dob-error').hide()	
-	let dobval = $('#Date-Of-Birth').val()
-	if( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) ) {
-	//if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
-
-	let mindate = dayjs().subtract(23, 'year')
-	let maxdate = dayjs().subtract(76, 'year') 
-	let inputdate = dayjs(dobval)
-		if ( (inputdate.isBefore(mindate) || inputdate.isSame(mindate) ) && (inputdate.isAfter(maxdate) || inputdate.isSame(maxdate)) ) {
-		 dobpicker.getDate() == null ? dobpicker.setDate(inputdate) : ''
-		}
-			else {
-			dobpicker.clearSelection()
-			$('#dob-error').text('Age range: 23-75')
-			$('#dob-error').show()	
-			}
-		}
-	else {
-	$('#dob-error').text('Bad Date Format')	
-	dobpicker.clearSelection()
-	$('#dob-error').show()	
-	}
-*/	
 });	
 
 function subdatereformate(pickerid,pickername,errclass) {
@@ -1379,32 +1359,6 @@ $('.payment-wrapper').css('opacity' , 100)
 subcallbooking();
 event.preventDefault();
 });
-	/*
-$("#booking-butt").click(function(event) {
-	
-	let dobval = $('#Date-Of-Birth').val()
-	if( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) ) {
-	//if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
- 	
-	let mindate = dayjs().subtract(23, 'year')
-	let maxdate = dayjs().subtract(76, 'year') 
-	let inputdate = dayjs(dobval)
-	if ( (inputdate.isBefore(mindate) || inputdate.isSame(mindate) ) && (inputdate.isAfter(maxdate) || inputdate.isSame(maxdate)) ) {
-	 dobpicker.getDate() == null ? dobpicker.setDate(inputdate) : ''
-	subcallbooking();
-	event.preventDefault();
-	}
-	else {
-	dobpicker.clearSelection()
-	event.preventDefault();
-	}
- }
-	else {
-	dobpicker.clearSelection()
-	event.preventDefault();
-	}
-});
-*/
 
 function subcallbooking() {
 additioncharge = [];
