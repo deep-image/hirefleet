@@ -209,19 +209,20 @@ for (var x=0; x<additsel.length; x++){
 var elemval = $('#'+ additsel[x].id).find(":selected").val()
     if(elemval != '') {
     additioncharge.push(Number($('#'+ additsel[x].id).attr('idattr')) + "_" + elemval)
-      extstr = extstr + ', '  + $('#'+ additsel[1].id).find(":selected").parent().parent().parent().find('.extras-text').text()
+      extstr = extstr + ', '  + $('#'+ additsel[x].id).find(":selected").parent().parent().parent().find('.extras-text').text()
     }
 }
 var additcheck = $('.addit-check');
 for (var x=0; x< additcheck.length; x++){
 var elemval = $('#'+ additcheck[x].id).is(':checked')
 	if(elemval) {
-	extstr = extstr + ', '  + $('#'+ additcheck[0].id).parent().parent().find('.radio-label').text()	
+	extstr = extstr + ', '  + $('#'+ additcheck[x].id).parent().parent().find('.radio-label').text()	
 	 additioncharge.push($('#'+ additcheck[x].id).attr('idattr'))
 	}
 }
 additageval ? additioncharge.push(3) : '';
-additageval ? extstr = (extstr + ', ' + 'Young Driver Surcharge') : '';	
+extstr =  additageval ? (extstr + ', ' + 'Young Driver Surcharge') : extstr;	
+extstr.substr(2)
 extstr.substr(2)	
 return additioncharge;
 }
