@@ -195,6 +195,7 @@ $('select').on('change', function(){
 var additioncharge = [];
 var extstr = ""
 function getextras() {
+var extstr = ""	
 additioncharge = [];
 let additageval = false;
 if(getParam('age') == '') {
@@ -222,8 +223,7 @@ var elemval = $('#'+ additcheck[x].id).is(':checked')
 }
 additageval ? additioncharge.push(3) : '';
 extstr =  additageval ? (extstr + ', ' + 'Young Driver Surcharge') : extstr;	
-extstr.substr(2)
-extstr.substr(2)	
+extstr = extstr.substr(2)
 return additioncharge;
 }
 
