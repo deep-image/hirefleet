@@ -1479,19 +1479,25 @@ $("#rxp-frame-1", window.parent.document).height(windchng.iframe.height);
 }
 
 function callcancelemail() {
-	
+	getextras()
 	$.ajax({  type: "POST",
 url: "https://hirefleet-328113.nw.r.appspot.com/api/cancelemail",
 data: JSON.stringify({
 name : $('#First-Name').val(),
+lastname : $('#Last-Name').val(),	
 email : $('#email').val(),	
 phone : $('#phone').val(),	
+dob : #('#Date-Of-Birth').val(),	
 start_date : $('#start-date').val(),
 start_time : $('#start-time').val(),
 end_date : $('#end-date').val(),
 end_time : $('#end-time').val(),
-vehicle : $('#class-id').text(),
-extras :getcharges()	
+vehicle : $('#vantitle').text(),
+extras : extstr,
+discount : $('#discount').val(),
+price : $('#total-price').text(),
+notes : $('#Additional-Info-Requests').text(),
+bookurl : window.location.href		
 }),
 contentType: "application/json",
 dataType: "json",
