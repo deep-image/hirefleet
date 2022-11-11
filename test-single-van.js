@@ -195,15 +195,14 @@ $('select').on('change', function(){
 var additioncharge = [];
 var extstr = ""
 function getextras() {
-var extstr = ""	
+extstr = ""	
 additioncharge = [];
 let additageval = false;
 if(getParam('age') == '') {
  additageval = $('#age-range').val() == '25' ? false : true;	
 }
 else {
-additageval = getParam('age') == '25' ? false : true;
-console.log(additageval)		
+additageval = getParam('age') == '25' ? false : true;		
 }		
 var additsel = $('.addit-select');
 for (var x=0; x<additsel.length; x++){
