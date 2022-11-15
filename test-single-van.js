@@ -665,6 +665,7 @@ bothpicker =  new Litepicker({
 				//allowRepick: true,   
 				maxDate: maxd,       startDate: today,
 				endDate: tomorrow,
+				selectForward : true,
 				tooltipNumber: (totalDays) => {
 				return totalDays - 1;
 				},
@@ -673,6 +674,12 @@ bothpicker =  new Litepicker({
 picker.setDateRange(date1,date2)
   })
 	},		
+	lockDaysFilter: function(date1, date2, pickedDates){	
+      if(pickedDates.length == 0) {
+      const allowedDates = disallowedarr
+			return disallowedarr.includes(date1.format('YYYY-MM-DD'));
+        }
+    } 
 })	
 
 var precount = 0;	
