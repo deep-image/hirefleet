@@ -136,7 +136,7 @@ if($('#start-time').val() != null && $('#end-time').val() != null) {
 	      format: 'DD-MM-YYYY',
 	      minDate: dayjs().format('MM/DD/YYYY'),
 	      plugins: ['mobilefriendly'],
-	      //allowRepick: true,   
+	     selectForward : true, 
       startDate: today,
 	endDate: tomorrow,
 	      tooltipNumber: (totalDays) => {
@@ -146,7 +146,13 @@ if($('#start-time').val() != null && $('#end-time').val() != null) {
 	bothpicker.on('selected', (date1, date2) => {
       picker.setDateRange(date1,date2)
 	})
-	},		
+	},	
+lockDaysFilter: function(date1, date2, pickedDates){	      
+	      if(pickedDates.length == 0) {
+	      const allowedDates = disallowedarr
+				return disallowedarr.includes(date1.format('YYYY-MM-DD'));
+		}
+	    }      
       });
    }	
 });
