@@ -515,7 +515,7 @@ function ccvalidation() {
 	console.log("class removed!");
 	$('#login-alert').css('display','none');
 	fieldschange(true,'not-allowed');
-	phonevalidation()	
+	//phonevalidation()	
 	}
 	}
 	}
@@ -536,7 +536,7 @@ function ccvalidation() {
 	fieldschange(false,'pointer');
         $('#Personal-Business').css('display','flex')
 	$('#Additional-Info, #Submit, #Cardholder-Details').css('display','block') 
-	phonevalidation()	
+	//phonevalidation()	
 	}
 	});
 	}
