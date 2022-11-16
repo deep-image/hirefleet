@@ -175,7 +175,7 @@ window.cc_c2a.addEmailVerify({
 	allow_high_risk: false
 });
 
-window.addPhoneVerify({
+window.cc_c2a.addPhoneVerify({
 phone: '#phone'	
 })
 
