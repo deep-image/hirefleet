@@ -515,6 +515,7 @@ function ccvalidation() {
 	console.log("class removed!");
 	$('#login-alert').css('display','none');
 	fieldschange(true,'not-allowed');
+	phonevalidation()	
 	}
 	}
 	}
@@ -553,7 +554,7 @@ function ccvalidation() {
 function phonevalidation() {
 			$('#booking-butt').prop('disabled', true)
 	$('#booking-butt').addClass('booking-butt-dis')		
-	var elemToObserve = document.getElementById('cc_validate_box');
+	var elemToObserve =  $("[cc_validate_tag=400727]")[0];
 	var prevClassState = elemToObserve.classList.contains('cc-validate-ok');
 	 observer = new MutationObserver(function(mutations) {
 	mutations.forEach(function(mutation) {
