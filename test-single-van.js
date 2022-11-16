@@ -176,7 +176,8 @@ window.cc_c2a.addEmailVerify({
 });
 
 window.cc_c2a.addPhoneVerify({
-phone: '#phone'	
+phone: '#phone'	,
+country : '#addr_country'	
 })
 
 // change background colour of dropdown
