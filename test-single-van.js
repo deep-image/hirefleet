@@ -550,7 +550,7 @@ function ccvalidation() {
 	});
 	}
 
-
+/*
 function phonevalidation() {
 			$('#booking-butt').prop('disabled', true)
 	$('#booking-butt').addClass('booking-butt-dis')		
@@ -576,7 +576,7 @@ function phonevalidation() {
 	}
 	});
 }
-
+*/
 
 function fieldschange(enable,cursor) {
 $('[for=Business], [for=Personal], #age .w-checkbox-input, #Date-Of-Birth').css('cursor',cursor) 
