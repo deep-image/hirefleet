@@ -553,7 +553,7 @@ function ccvalidation() {
 	}
 
 function phonevalidation() {
-	$('#phone').focus()
+*//	$('#phone').focus()
 	$('#First-Name').focus()
 			$('#booking-butt').prop('disabled', true)
 	$('#booking-butt').addClass('booking-butt-dis')		
@@ -580,6 +580,7 @@ function phonevalidation() {
 	});
 	});	
 		phobserver.observe(elemToObserve, {attributes: true});
+//*
 }
 
 
