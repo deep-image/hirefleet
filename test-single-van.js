@@ -536,6 +536,7 @@ function ccvalidation() {
 	fieldschange(false,'pointer');
         $('#Personal-Business').css('display','flex')
 	$('#Additional-Info, #Submit, #Cardholder-Details').css('display','block') 
+	phonevalidation()	
 	}
 	});
 	}
