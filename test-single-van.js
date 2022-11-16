@@ -558,7 +558,7 @@ function phonevalidation() {
 			$('#booking-butt').prop('disabled', true)
 	$('#booking-butt').addClass('booking-butt-dis')		
 	var elemToObserve =  $('.cc-validate-fail')[0];
-	var prevClassState = elemToObserve.classList.contains('cc-validate-ok');
+	var prevClassState = !elemToObserve.classList.contains('cc-validate-ok');
 	 observer = new MutationObserver(function(mutations) {
 	mutations.forEach(function(mutation) {
 	if(mutation.attributeName == "class"){
