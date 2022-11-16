@@ -175,10 +175,12 @@ window.cc_c2a.addEmailVerify({
 	allow_high_risk: false
 });
 
+/*
 window.cc_c2a.addPhoneVerify({
 phone: '#phone'	,
 country : '#addr_country'	
 })
+*/
 
 // change background colour of dropdown
 $('select').on('change', function(){
