@@ -492,6 +492,8 @@ var emailcount = 0;
 
 var observer;
 function ccvalidation() {
+		$('#booking-butt').prop('disabled', true)
+	$('#booking-butt').addClass('booking-butt-dis')		
 	firebase.auth().onAuthStateChanged(user => {
 	if(user == null)
 	{
@@ -508,6 +510,8 @@ function ccvalidation() {
 	prevClassState = currentClassState;
 	if(currentClassState) {
 	console.log("class added!");
+	$('#booking-butt').prop('disabled', false)
+	$('#booking-butt').removeClass('booking-butt-dis')		
 	checkuserexist();
 	var highlight = document.getElementById("email");
         highlight.classList.remove("highlight");
@@ -515,7 +519,7 @@ function ccvalidation() {
 	else {
 	console.log("class removed!");
 	$('#booking-butt').prop('disabled', true)
-	$('#booking-butt').css('background' , 'grey')		
+	$('#booking-butt').addClass('booking-butt-dis')
 	$('#login-alert').css('display','none');
 	fieldschange(true,'not-allowed');
 	}
