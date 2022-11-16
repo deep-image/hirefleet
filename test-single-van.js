@@ -550,7 +550,6 @@ function ccvalidation() {
 	});
 	}
 
-/*
 function phonevalidation() {
 			$('#booking-butt').prop('disabled', true)
 	$('#booking-butt').addClass('booking-butt-dis')		
@@ -562,21 +561,22 @@ function phonevalidation() {
 	var currentClassState = mutation.target.classList.contains('cc-validate-ok');
 	if(prevClassState !== currentClassState) {
 	prevClassState = currentClassState;
-	if(currentClassState) {
-	console.log("phone class added!");
-	$('#booking-butt').prop('disabled', false)
-	$('#booking-butt').removeClass('booking-butt-dis')		
-	}
-	else {
-	console.log("phone class removed!");
-	$('#booking-butt').prop('disabled', true)
-	$('#booking-butt').addClass('booking-butt-dis')
-	}
+		if(currentClassState) {
+		console.log("phone class added!");
+		$('#booking-butt').prop('disabled', false)
+		$('#booking-butt').removeClass('booking-butt-dis')		
+		}
+		else {
+		console.log("phone class removed!");
+		$('#booking-butt').prop('disabled', true)
+		$('#booking-butt').addClass('booking-butt-dis')
+		}
 	}
 	}
 	});
+	});	 
 }
-*/
+
 
 function fieldschange(enable,cursor) {
 $('[for=Business], [for=Personal], #age .w-checkbox-input, #Date-Of-Birth').css('cursor',cursor) 
