@@ -492,12 +492,9 @@ var emailcount = 0;
 
 var observer;
 function ccvalidation() {
-		$('#booking-butt').prop('disabled', true)
-	$('#booking-butt').addClass('booking-butt-dis')		
 	firebase.auth().onAuthStateChanged(user => {
 	if(user == null)
 	{
-
 	fieldschange("true",'not-allowed')
 	var emailcount = 0;
 	var elemToObserve = document.getElementById('cc_validate_box');
@@ -509,17 +506,13 @@ function ccvalidation() {
 	if(prevClassState !== currentClassState) {
 	prevClassState = currentClassState;
 	if(currentClassState) {
-	console.log("class added!");
-	$('#booking-butt').prop('disabled', false)
-	$('#booking-butt').removeClass('booking-butt-dis')		
+	console.log("class added!");	
 	checkuserexist();
 	var highlight = document.getElementById("email");
         highlight.classList.remove("highlight");
 	}
 	else {
 	console.log("class removed!");
-	$('#booking-butt').prop('disabled', true)
-	$('#booking-butt').addClass('booking-butt-dis')
 	$('#login-alert').css('display','none');
 	fieldschange(true,'not-allowed');
 	}
@@ -556,6 +549,34 @@ function ccvalidation() {
 	}
 	});
 	}
+
+
+function phonevalidation() {
+			$('#booking-butt').prop('disabled', true)
+	$('#booking-butt').addClass('booking-butt-dis')		
+	var elemToObserve = document.getElementById('cc_validate_box');
+	var prevClassState = elemToObserve.classList.contains('cc-validate-ok');
+	 observer = new MutationObserver(function(mutations) {
+	mutations.forEach(function(mutation) {
+	if(mutation.attributeName == "class"){
+	var currentClassState = mutation.target.classList.contains('cc-validate-ok');
+	if(prevClassState !== currentClassState) {
+	prevClassState = currentClassState;
+	if(currentClassState) {
+	console.log("phone class added!");
+	$('#booking-butt').prop('disabled', false)
+	$('#booking-butt').removeClass('booking-butt-dis')		
+	}
+	else {
+	console.log("phone class removed!");
+	$('#booking-butt').prop('disabled', true)
+	$('#booking-butt').addClass('booking-butt-dis')
+	}
+	}
+	}
+	});
+}
+
 
 function fieldschange(enable,cursor) {
 $('[for=Business], [for=Personal], #age .w-checkbox-input, #Date-Of-Birth').css('cursor',cursor) 
