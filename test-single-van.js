@@ -915,7 +915,7 @@ getsinglevan();
 
 function setupunavailable(vehicledata)
 	{
-	vehicledata.forEach(singval => { 
+	vehicledata.forEach((singval,x) => { 
 if(singval.vehicle_class_id == $('#class-id').text()) {
 vanavailable = singval.availability.quantity == 0;
 vanavailable == true ? $('#booking-butt').val('Check Availability') :  $('#booking-butt').val('confirm & pay');document.getElementsByClassName('available')[x+1].style.display = 'block';
