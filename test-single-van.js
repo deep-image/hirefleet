@@ -508,6 +508,8 @@ function ccvalidation() {
 	prevClassState = currentClassState;
 	if(currentClassState) {
 	console.log("class added!");
+	$('#booking-butt').prop('disabled', true)
+	$('#booking-butt').css('background' , 'grey')	
 	checkuserexist();
 	var highlight = document.getElementById("email");
         highlight.classList.remove("highlight");
