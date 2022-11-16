@@ -515,7 +515,7 @@ function ccvalidation() {
 	console.log("class removed!");
 	$('#login-alert').css('display','none');
 	fieldschange(true,'not-allowed');
-	//phonevalidation()	
+	phonevalidation()	
 	}
 	}
 	}
@@ -536,7 +536,7 @@ function ccvalidation() {
 	fieldschange(false,'pointer');
         $('#Personal-Business').css('display','flex')
 	$('#Additional-Info, #Submit, #Cardholder-Details').css('display','block') 
-	//phonevalidation()	
+	phonevalidation()	
 	}
 	});
 	}
@@ -553,9 +553,11 @@ function ccvalidation() {
 	}
 
 function phonevalidation() {
+	$('#phone').focus()
+	$('#phone').focusout()
 			$('#booking-butt').prop('disabled', true)
 	$('#booking-butt').addClass('booking-butt-dis')		
-	var elemToObserve =  $("[cc_validate_tag=400727]")[0];
+	var elemToObserve =  $('.cc-validate-fail')[0];
 	var prevClassState = elemToObserve.classList.contains('cc-validate-ok');
 	 observer = new MutationObserver(function(mutations) {
 	mutations.forEach(function(mutation) {
