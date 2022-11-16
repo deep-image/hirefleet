@@ -554,7 +554,7 @@ function ccvalidation() {
 
 function phonevalidation() {
 	$('#phone').focus()
-	$('#phone').focusout()
+	$('#First-Name').focus()
 			$('#booking-butt').prop('disabled', true)
 	$('#booking-butt').addClass('booking-butt-dis')		
 	var elemToObserve =  $('.cc-validate-fail')[0];
