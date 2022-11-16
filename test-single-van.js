@@ -175,6 +175,10 @@ window.cc_c2a.addEmailVerify({
 	allow_high_risk: false
 });
 
+window.addPhoneVerify({
+phone: '#phone'	
+})
+
 // change background colour of dropdown
 $('select').on('change', function(){
     var $this = $(this);
