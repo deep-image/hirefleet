@@ -557,8 +557,8 @@ function phonevalidation() {
 	
 	$('#phone').focus()
 	$('#First-Name').focus()
-			$('#booking-butt').prop('disabled', true)
-	$('#booking-butt').addClass('booking-butt-dis')		
+	//		$('#booking-butt').prop('disabled', true)
+//	$('#booking-butt').addClass('booking-butt-dis')		
 	var elemToObserve =  $('.cc-validate-fail')[0];
 	var prevClassState = elemToObserve.classList.contains('cc-validate-ok');
 	var  phobserver = new MutationObserver(function(mutations) {
