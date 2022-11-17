@@ -554,7 +554,7 @@ function ccvalidation() {
 	}
 
 function phonevalidation() {
-	
+	/*
 	$('#phone').focus()
 	$('#First-Name').focus()
 	//		$('#booking-butt').prop('disabled', true)
@@ -583,6 +583,7 @@ function phonevalidation() {
 	});
 	});	
 		phobserver.observe(elemToObserve, {attributes: true});
+		*/
 }
 
 
@@ -1408,6 +1409,7 @@ event.preventDefault();
 });
 
 function subcallbooking() {
+$('#phone-error').hide()	
 additioncharge = [];
 regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 emtest = regex.test($('#email').val());
@@ -1417,20 +1419,21 @@ firstname = $('#First-Name').val();
 dob = $('#Date-Of-Birth').val();
 phone = $('#phone').val();
 address = $('#Address').val();
+	
 var buscheck = $('#Business_Checkbox').is(':checked') ? $('#Company-Name').val() != '' : true;
 if(emtest && lastname != '' && firstname != '' && dob != '' & phone != '' && address != '' && buscheck )
 {
 if(sendquote) {
-callbooking();
+$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callbooking();
 }
 else if(vanavailable)
 {
-userid == '' ? callbooking() : callconfirm(userid);
-$('#detailform').submit();
+userid == '' ? ( $('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callbooking() ) : ( $('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callconfirm(userid) ) ;
+$('.cc-validate-fail').length > 0  ? $('#phone-error').show() :  $('#detailform').submit();
 }
 else
-{
-callglobalpay();
+{ 
+$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callglobalpay();
 }
 }
 }
