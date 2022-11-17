@@ -175,12 +175,11 @@ window.cc_c2a.addEmailVerify({
 	allow_high_risk: false
 });
 
-/*
+
 window.cc_c2a.addPhoneVerify({
 phone: '#phone'	,
 country : '#addr_country'	
 })
-*/
 
 // change background colour of dropdown
 $('select').on('change', function(){
@@ -555,7 +554,7 @@ function ccvalidation() {
 	}
 
 function phonevalidation() {
-/*	$('#phone').focus()
+	$('#phone').focus()
 	$('#First-Name').focus()
 			$('#booking-butt').prop('disabled', true)
 	$('#booking-butt').addClass('booking-butt-dis')		
@@ -582,7 +581,6 @@ function phonevalidation() {
 	});
 	});	
 		phobserver.observe(elemToObserve, {attributes: true});
-*/
 }
 
 
