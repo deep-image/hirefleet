@@ -85,7 +85,7 @@ function gtagpurchase(data,ORDER_ID) {
 
 
 $(document).ready(function () {
-
+$('#country_code').val('GBR')
  $('.sing-features-block .div-block-47').remove()
 $('.sing-features-block .div-block-45').remove()   	
 $('.features-block').hide()
@@ -178,7 +178,7 @@ window.cc_c2a.addEmailVerify({
 
 window.cc_c2a.addPhoneVerify({
 phone: '#phone'	,
-country : '#addr_county'	
+country : '#country_code'	
 })
 
 // change background colour of dropdown
@@ -554,6 +554,7 @@ function ccvalidation() {
 	}
 
 function phonevalidation() {
+	
 	$('#phone').focus()
 	$('#First-Name').focus()
 			$('#booking-butt').prop('disabled', true)
@@ -568,13 +569,14 @@ function phonevalidation() {
 	prevClassState = currentClassState;
 		if(currentClassState) {
 		console.log("phone class added!");
-		$('#booking-butt').prop('disabled', false)
-		$('#booking-butt').removeClass('booking-butt-dis')		
+		$('#phone-error').hide()	
+		//$('#booking-butt').prop('disabled', false)	
 		}
 		else {
+		$('#phone-error').show()()	
 		console.log("phone class removed!");
-		$('#booking-butt').prop('disabled', true)
-		$('#booking-butt').addClass('booking-butt-dis')
+		//$('#booking-butt').prop('disabled', true)
+		//$('#booking-butt').addClass('booking-butt-dis')
 		}
 	}
 	}
