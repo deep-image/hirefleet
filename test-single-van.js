@@ -1433,7 +1433,7 @@ userid == '' ? ( $('.cc-validate-fail').length > 0  ? $('#phone-error').show() :
 $('.cc-validate-fail').length > 0  ? $('#phone-error').show() :  $('#detailform').submit();
 }
 else
-{ 
+{ 	
 $('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callglobalpay();
 }
 }
@@ -1465,6 +1465,7 @@ $('#rxp-frame-1').remove()
 
 function callglobalpay()
 {
+console.log("global pay works")	
 var price = $('#hidd-total-price').text();
 price = Number(price);
 RealexHpp.setHppUrl('https://pay.realexpayments.com/pay');
