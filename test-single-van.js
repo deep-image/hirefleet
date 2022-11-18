@@ -1450,7 +1450,7 @@ const body = document.querySelector("body");
 $('#booking-butt').click(function() {
 var tp = $('#total-price').text();
 $('#total-price2').text(tp);
-detailform.reportValidity()
+//detailform.reportValidity()
 if($('#rxp-frame-1').length == 0) {
 $('<iframe id="rxp-frame-1" name="gpform" style="width: 100%; height: 692px; display: inherit; background-color: rgb(255, 255, 255);" frameborder="0" scrolling="no"></iframe>').appendTo('#GP');;
 }
