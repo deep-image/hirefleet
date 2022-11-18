@@ -1405,7 +1405,7 @@ $("#booking-butt").click(function(event) {
 $('.payment-container').css('opacity' , 100)
 $('.payment-wrapper').css('opacity' , 100)	
 subcallbooking();
-event.preventDefault();
+//event.preventDefault();
 });
 
 function subcallbooking() {
