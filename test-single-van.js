@@ -1428,6 +1428,7 @@ $('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callbooking();
 }
 else if(vanavailable)
 {
+console.log("form submit runs")	
 userid == '' ? ( $('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callbooking() ) : ( $('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callconfirm(userid) ) ;
 $('.cc-validate-fail').length > 0  ? $('#phone-error').show() :  $('#detailform').submit();
 }
