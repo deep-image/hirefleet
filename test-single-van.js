@@ -659,9 +659,6 @@ var today = dayjs().format('DD/MM/YYYY'); //set the start / end date to today
 var tomorrow = dayjs().add(1, 'day').format('DD/MM/YYYY');
  var dayaftom = dayjs().add(2, 'day').format('DD/MM/YYYY'); 
     } //set the start / end date to today
-	console.log("litepciker")
-console.log(tomorrow)
-console.log(dayaftom)	
 picker = new Litepicker({
 				element: document.getElementById('start-date'),
   			elementEnd: document.getElementById('end-date'),
@@ -700,6 +697,10 @@ window.history.replaceState(null, null, addparam());
  console.log("clear")
 precount = 0;	  
   });
+
+console.log( today.split("/").reverse().join("-") )	
+console.log( disallowedarr.includes( today.split("/").reverse().join("-") ) )
+console.log(  today )
 	
 bothpicker =  new Litepicker({
 					element: document.getElementById('both-date'),
