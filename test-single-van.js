@@ -651,6 +651,7 @@ $('#both-date').val($('#start-date').val() + " - " + $('#end-date').val())
    else if (time >= 10){
 var today = dayjs().add(1, 'day').format('DD/MM/YYYY'); //set the start / end date to today
 var tomorrow = dayjs().add(2, 'day').format('DD/MM/YYYY'); 
+ var dayaftom = dayjs().add(2, 'day').format('DD/MM/YYYY'); 	   
    } //set the start 
     else{ 
 var today = dayjs().format('DD/MM/YYYY'); //set the start / end date to today
@@ -659,6 +660,7 @@ var tomorrow = dayjs().add(1, 'day').format('DD/MM/YYYY');
  var dayaftom = dayjs().add(2, 'day').format('DD/MM/YYYY'); 
     } //set the start / end date to today
 	console.log("litepciker")
+console.log(tomorrow)
 console.log(dayaftom)	
 picker = new Litepicker({
 				element: document.getElementById('start-date'),
