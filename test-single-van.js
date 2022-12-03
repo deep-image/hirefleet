@@ -655,9 +655,11 @@ var tomorrow = dayjs().add(2, 'day').format('DD/MM/YYYY');
     else{ 
 var today = dayjs().format('DD/MM/YYYY'); //set the start / end date to today
 //var todays = dayjs().format('MM/DD/YYYY'); //set the start / end date to today
-var tomorrow = dayjs().add(1, 'day').format('DD/MM/YYYY'); } //set the start / end date to today
+var tomorrow = dayjs().add(1, 'day').format('DD/MM/YYYY');
+ var dayaftom = dayjs().add(2, 'day').format('DD/MM/YYYY'); 
+    } //set the start / end date to today
 	console.log("litepciker")
-console.log(today)	
+console.log(dayaftom)	
 picker = new Litepicker({
 				element: document.getElementById('start-date'),
   			elementEnd: document.getElementById('end-date'),
@@ -704,7 +706,8 @@ bothpicker =  new Litepicker({
 				minDate: dayjs().format('MM/DD/YYYY'),
 				plugins: ['mobilefriendly'],
 				//allowRepick: true,   
-				maxDate: maxd,       startDate: today,
+				maxDate: maxd,     
+				startDate: today,
 				endDate: tomorrow,
 				selectForward : true,
 				tooltipNumber: (totalDays) => {
