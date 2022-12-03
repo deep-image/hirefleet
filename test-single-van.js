@@ -710,7 +710,7 @@ bothpicker =  new Litepicker({
 				plugins: ['mobilefriendly'],
 				//allowRepick: true,   
 				maxDate: maxd,     
-				startDate: disallowedarr.includes( today.split("/").reverse().join("-") ) ? tomorrow : today,
+				startDate: today,
 				endDate: tomorrow,
 				selectForward : true,
 				tooltipNumber: (totalDays) => {
