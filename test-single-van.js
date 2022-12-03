@@ -698,9 +698,6 @@ window.history.replaceState(null, null, addparam());
 precount = 0;	  
   });
 
-console.log( today.split("/").reverse().join("-") )	
-console.log( disallowedarr.includes( today.split("/").reverse().join("-") ) )
-console.log(  today )
 	
 bothpicker =  new Litepicker({
 					element: document.getElementById('both-date'),
