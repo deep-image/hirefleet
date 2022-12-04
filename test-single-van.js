@@ -1378,7 +1378,7 @@ subcallbooking();
 });
 
 function subcallbooking() {
-//$('#phone-error').hide()	
+$('#phone-error').hide()	
 additioncharge = [];
 regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 emtest = regex.test($('#email').val());
