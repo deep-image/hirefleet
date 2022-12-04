@@ -285,10 +285,6 @@ $('.item-overlay')[x].href = butturl + paramstr;
 }
 
 
-
-
-
-
 function appdisc(resdata) {
     if(resdata.length == 0 || resdata.applicable_discounts.length == 0) {
     $('#discount').css('color','red')
@@ -554,36 +550,6 @@ function ccvalidation() {
 	}
 
 function phonevalidation() {
-	/*
-	$('#phone').focus()
-	$('#First-Name').focus()
-	//		$('#booking-butt').prop('disabled', true)
-//	$('#booking-butt').addClass('booking-butt-dis')		
-	var elemToObserve =  $('.cc-validate-fail')[0];
-	var prevClassState = elemToObserve.classList.contains('cc-validate-ok');
-	var  phobserver = new MutationObserver(function(mutations) {
-	mutations.forEach(function(mutation) {
-	if(mutation.attributeName == "class"){
-	var currentClassState = mutation.target.classList.contains('cc-validate-ok');
-	if(prevClassState !== currentClassState) {
-	prevClassState = currentClassState;
-		if(currentClassState) {
-		console.log("phone class added!");
-		$('#phone-error').hide()	
-		//$('#booking-butt').prop('disabled', false)	
-		}
-		else {
-		$('#phone-error').show()()	
-		console.log("phone class removed!");
-		//$('#booking-butt').prop('disabled', true)
-		//$('#booking-butt').addClass('booking-butt-dis')
-		}
-	}
-	}
-	});
-	});	
-		phobserver.observe(elemToObserve, {attributes: true});
-		*/
 }
 
 
@@ -1426,19 +1392,19 @@ address = $('#Address').val();
 var buscheck = $('#Business_Checkbox').is(':checked') ? $('#Company-Name').val() != '' : true;
 if(emtest && lastname != '' && firstname != '' && dob != '' & phone != '' && address != '' && buscheck )
 {
-if(sendquote) {
-$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callbooking();
-}
-else if(vanavailable)
-{
-console.log("form submit runs")	
-userid == '' ? ( $('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callbooking() ) : ( $('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callconfirm(userid) ) ;
-$('.cc-validate-fail').length > 0  ? $('#phone-error').show() :  $('#detailform').submit();
-}
-else
-{ 	
-$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callglobalpay();
-}
+	if(sendquote) {
+	$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callbooking();
+	}
+	else if(vanavailable)
+	{
+	console.log("form submit runs")	
+	userid == '' ? ( $('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callbooking() ) : ( $('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callconfirm(userid) ) ;
+	$('.cc-validate-fail').length > 0  ? $('#phone-error').show() :  $('#detailform').submit();
+	}
+	else
+	{ 	
+	$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callglobalpay();
+	}
 }
 }
 
@@ -1499,7 +1465,8 @@ brand = answer.SAVED_PMT_TYPE;
 lastdigits = answer.SAVED_PMT_DIGITS.slice(-4);
 }
 body.style.overflow = "auto";
-$('#sucess-form').show();					
+$('#sucess-form').show();	
+console.log("detail form submit")	
 $('#detailform').submit();
 $('#pay-wrap').hide();
 userid == '' ? callbooking() : updateuserdet(); 
