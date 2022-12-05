@@ -1373,11 +1373,11 @@ function subdatereformate(pickerid,pickername,errclass) {
 $("#booking-butt").click(function(event) {
 $('.payment-container').css('opacity' , 100)
 $('.payment-wrapper').css('opacity' , 100)	
-subcallbooking();
-//
+subcallbooking(event);
+//event.preventDefault();
 });
 
-function subcallbooking() {
+function subcallbooking(event) {
 //$('#phone-error').hide()	
 additioncharge = [];
 regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
