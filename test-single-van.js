@@ -1292,7 +1292,7 @@ var lastdigits = "";
 var entitity=1;
 var vt = $('#vantitle').text();
 
-//$('#dob-error').hide()		
+$('#dob-error').hide()		
 	
 $('input[type=radio]').on('change', function() {
 switch ($(this).val()) {     
@@ -1359,16 +1359,12 @@ function subdatereformate(pickerid,pickername,errclass) {
 		}
 			else {
 			 eval(pickername).clearSelection()
-			$(errclass).text('Age range: 23-75')
-			$('#dob-error').css('display', 'block')
-			$('#dob-error').show()		
+			$(errclass).text('Age range: 23-75')	
 			$(errclass).show()	
 			}
 		}
 	else {
-	$(errclass).text('Bad Date Format')	
-		$('#dob-error').css('display', 'block')
-	$('#dob-error').show()	
+	$(errclass).text('Bad Date Format')		
 	eval(pickername).clearSelection()
 	$(errclass).show()	
 	}
