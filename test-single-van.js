@@ -1373,8 +1373,8 @@ function subdatereformate(pickerid,pickername,errclass) {
 $("#booking-butt").click(function(event) {
 $('.payment-container').css('opacity' , 100)
 $('.payment-wrapper').css('opacity' , 100)	
+event.preventDefault();
 subcallbooking(event);
-//event.preventDefault();
 });
 
 function subcallbooking(event) {
