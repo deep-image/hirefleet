@@ -1329,8 +1329,9 @@ $('#age-range').val() == 23 ? additioncharge.push(3) : '';
 return additioncharge;
 }
 
-$("#send-quote").click(function() {
+$("#send-quote").click(function(event) {
 sendquote = true;
+event.preventDefault();		
 subcallbooking();
 });
 	
