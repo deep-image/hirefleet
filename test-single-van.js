@@ -1373,12 +1373,11 @@ function subdatereformate(pickerid,pickername,errclass) {
 $("#booking-butt").click(function(event) {
 $('.payment-container').css('opacity' , 100)
 $('.payment-wrapper').css('opacity' , 100)	
-event.preventDefault();
-console.log(event)	
-subcallbooking(event);
+event.preventDefault();	
+subcallbooking();
 });
 
-function subcallbooking(event) {
+function subcallbooking() {
 //$('#phone-error').hide()	
 additioncharge = [];
 regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -1393,7 +1392,6 @@ address = $('#Address').val();
 var buscheck = $('#Business_Checkbox').is(':checked') ? $('#Company-Name').val() != '' : true;
 if(emtest && lastname != '' && firstname != '' && dob != '' & phone != '' && address != '' && buscheck )
 {
-event.preventDefault();	
 	if(sendquote) {
 	console.log( $('.cc-validate-fail').length > 0 )	
 	$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callbooking();
