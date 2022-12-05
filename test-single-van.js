@@ -1346,7 +1346,7 @@ $("#Date-Of-Birth").focusout(function(){
 
 function subdatereformate(pickerid,pickername,errclass) {
 
-		$(errclass).show()
+		//$(errclass).show()
 
 	let dobval = $(pickerid).val()
 	if( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) ) {
