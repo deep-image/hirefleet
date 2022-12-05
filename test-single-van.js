@@ -1393,17 +1393,20 @@ var buscheck = $('#Business_Checkbox').is(':checked') ? $('#Company-Name').val()
 if(emtest && lastname != '' && firstname != '' && dob != '' & phone != '' && address != '' && buscheck )
 {
 	if(sendquote) {
-	$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callbooking();
+	console.log( $('.cc-validate-fail').length > 0 )	
+	//$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callbooking();
 	}
 	else if(vanavailable)
 	{
 	console.log("form submit runs")	
+	console.log( $('.cc-validate-fail').length > 0 )	
 	userid == '' ? ( $('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callbooking() ) : ( $('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callconfirm(userid) ) ;
-	$('.cc-validate-fail').length > 0  ? $('#phone-error').show() :  $('#detailform').submit();
+	//$('.cc-validate-fail').length > 0  ? $('#phone-error').show() :  $('#detailform').submit();
 	}
 	else
 	{ 	
-	$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callglobalpay();
+	console.log( $('.cc-validate-fail').length > 0 )		
+	//$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callglobalpay();
 	}
 }
 }
