@@ -1347,8 +1347,7 @@ $("#Date-Of-Birth").focusout(function(){
 function subdatereformate(pickerid,pickername,errclass) {
 
 		$(errclass).show()
-	$('#dob-error').css('display', 'block')
-	$('#dob-error').show()
+
 	let dobval = $(pickerid).val()
 	if( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) ) {
 	//if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
@@ -1361,11 +1360,15 @@ function subdatereformate(pickerid,pickername,errclass) {
 			else {
 			 eval(pickername).clearSelection()
 			$(errclass).text('Age range: 23-75')
+			$('#dob-error').css('display', 'block')
+			$('#dob-error').show()		
 			$(errclass).show()	
 			}
 		}
 	else {
 	$(errclass).text('Bad Date Format')	
+		$('#dob-error').css('display', 'block')
+	$('#dob-error').show()	
 	eval(pickername).clearSelection()
 	$(errclass).show()	
 	}
