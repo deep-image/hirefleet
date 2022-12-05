@@ -438,7 +438,6 @@ function agechangeonsimilar()
 		pricearr = document.getElementsByClassName('price-amount');
 		for(var x=0; x < pricearr.length; x++) {	
 		var tot = Number(pricearr[x].innerText.slice(1).replaceAll(',','.')) + Number(young_driver_cost)
-		console.log(tot.toFixed(2))
 		pricearr[x].innerText = '£' + tot.toFixed(2);
 		addageparam(x);	
 		}
@@ -1347,7 +1346,7 @@ $("#Date-Of-Birth").focusout(function(){
 
 function subdatereformate(pickerid,pickername,errclass) {
 
-		$(errclass).hide()	
+		//$(errclass).hide()	
 	let dobval = $(pickerid).val()
 	if( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) ) {
 	//if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
