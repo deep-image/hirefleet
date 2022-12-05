@@ -1374,6 +1374,7 @@ $("#booking-butt").click(function(event) {
 $('.payment-container').css('opacity' , 100)
 $('.payment-wrapper').css('opacity' , 100)	
 event.preventDefault();
+console.log(event)	
 subcallbooking(event);
 });
 
