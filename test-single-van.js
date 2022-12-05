@@ -1374,7 +1374,7 @@ $("#booking-butt").click(function(event) {
 $('.payment-container').css('opacity' , 100)
 $('.payment-wrapper').css('opacity' , 100)	
 subcallbooking();
-event.preventDefault();
+//
 });
 
 function subcallbooking() {
@@ -1392,6 +1392,7 @@ address = $('#Address').val();
 var buscheck = $('#Business_Checkbox').is(':checked') ? $('#Company-Name').val() != '' : true;
 if(emtest && lastname != '' && firstname != '' && dob != '' & phone != '' && address != '' && buscheck )
 {
+event.preventDefault();	
 	if(sendquote) {
 	console.log( $('.cc-validate-fail').length > 0 )	
 	//$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callbooking();
