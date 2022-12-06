@@ -1340,8 +1340,9 @@ $("#Primary-Driver-Date-Of-Birth").focusout(function(){
 	
 	
 $("#Date-Of-Birth").focusout(function(){
-	
+	 setTimeout(function() { 
 	subdatereformate('#Date-Of-Birth' ,'dobpicker','#dob-error')
+	 }, 200);	 
 });	
 
 function subdatereformate(pickerid,pickername,errclass) {
