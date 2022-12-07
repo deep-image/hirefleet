@@ -1365,12 +1365,12 @@ event.preventDefault();
 subcallbooking();
 });
 	
-$("#Primary-Driver-Date-Of-Birth").change(function(){
+$("#Primary-Driver-Date-Of-Birth").focusout(function(){
 	subdatereformate('#Primary-Driver-Date-Of-Birth' ,'primdobpicker','#dob-error2')	
 })
 	
 	
-$("#Date-Of-Birth").focusout(function(){
+$("#Date-Of-Birth").change(function(){
 	 setTimeout(function() { 
 	subdatereformate('#Date-Of-Birth' ,'dobpicker','#dob-error')
 	 }, 200);	 
