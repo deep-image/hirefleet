@@ -1360,7 +1360,7 @@ function subdatereformate(pickerid,pickername,errclass) {
 	let maxdate = dayjs().subtract(76, 'year') 
 	let inputdate = dayjs(dobval)
 		if ( (inputdate.isBefore(mindate) || inputdate.isSame(mindate) ) && (inputdate.isAfter(maxdate) || inputdate.isSame(maxdate)) ) {
-		 eval(pickername).getDate() == null ? eval(pickername).setDate(inputdate) : ''
+		 eval(pickername).getDate() == null ? ( eval(pickername).setDate(inputdate); $('#dob-error').hide()  ) : ''
 		}
 			else {
 			 eval(pickername).clearSelection()
