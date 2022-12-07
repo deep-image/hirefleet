@@ -446,6 +446,33 @@ function agechangeonsimilar()
 	}	
 
 
+function subdatereformate(pickerid,pickername,errclass) {
+		$(errclass).hide()
+	let dobval = $(pickerid).val()
+	console.log( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) )
+	console.log( dayjs(dobval).format('DD-MM-YYYY') )
+	if( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) ) {
+	//if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
+	let mindate = dayjs().subtract(23, 'year')
+	let maxdate = dayjs().subtract(76, 'year') 
+	let inputdate = dayjs(dobval)
+		if ( (inputdate.isBefore(mindate) || inputdate.isSame(mindate) ) && (inputdate.isAfter(maxdate) || inputdate.isSame(maxdate)) ) {
+		 eval(pickername).getDate() == null ?  eval(pickername).setDate(inputdate)   : ''
+		eval(pickername).getDate() == null ? $('#dob-error').hide() : ''	
+		}
+			else {
+			 eval(pickername).clearSelection()
+			$(errclass).text('Age range: 23-75')	
+			$(errclass).show()	
+			}
+		}
+	else {
+	$(errclass).text('Bad Date Format')		
+	eval(pickername).clearSelection()
+	$(errclass).show()	
+	}
+	
+}
 
 $( document ).ready(function() {
 
@@ -1349,35 +1376,6 @@ $("#Date-Of-Birth").focusout(function(){
 	 }, 200);	 
 });	
 
-function subdatereformate(pickerid,pickername,errclass) {
-
-		$(errclass).hide()
-
-	let dobval = $(pickerid).val()
-	console.log( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) )
-	console.log( dayjs(dobval).format('DD-MM-YYYY') )
-	if( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) ) {
-	//if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
-	let mindate = dayjs().subtract(23, 'year')
-	let maxdate = dayjs().subtract(76, 'year') 
-	let inputdate = dayjs(dobval)
-		if ( (inputdate.isBefore(mindate) || inputdate.isSame(mindate) ) && (inputdate.isAfter(maxdate) || inputdate.isSame(maxdate)) ) {
-		 eval(pickername).getDate() == null ?  eval(pickername).setDate(inputdate)   : ''
-		eval(pickername).getDate() == null ? $('#dob-error').hide() : ''	
-		}
-			else {
-			 eval(pickername).clearSelection()
-			$(errclass).text('Age range: 23-75')	
-			$(errclass).show()	
-			}
-		}
-	else {
-	$(errclass).text('Bad Date Format')		
-	eval(pickername).clearSelection()
-	$(errclass).show()	
-	}
-	
-}
 	
 $("#booking-butt").click(function(event) {
 $('.payment-container').css('opacity' , 100)
