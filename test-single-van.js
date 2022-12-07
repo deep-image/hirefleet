@@ -531,7 +531,7 @@ function ccvalidation() {
 	else {
 	fieldschange(false,'pointer');
         $('#Personal-Business').css('display','flex')
-	$('# #Submit').css('display','flex')	
+	$('#Submit').css('display','flex')	
 	$('#Additional-Info,  #Cardholder-Details').css('display','block') 
 	phonevalidation()	
 	}
@@ -541,7 +541,7 @@ function ccvalidation() {
 	}
 	else {
 	$("#email").css("boxShadow", "none");
-	$('# #Submit').css('display','flex')
+	$('#Submit').css('display','flex')
 	$('#Additional-Info, #Cardholder-Details').css('display','block') 
 	$('#Primary-Driver-Checkbox, #Address, #phone').attr("disabled",false); 
 	$('[for=Personal], [for=Business]').css('cursor','not-allowed') 
