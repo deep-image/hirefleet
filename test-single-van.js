@@ -1365,7 +1365,7 @@ event.preventDefault();
 subcallbooking();
 });
 	
-$("#Primary-Driver-Date-Of-Birth").focusout(function(){
+$("#Primary-Driver-Date-Of-Birth").change(function(){
 	subdatereformate('#Primary-Driver-Date-Of-Birth' ,'primdobpicker','#dob-error2')	
 })
 	
