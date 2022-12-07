@@ -763,10 +763,11 @@ dayjs.extend(dayjsPluginUTC.default)
 	dob = dayjs(dob).format();	
 let compyear = dayjs.utc().subtract(25, 'year').format();					
 let primcheck = document.querySelector( 'input[name="Primary-Driver-Selection"]:checked').value == 'As Above'	
-//subdatereformate('#Date-Of-Birth' ,'dobpicker','#dob-error')
+subdatereformate('#Date-Of-Birth' ,'dobpicker','#dob-error')
 		if(dob >= compyear && $('#young').length != 1 && primcheck) {
 $('#age-range').val('23').change(); 
-$('#extra-text').show()				
+$('#extra-text').show()		
+$('#dob-error').hide()			
 }	
 else if(dob < compyear && primcheck)
 {
