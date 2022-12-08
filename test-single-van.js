@@ -470,7 +470,7 @@ function subdatereformate(pickerid,pickername,errclass) {
 			}
 		}
 	else {
-	$(errclass).text('Bad Date Format')		
+	$(errclass).text('Bad Date Format (DD-MM-YYYY)')		
 	eval(pickername).clearSelection()
 	$(errclass).show()	
 	}
