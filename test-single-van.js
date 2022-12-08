@@ -449,8 +449,11 @@ function agechangeonsimilar()
 function subdatereformate(pickerid,pickername,errclass) {
 		$(errclass).hide()
 	let dobval = $(pickerid).val()
+	const [day, month, year] = date.split('-');
+	dobval = [month, day, year].join('-');
 	console.log( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) )
 	console.log( dayjs(dobval).format('DD-MM-YYYY') )
+
 	if( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) ) {
 	//if(dayjs(dobval,'DD-MM-YYYY',true).isValid() ) {
 	let mindate = dayjs().subtract(23, 'year')
