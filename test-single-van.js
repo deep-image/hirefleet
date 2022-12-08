@@ -449,7 +449,7 @@ function agechangeonsimilar()
 function subdatereformate(pickerid,pickername,errclass) {
 		$(errclass).hide()
 	let dobval = $(pickerid).val()
-	const [day, month, year] = date.split('-');
+	const [day, month, year] = dobval.split('-');
 	dobval = [month, day, year].join('-');
 	console.log( (dayjs(dobval).format('DD-MM-YYYY') != 'Invalid Date' ) )
 	console.log( dayjs(dobval).format('DD-MM-YYYY') )
