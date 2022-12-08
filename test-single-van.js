@@ -800,7 +800,8 @@ $('#age-range').attr("disabled", true);
 dayjs.extend(dayjsPluginUTC.default);
 	let dob = new Date(date1.dateInstance);
 	dob = dayjs(dob).format();	
-let compyear = dayjs.utc().subtract(25, 'year').format();						
+let compyear = dayjs.utc().subtract(25, 'year').format();	
+$('#prm-dob-error').hide()		
 //let primcheck = $('#Primary-Driver-Checkbox').is(":checked");
 let primcheck = document.querySelector( 'input[name="Primary-Driver-Selection"]:checked').value == 'As Above'		
 if(dob >= compyear  && !primcheck) {
@@ -1369,8 +1370,8 @@ event.preventDefault();
 subcallbooking();
 });
 	
-$("#Primary-Driver-Date-Of-Birth").focusout(function(){
-	subdatereformate('#Primary-Driver-Date-Of-Birth' ,'primdobpicker','#dob-error2')	
+$("#Primary-Driver-Date-Of-Birth").change(function(){
+	subdatereformate('#Primary-Driver-Date-Of-Birth' ,'primdobpicker','#prm-dob-error')	
 })
 	
 	
