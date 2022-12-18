@@ -1034,7 +1034,6 @@ document.getElementsByClassName('limited')[x+1].style.display = 'block';
 	$('.price-amount').attr('data-id', 'price')
 	$('.days').show()	
 	//$('.price-amount').show()
-
 }	
 
 
@@ -1080,6 +1079,7 @@ agechecked();
 }
 
 $( "#start-time" ).one( "change", function() {
+console.log("start time change")	
 getsinglevan();	
 });
 	/*
