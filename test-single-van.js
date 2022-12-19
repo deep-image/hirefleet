@@ -1161,7 +1161,7 @@ document.getElementsByClassName('limited')[x+1].style.display = 'block';
 $( "#start-time" ).one( "change", function() {
 	setTimeout(function() { 	
 	    getsinglevan();	
-	}, 200);	
+	}, 250);	
 });
 
 	
