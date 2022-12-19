@@ -535,7 +535,59 @@ var additelem = '<div class="extras-div"><div class="extras-detail"><div class="
 })	
 }	
 
+	 function applyeve() {
+$('.addit-select').change(function() {
+	 if($(this).val()) {
+	$(this).css({'border-color': '#89d12b', 'background-color': '#89d12b'}) 	
+	 }
+	else {
+	$(this).css({'border-color': '#418fd3', 'background-color': '#3a78ae' }) 	
+	}
+	subdetectchange()
+})
+$('.addit-check').change(function() {
+subdetectchange()
+})		 		 
+}
 
+function applyextraparam() {
+$('.addit-check').each(function(singelem) {
+    if(getParam(this.id) == 1) {
+    $('#'+this.id).click()
+    }
+});
+
+$('.addit-select').each(function(singelem) {
+ var paramval = getParam(this.id)
+    if(paramval > 0) {
+    $('#'+this.id).val(paramval).change()
+    }
+});
+}
+
+		function applyurlchange() {
+	var elem1 = $('.addit-check');
+var elem2 = $('#discount');
+var elem3 = $('.additional');
+var elem4 = $('#start-time');
+var elem5 = $('#end-time');	
+var elem6 = $('#age-range');		
+
+$([elem1,elem2,elem3,elem4,elem5,elem6]).each(function() {
+
+    $(this).bind("change", function() {    
+window.history.replaceState(null, null, addparam());
+    });
+});	
+	}
+
+
+	function agechecked() {  
+    if (window.location.href.indexOf("age") > -1) {   
+$('#age-range').val(getParam('age'));
+    }	
+}
+	
 
 
 $( document ).ready(function() {
@@ -1098,89 +1150,20 @@ document.getElementsByClassName('limited')[x+1].style.display = 'block';
 
 //getsinglevan
 //changeprices	
+//applyeve
+//applyextraparam
+//applyurlchange
+//agechecked	
+	
 
+	
+	
 $( "#start-time" ).one( "change", function() {
 console.log("start time change")	
 getsinglevan();	
 });
-	/*
-setTimeout(function() {
-        getsinglevan();
-          }, 1200);
-	  */
 
-
-	 function applyeve() {
-		 /*
- $('.addit-check').change(function(ev) {
-showsum(ev.currentTarget.getAttribute('indexatt'),$(this).is(':checked'), $(this).is(':checked') ? 1 : 0);	 
-});
- $('.addit-select').change(function(ev) {
- if($(this).val()) {
-$(this).css({'border-color': '#89d12b', 'background-color': '#89d12b'}) 
-showsum(ev.currentTarget.getAttribute('indexatt'),true,$(this).val());
-}
-else {
-$(this).css({'border-color': '#6b6b6b', 'background-color': '#6b6b6b' }) 
-showsum(ev.currentTarget.getAttribute('indexatt'),false,$(this).val() == '' ? 0 : $(this).val());
-console.log($(this).val())	 
-}
-});
-*/
-$('.addit-select').change(function() {
-	 if($(this).val()) {
-	$(this).css({'border-color': '#89d12b', 'background-color': '#89d12b'}) 	
-	 }
-	else {
-	$(this).css({'border-color': '#418fd3', 'background-color': '#3a78ae' }) 	
-	}
-	subdetectchange()
-})
-$('.addit-check').change(function() {
-subdetectchange()
-})		 		 
-}
-
-
-function agechecked() {  
-    if (window.location.href.indexOf("age") > -1) {   
-$('#age-range').val(getParam('age'));
-    }	
-}	
-
-
-
-
-function applyextraparam() {
-$('.addit-check').each(function(singelem) {
-    if(getParam(this.id) == 1) {
-    $('#'+this.id).click()
-    }
-});
-
-$('.addit-select').each(function(singelem) {
- var paramval = getParam(this.id)
-    if(paramval > 0) {
-    $('#'+this.id).val(paramval).change()
-    }
-});
-}
-
-	function applyurlchange() {
-	var elem1 = $('.addit-check');
-var elem2 = $('#discount');
-var elem3 = $('.additional');
-var elem4 = $('#start-time');
-var elem5 = $('#end-time');	
-var elem6 = $('#age-range');		
-
-$([elem1,elem2,elem3,elem4,elem5,elem6]).each(function() {
-
-    $(this).bind("change", function() {    
-window.history.replaceState(null, null, addparam());
-    });
-});	
-	}
+	
 
 //end code here 	
 });
