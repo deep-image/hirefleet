@@ -1159,8 +1159,9 @@ document.getElementsByClassName('limited')[x+1].style.display = 'block';
 	
 	
 $( "#start-time" ).one( "change", function() {
-console.log("start time change")	
-getsinglevan();	
+	setTimeout(function() { 	
+	    getsinglevan();	
+	}, 200);	
 });
 
 	
