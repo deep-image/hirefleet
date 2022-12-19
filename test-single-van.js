@@ -477,6 +477,49 @@ function subdatereformate(pickerid,pickername,errclass) {
 	
 }
 
+var callcount = 0; 	
+function getsinglevan() {
+$('#extra-text').hide();
+$.ajax({
+    type: "POST",
+    url: "https://hirefleet-328113.nw.r.appspot.com/api/additionalcharges",
+    // The key needs to match your method's input parameter (case-sensitive).
+    data: JSON.stringify({
+	    pick_up_date: $('#start-date').val(),
+pick_up_time: $('#start-time :selected').val(),
+return_date : $('#end-date').val(),
+return_time : $('#end-time :selected').val(),
+pick_up_location : 2,
+return_location : 2,
+brand_id : 1,
+vehicle_class_id : $('#class-id').text(),
+
+
+	    ///////////////////////this needs sorting//////////////// 
+
+//	    additional_charges : $('#age-range').val() == '25' ? 1 : '', // this needs to be the full lis of selected extras
+
+	    ///////////////////////this needs sorting//////////////// 
+//          additional_charges : getextras()		    
+    }),
+    contentType: "application/json",
+    dataType: "json",
+    success: function(data){
+$('.extra-js-accordion-body').empty();	
+setTimeout(function()  {  	    
+   changeprices(data.data);
+applyeve();	
+applyextraparam();	
+applyurlchange();
+agechecked();	
+	}, 200);
+	    ccvalidation();
+    },
+});
+}
+
+
+
 $( document ).ready(function() {
 
 var picker;	
@@ -1035,46 +1078,7 @@ document.getElementsByClassName('limited')[x+1].style.display = 'block';
 }	
 
 
-var callcount = 0; 	
-function getsinglevan() {
-$('#extra-text').hide();
-$.ajax({
-    type: "POST",
-    url: "https://hirefleet-328113.nw.r.appspot.com/api/additionalcharges",
-    // The key needs to match your method's input parameter (case-sensitive).
-    data: JSON.stringify({
-	    pick_up_date: $('#start-date').val(),
-pick_up_time: $('#start-time :selected').val(),
-return_date : $('#end-date').val(),
-return_time : $('#end-time :selected').val(),
-pick_up_location : 2,
-return_location : 2,
-brand_id : 1,
-vehicle_class_id : $('#class-id').text(),
-
-
-	    ///////////////////////this needs sorting//////////////// 
-
-//	    additional_charges : $('#age-range').val() == '25' ? 1 : '', // this needs to be the full lis of selected extras
-
-	    ///////////////////////this needs sorting//////////////// 
-//          additional_charges : getextras()		    
-    }),
-    contentType: "application/json",
-    dataType: "json",
-    success: function(data){
-$('.extra-js-accordion-body').empty();	
-setTimeout(function()  {  	    
-   changeprices(data.data);
-applyeve();	
-applyextraparam();	
-applyurlchange();
-agechecked();	
-	}, 200);
-	    ccvalidation();
-    },
-});
-}
+//getsinglevan
 
 $( "#start-time" ).one( "change", function() {
 console.log("start time change")	
