@@ -1397,6 +1397,8 @@ address = $('#Address').val();
 var buscheck = $('#Business_Checkbox').is(':checked') ? $('#Company-Name').val() != '' : true;
 if(emtest && lastname != '' && firstname != '' && dob != '' & phone != '' && address != '' && buscheck )
 {
+$('#detailform input,#detailform textarea').removeClass('fields-border-error')
+$('#Complete').text('Payment failed')	
 	if(sendquote) {
 	console.log( $('.cc-validate-fail').length > 0 )	
 	$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callbooking();
@@ -1479,10 +1481,14 @@ $('#detailform').submit();
 $('#pay-wrap').hide();
 userid == '' ? callbooking() : updateuserdet(); 
 }
-else{
+else{	
 console.log("global pay failed")	
+console.log(answer)
 body.style.overflow = "auto";
-$('#gp-error').show()
+//$('#gp-error').show()
+$('#Complete').text('Payment failed')
+$('#booking-tip').show()
+$('#detailform input,#detailform textarea').addClass('fields-border-error')
 $('#rxp-frame-1').remove()
 $('#pay-wrap').hide();
 callcancelemail()	
