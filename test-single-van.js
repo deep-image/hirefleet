@@ -1076,8 +1076,8 @@ function setupunavailable(vehicledata)
 if(singval.vehicle_class_id == $('#class-id').text()) {
 vanavailable = singval.availability.quantity == 0;
 console.log(vanavailable)	
-//vanavailable == true ? $('#booking-butt').text('Check Availability') :  $('#booking-butt').text('confirm & pay');document.getElementsByClassName('available')[x+1].style.display = 'block';
-	//if(vanavailable == true){$('#Summary').text("Your enquiry summary");$('#Complete').text("Complete your enquiry");document.getElementsByClassName('limited')[x+1].style.display = 'block';}
+vanavailable == true ? $('#booking-butt').text('Check Availability') :  $('#booking-butt').text('confirm & pay');document.getElementsByClassName('available')[x+1].style.display = 'block';
+	if(vanavailable == true){$('#Summary').text("Your enquiry summary");$('#Complete').text("Complete your enquiry");document.getElementsByClassName('limited')[x+1].style.display = 'block';}
 }
 })
      }	
