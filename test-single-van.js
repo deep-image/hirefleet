@@ -1015,6 +1015,7 @@ additional_charges : getextras()
     contentType: "application/json",
     dataType: "json",
     success: function(data) {
+	    console.log(disallowedarr)
 	    if(data.data.length == 0) {
 	    $('.error-wrapper-2').show()    
 		    nexavailcount < 2 ?  nextavailfunc() : '';   
