@@ -1016,7 +1016,7 @@ additional_charges : getextras()
     dataType: "json",
     success: function(data) {
 	    console.log(disallowedarr)
-	    if(data.data.length == 0) {
+	    if(data.data.length == 0 && !disallowedarr.includes(picker.getStartDate().format('YYYY-MM-DD')) ) {
 	    $('.error-wrapper-2').show()    
 		    nexavailcount < 2 ?  nextavailfunc() : '';   
 		    nexavailcount = nexavailcount + 1;
