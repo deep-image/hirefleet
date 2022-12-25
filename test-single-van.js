@@ -1044,7 +1044,7 @@ var nextavail = dayjs();
  var lckcount = picker.options.lockDays.length < 10 ? picker.options.lockDays.length : 10;
  if(lckcount > 0 ) {
 	for(x=0; x< lckcount; x++) {
-      if(dayjs(lockdays[x].toJSDate()).isSame(nextavail,'day') || disallowedarr.includes(  nextavail.format('YYYY-MM-DD') )  {
+      if(dayjs(lockdays[x].toJSDate()).isSame(nextavail,'day') || disallowedarr.includes(  nextavail.format('YYYY-MM-DD') )) {
      nextavail = nextavail.add(1,'day')
         loopcount = loopcount +1
         }
@@ -1054,7 +1054,7 @@ var nextavail = dayjs();
 }
     tomnextavail = tomnextavail.add(loopcount,'day')
 for(x=loopcount; x< lckcount; x++) {
-      if(dayjs(lockdays[x].toJSDate()).isSame(tomnextavail,'day')   || disallowedarr.includes(  tomnextavail.format('YYYY-MM-DD') )   ) {
+      if(dayjs(lockdays[x].toJSDate()).isSame(tomnextavail,'day')   || disallowedarr.includes(  tomnextavail.format('YYYY-MM-DD') )  )) {
      tomnextavail = tomnextavail.add(1,'day')
         }
         else {
