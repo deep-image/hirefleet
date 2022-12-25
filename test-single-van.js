@@ -1054,7 +1054,7 @@ var nextavail = dayjs();
 }
     tomnextavail = tomnextavail.add(loopcount,'day')
 for(x=loopcount; x< lckcount; x++) {
-      if(dayjs(lockdays[x].toJSDate()).isSame(tomnextavail,'day')   || disallowedarr.includes(  tomnextavail.format('YYYY-MM-DD') )  )) {
+      if(dayjs(lockdays[x].toJSDate()).isSame(tomnextavail,'day')   || disallowedarr.includes(  tomnextavail.format('YYYY-MM-DD'))  ) {
      tomnextavail = tomnextavail.add(1,'day')
         }
         else {
