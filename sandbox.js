@@ -1450,7 +1450,7 @@ function callglobalpay()
 console.log("global pay works")	
 var price = $('#hidd-total-price').text();
 price = Number(price);
-RealexHpp.setHppUrl('https://api.sandbox.realexpayments.com/epage-remote.cgi');
+RealexHpp.setHppUrl('https://pay.sandbox.realexpayments.com/pay');
 let phone = $('#phone').val();
 phone = phone.length == 11 ? "+44"  + phone.substring(1)  : phone;
 phone = phone.length == 14 ? "+"  + phone.substring(2)  : phone;
