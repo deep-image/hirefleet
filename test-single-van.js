@@ -1467,6 +1467,7 @@ RealexHpp.embedded.init(
 'payButtonId',
 "rxp-frame-1",
 function(answer,close){
+console.log(answer)	
 close();
 if(answer.AUTHCODE){
 ORDER_ID =  answer.ORDER_ID;
