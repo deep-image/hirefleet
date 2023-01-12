@@ -1457,6 +1457,7 @@ else {
 RealexHpp.setHppUrl('https://pay.realexpayments.com/pay');
 }
 	let phone = $('#phone').val();
+phone = phone.replaceAll(' ','');	
 phone = phone.length == 11 ? "+44"  + phone.substring(1)  : phone;
 phone = phone.length == 14 ? "+"  + phone.substring(2)  : phone;
 var firstpart = phone.substring(1,3);
