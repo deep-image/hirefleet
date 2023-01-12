@@ -1450,8 +1450,13 @@ function callglobalpay()
 console.log("global pay works")	
 var price = $('#hidd-total-price').text();
 price = Number(price);
+if( window.location.href.includes('webflow.io') ) {	
+RealexHpp.setHppUrl('https://pay.sandbox.realexpayments.com/pay');
+}
+else {
 RealexHpp.setHppUrl('https://pay.realexpayments.com/pay');
-let phone = $('#phone').val();
+}
+	let phone = $('#phone').val();
 phone = phone.length == 11 ? "+44"  + phone.substring(1)  : phone;
 phone = phone.length == 14 ? "+"  + phone.substring(2)  : phone;
 var firstpart = phone.substring(1,3);
