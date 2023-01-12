@@ -1473,6 +1473,7 @@ RealexHpp.embedded.init(
 "rxp-frame-1",
 function(answer,close){
 console.log(answer)	
+console.log(close)	
 close();
 if(answer.AUTHCODE){
 ORDER_ID =  answer.ORDER_ID;
