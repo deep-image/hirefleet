@@ -1501,7 +1501,7 @@ $('#booking-tip').show()
 $('.card-error').addClass('fields-border-error')
 $('#rxp-frame-1').remove()
 $('#pay-wrap').hide();
-callcancelemail()	
+callcancelemail(answer)	
 }
 },
 jsonFromServerSdk
@@ -1524,7 +1524,7 @@ $("#rxp-frame-1", window.parent.document).height(windchng.iframe.height);
 });
 }
 
-function callcancelemail() {
+function callcancelemail(answer) {
 	getextras()
 	$.ajax({  type: "POST",
 url: "https://hirefleet-328113.nw.r.appspot.com/api/cancelemail",
@@ -1544,7 +1544,8 @@ extras : extstr,
 discount : $('#discount').val(),
 price : $('#total-price').text(),
 notes : $('#Additional-Info-Requests').text(),
-bookurl : window.location.href		
+bookurl : window.location.href,
+message : answer.MESSAGE	
 }),
 contentType: "application/json",
 dataType: "json",
