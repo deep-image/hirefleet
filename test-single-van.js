@@ -727,7 +727,7 @@ var formatted_time = time_format(bc);
 }
 // auto populate form from url parameter
 function getParam(name) { name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]"); var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search); return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); }
-Webflow.push(function() {
+//Webflow.push(function() {
 
 	if(window.location.href.indexOf("#age-range") == -1) {
 	$('#age-range').val(25);
@@ -797,7 +797,7 @@ window.history.replaceState(null, null, addparam());
  }	 
   });	
 	},
-})
+//})
 	
 
 
