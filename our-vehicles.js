@@ -1,7 +1,6 @@
 // test2
 
 var vichHref = ''; 
-var Webflow = Webflow || [];
 
 $('.card-button').click(function(){
  vichHref =$(this)[0].href; 
@@ -45,7 +44,7 @@ $('.days').hide()
 // auto populate form from url parameter
 function getParam(name) { 
 name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]"); var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search); return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); }
-Webflow.push(function() {
+//Webflow.push(function() {
 if (window.location.href.indexOf("start-date") > -1) {
 // Auto-populate form fields based on query string
  $('input:text, input[type=plain], select[name=start-time]').each(function() {
@@ -154,7 +153,7 @@ lockDaysFilter: function(date1, date2, pickedDates){
 				return disallowedarr.includes(date1.format('YYYY-MM-DD'));
 		}
 	    }      
-      });
+   //   });
    }	
 });
 
