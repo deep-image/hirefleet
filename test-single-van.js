@@ -799,8 +799,6 @@ window.history.replaceState(null, null, addparam());
 	},
 })
 	
-
-
   picker.on('hide', () => {
  console.log("clear")
 precount = 0;	  
@@ -925,8 +923,7 @@ $('.summ-extras-div > .extras-text').length == 0 ? $('.summary-div').hide() : ''
 }	
 });
 	},	
-
-//})
+})
 
 
 var additionalcount = 0;
@@ -1170,7 +1167,7 @@ $( "#start-time" ).one( "change", function() {
 	
 
 //end code here 	
-});
+//});
 ///////////////////////////////////////////////////////////////////////
 $('#booking-form').submit(function() {
   return false;
