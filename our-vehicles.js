@@ -153,7 +153,7 @@ lockDaysFilter: function(date1, date2, pickedDates){
 				return disallowedarr.includes(date1.format('YYYY-MM-DD'));
 		}
 	    }      
-   //   });
+      });
    }	
 });
 
