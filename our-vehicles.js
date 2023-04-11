@@ -1,6 +1,7 @@
 // test2
 
 var vichHref = ''; 
+var Webflow = Webflow || [];
 
 $('.card-button').click(function(){
  vichHref =$(this)[0].href; 
