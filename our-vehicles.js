@@ -155,7 +155,7 @@ lockDaysFilter: function(date1, date2, pickedDates){
 	    }      
       });
    }	
-});
+//});
 
 $('#start-time').change(function() {
 	setTimeout(function() { 
