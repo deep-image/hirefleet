@@ -797,7 +797,7 @@ window.history.replaceState(null, null, addparam());
  }	 
   });	
 	},
-//})
+})
 	
 
 
@@ -926,7 +926,7 @@ $('.summ-extras-div > .extras-text').length == 0 ? $('.summary-div').hide() : ''
 });
 	},	
 
-})
+//})
 
 
 var additionalcount = 0;
