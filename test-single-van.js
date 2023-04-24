@@ -291,7 +291,7 @@ function appdisc(resdata) {
     $('#discount').css('border-color','red')	
    let urlstr = window.location.href;
 	     
-   window.history.replaceState(null, null, urlstr.substring( 0  ,  window.location.href.indexOf('coupon')   )  );	    
+   window.history.replaceState(null, null, urlstr.substring( 0  ,  window.location.href.indexOf('&coupon')   )  );	    
     }
         else {
 	console.log('dic applied')	
