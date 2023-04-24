@@ -288,6 +288,7 @@ $('.item-overlay')[x].href = butturl + paramstr;
 function appdisc(resdata) {
     if(resdata.length == 0 || resdata.applicable_discounts.length == 0) {
     $('#discount').css('color','red')
+    $('#discount').css('border-color','red')	    
     }
         else {
 	console.log('dic applied')	
@@ -419,7 +420,7 @@ if(data.length != 0) {
 	$('#duration, #duration-mobile').text(dayscount);
 	//$('#discount').val().length  > 0 ? appdisc(data) : '';
 	    	}
-	    appdisc(data);      
+	    $('#discount').val().length  > 0 ? appdisc(data) : '';    
         },
     });
 
