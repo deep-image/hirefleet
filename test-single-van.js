@@ -353,6 +353,7 @@ function additionalpostcall()
 {
 $('#extra-text').hide();
 $('.summ-div-child').empty();	 	
+let source_coupon = getParam('source_coupon') == '' ? '' : ',' + getParam('source_coupon');	
 $.ajax({
     type: "POST",
     url: "https://hirefleet-328113.nw.r.appspot.com/api/additionalcharges-post",
@@ -371,7 +372,7 @@ vehicle_class_id : $('#class-id').text(),
 	 //   additional_charges : additageval, // this needs to be the full lis of selected extras
 	    ///////////////////////this needs sorting//////////////// 
 additional_charges : getextras(),
-coupon_code : $('#discount').val()	    
+coupon_code : $('#discount').val() + source_coupon	    
     }),
     contentType: "application/json",
     dataType: "json",
@@ -1342,7 +1343,9 @@ break;
 }
 });
 
+$('#source').val(getParam('source_coupon'))		
 $('#discount').val(getParam('coupon'))
+
 
 const auth = firebase.auth();
 auth.onAuthStateChanged(user => {
