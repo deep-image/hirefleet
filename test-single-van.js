@@ -255,8 +255,8 @@ string = string + '&' + $('.additional').map(function() {
     return key ? key + '=' + encodeURIComponent(selval) : null;
   }).get().join('&');
 
-string = string + '&coupon=' + $('#discount').val()
-string =  $('#source').val() == '' ? string :  string + '&source_coupon=' + $('#source').val()	 
+string =  $('#source').val() == '' ? string :  string + '&source_coupon=' + $('#source').val()		 
+string = string + '&coupon=' + $('#discount').val() 
 	return string; 
  }
 
