@@ -308,9 +308,9 @@ $('#discount').val('')
     $('#total-discount, #discount_box, #remov_disc').hide()
     $('#discount').css('color','black')
     $("#apply-discount").show();
-  addparam();
-additionalpostcall();	
-   window.history.replaceState(null, null, urlstr.substring( 0  ,  window.location.href.indexOf('&coupon')   )  );		
+   window.history.replaceState(null, null, urlstr.substring( 0  ,  window.location.href.indexOf('&coupon')   )  );	
+//	addparam();
+additionalpostcall();		
 });
 
 $("#apply-discount").click(function(e) {
