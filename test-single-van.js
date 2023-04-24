@@ -308,6 +308,7 @@ $('#discount').val('')
     $('#total-discount, #discount_box, #remov_disc').hide()
     $('#discount').css('color','black')
     $("#apply-discount").show();
+   let urlstr = window.location.href;
    window.history.replaceState(null, null, urlstr.substring( 0  ,  window.location.href.indexOf('&coupon')   )  );	
 //	addparam();
 additionalpostcall();		
