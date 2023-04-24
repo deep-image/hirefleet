@@ -291,12 +291,12 @@ function appdisc(resdata) {
     $('#discount').css('color','red')
     $('#discount').css('border-color','red')	
    let urlstr = window.location.href;
-	     
-   window.history.replaceState(null, null, urlstr.substring( 0  ,  window.location.href.indexOf('&coupon')   )  );	    
+window.history.replaceState(null, null, urlstr.substring( 0  ,  window.location.href.indexOf('&coupon')   )  );	    
     }
         else {
 	console.log('dic applied')	
 		 $('#discount').css('color','#89d12b')
+    $('#discount').css('color','#89d12b')		
     $('#total-discount, #remov_disc').show()
    $('#discount_box').css('display','flex')
   $('#total-discount').text(resdata.applicable_discounts[0].discounted_amount.amount_for_display) 
@@ -310,6 +310,7 @@ $('#discount').val('')
     $("#apply-discount").show();
   addparam();
 additionalpostcall();	
+   window.history.replaceState(null, null, urlstr.substring( 0  ,  window.location.href.indexOf('&coupon')   )  );		
 });
 
 $("#apply-discount").click(function(e) {
