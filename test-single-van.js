@@ -419,10 +419,11 @@ if(data.length != 0) {
 	$('#duration, #duration-mobile').text(dayscount);
 	//$('#discount').val().length  > 0 ? appdisc(data) : '';
 	    	}
+	    appdisc(data);      
         },
     });
 
- appdisc(data);      
+
 }	
 
 function agechangeonsimilar()
