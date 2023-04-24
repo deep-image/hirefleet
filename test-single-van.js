@@ -308,7 +308,8 @@ $('#discount').val('')
     $('#total-discount, #discount_box, #remov_disc').hide()
     $('#discount').css('color','black')
     $("#apply-discount").show();
-  addparam();	
+  addparam();
+additionalpostcall();	
 });
 
 $("#apply-discount").click(function(e) {
