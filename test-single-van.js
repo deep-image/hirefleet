@@ -288,7 +288,10 @@ $('.item-overlay')[x].href = butturl + paramstr;
 function appdisc(resdata) {
     if(resdata.length == 0 || resdata.applicable_discounts.length == 0) {
     $('#discount').css('color','red')
-    $('#discount').css('border-color','red')	    
+    $('#discount').css('border-color','red')	
+   let urlstr = window.location.href;
+	     
+   window.history.replaceState(null, null, urlstr.substring( 0  ,  window.location.href.indexOf('coupon')   )  );	    
     }
         else {
 	console.log('dic applied')	
