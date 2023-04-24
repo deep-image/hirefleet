@@ -418,8 +418,8 @@ if(data.length != 0) {
 	dayscount = dayscount > 1  ? dayscount + " days hire" : dayscount + " day hire";	
 	$('#duration, #duration-mobile').text(dayscount);
 	//$('#discount').val().length  > 0 ? appdisc(data) : '';
-	    },
-	}
+	    	}
+        },
     });
 
  appdisc(data);      
