@@ -354,6 +354,7 @@ function additionalpostcall()
 $('#extra-text').hide();
 $('.summ-div-child').empty();	 	
 let source_coupon = getParam('source_coupon') == '' ? '' : ',' + getParam('source_coupon');	
+source_coupon = getParam('coupon') == '' ? '' : source_coupon;	
 $.ajax({
     type: "POST",
     url: "https://hirefleet-328113.nw.r.appspot.com/api/additionalcharges-post",
