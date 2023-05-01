@@ -34,7 +34,9 @@ $( document ).ready(function() {
 	    $("#age").val("25");
 		} 
 	console.log($('#start-date').val())	
-	$('#both-date').length > 0 ?  $('#both-date').val( firstdate + " - " + lastdate ) : '';	
+	$('#start-date').val(firstdate)
+	$('#end-date').val(lastdate)	
+	//$('#both-date').length > 0 ?  $('#both-date').val( firstdate + " - " + lastdate ) : '';	
 	}
 
 	    else{ var today = dayjs().format('DD/MM/YYYY'); 
