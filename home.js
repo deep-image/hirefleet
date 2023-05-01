@@ -34,8 +34,7 @@ $( document ).ready(function() {
 	    $("#age").val("25");
 		} 
 	console.log($('#start-date').val())	
-	$('#start-date').val(firstdate)
-	$('#end-date').val(lastdate)	
+	bothpicker.setDateRange( firstdate , lastdate  )
 	//$('#both-date').length > 0 ?  $('#both-date').val( firstdate + " - " + lastdate ) : '';	
 	}
 
