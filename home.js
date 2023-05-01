@@ -1,7 +1,8 @@
-$( document ).ready(function() {
-	function getParam(name) { 
+function getParam(name) { 
 	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]"); var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search); return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); }
-	//Webflow.push(function() {
+
+$( document ).ready(function() {
+		//Webflow.push(function() {
 	if (window.location.href.indexOf("start-date") > -1) {
 	// Auto-populate form fields based on query string
 	 $('input:text, input[type=plain], select[name=start-time]').each(function() {
