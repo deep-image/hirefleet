@@ -31,8 +31,11 @@ $( document ).ready(function() {
 			});
 	  });     	
 	    if (age == 'On' || age == 25) {
-	    $("#age").val("25");
-		} 
+	    //$("#age").val("25");
+		}
+	else {
+	$('#age-check').click()
+	}
 	console.log($('#start-date').val())	
 	bothpicker.setDateRange( firstdate , lastdate  )
 	//$('#both-date').length > 0 ?  $('#both-date').val( firstdate + " - " + lastdate ) : '';	
