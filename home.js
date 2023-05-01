@@ -32,7 +32,7 @@ $( document ).ready(function() {
 	    if (age == 'On' || age == 25) {
 	    $("#age").val("25");
 		} 
-	console.log()	
+	console.log($('#start-date').val())	
 	$('#both-date').length > 0 ?  $('#both-date').val($('#start-date').val() + " - " + $('#end-date').val()) : '';	
 	}
 
