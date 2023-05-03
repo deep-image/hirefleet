@@ -32,6 +32,21 @@ function nextavailfunc() {
    $('#start-time').val($('#start-time option:first').val()).change()
 }
 
+function addparam() {
+   var string = "";
+   string = '?' + $('#booking-form').find('input,select, textarea').map(function () {
+      if (this.id != 'both-date') {
+         var key = encodeURIComponent((this.name || this.id).trim());
+         if (key == 'age') {
+            selval = document.getElementById("age-check").checked ? 25 : 23;
+         } else {
+            var selval = encodeURIComponent($(this).val());
+         }
+         return key ? key + '=' + selval : null;
+      }
+   }).get().join('&');
+   return string;
+}
 
 function getunicode(icclass) { 
 if(icclass == 'fad fa-chess-pawn') {  return ['&#xf443;' , false]  }
