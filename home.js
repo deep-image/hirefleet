@@ -1,6 +1,18 @@
 function getParam(name) { 
 	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]"); var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search); return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); }
 
+function getunicode(icclass) { 
+if(icclass == 'fad fa-chess-pawn') {  return ['&#xf443;' , false]  }
+else if(icclass == 'far fa-level-up-alt') {  return ['&#xf3bf;' , false ]  }
+else if(icclass == 'fab fa-autoprefixer') {  return ['&#xf41c;' , true ]   }
+else if(icclass == 'fab fa-linux') {   return ['&#xf17c;' , true ]         }
+else if(icclass == 'fas fa-radio') {    return ['&#xf8d7;' , false ]       }
+else if(icclass == 'fas fa-steering-wheel') { return ['&#xf622;' , false ] }
+else if(icclass == 'far fa-arrow-alt-from-left') { return ['&#xf347;' , false ] }
+else if(icclass == 'far fa-arrow-alt-down') { return ['&#xf063;' , false ] }
+else {   return ['' , false ]  }  
+}
+
 $( document ).ready(function() {
 		//Webflow.push(function() {
 	if (window.location.href.indexOf("start-date") > -1) {
