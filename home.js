@@ -1,6 +1,38 @@
 function getParam(name) { 
 	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]"); var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search); return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); }
 
+function nextavailfunc() {
+   var lockdays = picker.options.lockDays
+   var loopcount = 0
+   var nextavail = dayjs();
+   var tomnextavail = dayjs().add(1, 'day')
+   var lckcount = picker.options.lockDays.length < 10 ? picker.options.lockDays.length : 10;
+   if (lckcount > 0) {
+      for (x = 0; x < lckcount; x++) {
+         if (dayjs(lockdays[x].toJSDate()).isSame(nextavail, 'day') || disallowedarr.includes(nextavail.format('YYYY-MM-DD'))) {
+            nextavail = nextavail.add(1, 'day')
+            loopcount = loopcount + 1
+         } else {
+            break;
+         }
+      }
+      tomnextavail = tomnextavail.add(loopcount, 'day')
+      for (x = loopcount; x < lckcount; x++) {
+         if (dayjs(lockdays[x].toJSDate()).isSame(tomnextavail, 'day') || disallowedarr.includes(tomnextavail.format('YYYY-MM-DD'))) {
+            tomnextavail = tomnextavail.add(1, 'day')
+         } else {
+            break;
+         }
+      }
+   }
+
+   bothpicker.setDateRange(nextavail, tomnextavail)
+
+   $('#end-time').val() == null ? $('#end-time').val($('#end-time option:first').val()) : ''
+   $('#start-time').val($('#start-time option:first').val()).change()
+}
+
+
 function getunicode(icclass) { 
 if(icclass == 'fad fa-chess-pawn') {  return ['&#xf443;' , false]  }
 else if(icclass == 'far fa-level-up-alt') {  return ['&#xf3bf;' , false ]  }
