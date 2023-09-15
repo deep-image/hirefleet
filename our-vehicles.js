@@ -376,6 +376,9 @@ if(singval.vehicle_class_id == $('.van-class-id')[x].innerHTML)
 	$('.dimensions-block').eq(x).find('#F414').text(Number(singval.vehicle_class.f414).toFixed(0)) 
 	$('.dimensions-block').eq(x).find('#F449').text(Number(singval.vehicle_class.f449).toFixed(0))
 
+document.getElementsByClassName('limited')[x].style.display = 'none';
+document.getElementsByClassName('available')[x].style.display = 'none';	
+	
 if(singval.availability.quantity > 0) {
 var agecheck = age == 'On';
 //$('.price-amount')[x].innerHTML = agecheck ? singval.price.base_price_with_taxes.amount_for_display :  '£' + (Number(singval.price.base_price_with_taxes.amount_for_display.slice(1).replace(/,/g, '.')) + young_driver_cost).toFixed(2);
