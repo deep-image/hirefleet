@@ -411,7 +411,7 @@ document.getElementsByClassName('limited')[x].style.display = 'block';
 }
 }
 })
-resetpriceslider();	
+//resetpriceslider();	
 addparam();
 }
 
