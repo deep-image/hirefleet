@@ -345,24 +345,9 @@ function getunicode(icclass) {
    }
 }
 
-function sortfunc() {
-var customBlogPosts = new FsLibrary('.product3-grid')
-  // run the sort Library component on your instance
-  customBlogPosts.sort({
-    sortTrigger: '.available-sort', // class of the button........
-    sortReverse: false, // if you want sort first click to be Z>A.......
-    activeClass: 'active', 
-        filterReset:'.reset-filter',
-    animation: {
-    	enable: false,
-      duration: 100,
-    }
-  })
-}
 
 function applypricing(data)
 {
-sortfunc();	
 var vandat = $('.van-collection');
 $('.div-block-47').remove()
 $('.div-block-45').hide()	
@@ -425,7 +410,7 @@ document.getElementsByClassName('limited')[x].style.display = 'block';
 }
 }
 })
-//resetpriceslider();	
+resetpriceslider();	
 addparam();
 }
 
