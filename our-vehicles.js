@@ -269,7 +269,7 @@ brand_id : 1
        } else {
         nexavailcount = 0;	  	       
     var res = data.data;
-    $('#sort-available').is(':checked') ? $('#avail-sort-butt')[0].click() : '';		
+   // $('#sort-available').is(':checked') ? $('#avail-sort-butt')[0].click() : '';		
     applypricing(res.applicable_classes);
    // $('#sort-available').is(':checked') ? $('#avail-sort-butt')[0].click() : '';
 	}
