@@ -17,6 +17,12 @@ $('.card-button').click(function(){
     return key ? key + '=' + encodeURIComponent($(this).val()) : null;
 	  }			  
   }).get().join('&');
+
+string = string + '&' + $('#van-sort').map(function() {
+    var key = encodeURIComponent((this.name || this.id).trim());
+    var selval = $(this).val() == '' ? 0 : $(this).val()
+    return key ? key + '=' + encodeURIComponent(selval) : null;
+  }).get().join('&');	  
 return string;
  }
 $( document ).ready(function() {
