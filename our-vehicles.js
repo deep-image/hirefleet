@@ -45,11 +45,7 @@ $('.days').hide()
 
 
 setTimeout(function() {
-postadditional();
-	setTimeout(function() {	
-	console.log('pressed')	
-	$('#avail-sort-butt')[0].click();	
-	}, 500);	
+postadditional();	
 }, 500);
 
 // auto populate form from url parameter
@@ -296,6 +292,12 @@ if(sortcount > 1) {
 	$('#van-sort').val() == 'price-asc' ? $('#price-sort-butt')[0].click() : '';	
 	}
 }	
+if(sortcount == 0) {
+	setTimeout(function() {	
+	console.log('pressed')	
+	$('#avail-sort-butt')[0].click();	
+	}, 150);
+}
 sortcount = sortcount + 1;		
 }
     },
