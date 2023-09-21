@@ -78,12 +78,12 @@ if (window.location.href.indexOf("start-date") > -1) {
     age = getParam("age").replace(/\b[a-z]/g, function(txtVal) {
     return txtVal.toUpperCase().replace(/%20/g, " "); // replace %20 with real space
 		});
-  });     
-  console.log($("#age").val())		
+  });     	
     if (age == 'On' || age == 25) {
     $("#age").val("25");
         } 
 $('#both-date').length > 0 ?  $('#both-date').val($('#start-date').val() + " - " + $('#end-date').val()) : '';	
+$('#van-sort').val( $('#van-sort').val()  )	
 }
     
     else{ var today = dayjs().format('DD/MM/YYYY'); 
