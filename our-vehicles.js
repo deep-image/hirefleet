@@ -47,7 +47,7 @@ $('.days').hide()
 setTimeout(function() {
 postadditional();
 $('#avail-sort-butt')[0].click();	
-}, 500);
+}, 600);
 
 // auto populate form from url parameter
 function getParam(name) { 
