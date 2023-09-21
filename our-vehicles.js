@@ -37,8 +37,9 @@ $('.price-amount').attr('data-id', '')
 $('.days').hide()
 
 
-        setTimeout(function() {
-       postadditional();
+setTimeout(function() {
+postadditional();
+$('#avail-sort-butt')[0].click();	
 }, 500);
 
 // auto populate form from url parameter
@@ -200,7 +201,7 @@ addageparam(x);
 }
 }
 
-	window.history.replaceState(null, null, addparam());
+window.history.replaceState(null, null, addparam());
 });
 
 function addageparam(x)
@@ -228,7 +229,7 @@ pick_up_location : 2,
 return_location : 2,
 brand_id : 1,
 vehicle_class_id : 6,
-	 additional_charges : [1]
+ additional_charges : [1]
     }),
     contentType: "application/json",
     dataType: "json",
@@ -248,9 +249,9 @@ $('.price-amount').attr('data-id', '')
 $('.days').hide()	
 //$('.van-collection').hide();
 $.ajax({
-    type: "POST",
-    url: "https://hirefleet-328113.nw.r.appspot.com/api",
-    data: JSON.stringify({
+type: "POST",
+url: "https://hirefleet-328113.nw.r.appspot.com/api",
+data: JSON.stringify({
 pick_up_date: date1,
 pick_up_time: start == null ? '06:00' : $('#start-time').val(),
 return_date : date2,
@@ -264,15 +265,15 @@ brand_id : 1
     success: function(data){
         if(data.data.length == 0) {
        	    $('.error-wrapper-2').show()    
-			    nexavailcount < 2 ?  nextavailfunc() : '';   
-		    nexavailcount = nexavailcount + 1;
+	nexavailcount < 2 ?  nextavailfunc() : '';   
+	nexavailcount = nexavailcount + 1;
        } else {
-        nexavailcount = 0;	  	       
-    var res = data.data;
-   // 	
-    applypricing(res.applicable_classes);
-$('#sort-available').is(':checked') ? $('#avail-sort-butt')[0].click() : '';			
- $('#sort-available').is(':checked') ? $('#avail-sort-butt')[0].click() : '';
+nexavailcount = 0;	  	       
+var res = data.data;
+applypricing(res.applicable_classes);
+//setting available sort if selected before		
+$('#van-sort').val() == 'Available' ? $('#avail-sort-butt')[0].click() : '';			
+$('#van-sort').val() == 'Available' ? $('#avail-sort-butt')[0].click() : '';
 	}
     },
     error: function(error) {
@@ -310,7 +311,7 @@ for(x=loopcount; x< lckcount; x++) {
 	 
 bothpicker.setDateRange(nextavail,tomnextavail)
 	
- $('#end-time').val() == null ? $('#end-time').val($('#end-time option:first').val()) : ''	
+$('#end-time').val() == null ? $('#end-time').val($('#end-time option:first').val()) : ''	
 $('#start-time').val($('#start-time option:first').val()).change()
 }
 
