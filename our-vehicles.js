@@ -77,14 +77,14 @@ if (window.location.href.indexOf("start-date") > -1) {
 		});
     age = getParam("age").replace(/\b[a-z]/g, function(txtVal) {
     return txtVal.toUpperCase().replace(/%20/g, " "); // replace %20 with real space
-		});
-	console.log( $('#van-sort').val() )	
-	$('#van-sort').val( $('#van-sort').val()  );
-	$('#van-sort').change();	 
+		});	 
   });     	
     if (age == 'On' || age == 25) {
     $("#age").val("25");
         } 
+	console.log( getParam("sort") )	
+	$('#van-sort').val( getParam("sort")  );
+	$('#van-sort').change();	
 $('#both-date').length > 0 ?  $('#both-date').val($('#start-date').val() + " - " + $('#end-date').val()) : '';		
 }
     
