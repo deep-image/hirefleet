@@ -37,6 +37,7 @@ $( document ).ready(function() {
         var age = '';
 var picker;
 var bothpicker;
+var sortcount = 0;
 
 $('.features-block').hide()
 $('.price-amount').attr('data-id', '')
@@ -285,11 +286,14 @@ nexavailcount = 0;
 var res = data.data;
 applypricing(res.applicable_classes);
 //setting available sort if selected before	
+if(sortcount > 0) {		
 	for(x=0; x<2; x++) {		
 	$('#van-sort').val() == 'available' ? $('#avail-sort-butt')[0].click() : '';			
 	$('#van-sort').val() == 'price-desc' ? $('#price-sort-butt')[0].click() : '';
 	$('#van-sort').val() == 'price-asc' ? $('#price-sort-butt')[0].click() : '';	
 	}
+}	
+sortcount = sortcount + 1;		
 }
     },
     error: function(error) {
