@@ -271,14 +271,13 @@ brand_id : 1
 nexavailcount = 0;	  	       
 var res = data.data;
 applypricing(res.applicable_classes);
-//setting available sort if selected before		
-$('#van-sort').val() == 'Available' ? $('#avail-sort-butt')[0].click() : '';			
-$('#van-sort').val() == 'Available' ? $('#avail-sort-butt')[0].click() : '';
-setTimeout(function() {		
-$('#van-sort').val() == 'price-desc' ? $('#price-high-sort-butt')[0].click() : '';
-$('#van-sort').val() == 'price-asc' ? $('#price-sort-butt')[0].click() : '';	
-}, 500);	
+//setting available sort if selected before	
+	for(x=0; x<2; x++) {		
+	$('#van-sort').val() == 'Available' ? $('#avail-sort-butt')[0].click() : '';			
+	$('#van-sort').val() == 'price-desc' ? $('#price-high-sort-butt')[0].click() : '';
+	$('#van-sort').val() == 'price-asc' ? $('#price-sort-butt')[0].click() : '';	
 	}
+}
     },
     error: function(error) {
     //  $('.van-collection').toggle('300');
