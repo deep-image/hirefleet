@@ -83,6 +83,7 @@ if (window.location.href.indexOf("start-date") > -1) {
     $("#age").val("25");
         } 
 $('#both-date').length > 0 ?  $('#both-date').val($('#start-date').val() + " - " + $('#end-date').val()) : '';	
+console.log( $('#van-sort').val() )	
 $('#van-sort').val( $('#van-sort').val()  );
 $('#van-sort').change();	
 }
