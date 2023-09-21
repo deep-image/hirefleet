@@ -84,8 +84,8 @@ if (window.location.href.indexOf("start-date") > -1) {
         } 
 $('#both-date').length > 0 ?  $('#both-date').val($('#start-date').val() + " - " + $('#end-date').val()) : '';		
 	 setTimeout(function() { 
-	if( getParam("sort")  == 'available' ) {
-	console.log(getParam("sort"))	
+	console.log(getParam("sort"))	 
+	if( getParam("sort")  == 'available' ) {	
 	$('#van-sort').data('pre' , getParam("sort") ) 	 
 	$('#van-sort').val( getParam("sort")  );
 	$('#van-sort').change();	
