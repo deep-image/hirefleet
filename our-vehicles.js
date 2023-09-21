@@ -84,7 +84,7 @@ if (window.location.href.indexOf("start-date") > -1) {
         } 
 $('#both-date').length > 0 ?  $('#both-date').val($('#start-date').val() + " - " + $('#end-date').val()) : '';		
 	 setTimeout(function() { 
-	console.log( getParam("sort") )	
+	 $('#van-sort').data('pre' , getParam("sort") ) 	 
 	$('#van-sort').val( getParam("sort")  );
 	$('#van-sort').change();	
 	    }, 600);	 
