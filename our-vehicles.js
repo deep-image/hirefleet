@@ -49,7 +49,7 @@ postadditional();
 	setTimeout(function() {	
 	console.log('pressed')	
 	$('#avail-sort-butt')[0].click();	
-	}, 300);	
+	}, 500);	
 }, 500);
 
 // auto populate form from url parameter
