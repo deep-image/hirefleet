@@ -46,7 +46,7 @@ $('.days').hide()
 
 setTimeout(function() {
 postadditional();
-//$('#avail-sort-butt')[0].click();	
+$('#avail-sort-butt')[0].click();	
 }, 500);
 
 // auto populate form from url parameter
@@ -85,10 +85,12 @@ if (window.location.href.indexOf("start-date") > -1) {
         } 
 $('#both-date').length > 0 ?  $('#both-date').val($('#start-date').val() + " - " + $('#end-date').val()) : '';		
 	 setTimeout(function() { 
+	if(getParam("sort") != 'available' ) {	 
 	console.log(getParam("sort"))	 	
 	$('#van-sort').data('pre' , getParam("sort") ) 	 
 	$('#van-sort').val( getParam("sort")  );
-	$('#van-sort').change();	
+	$('#van-sort').change();
+	}	
 	 }, 600);	 
 }
     
