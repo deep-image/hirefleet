@@ -26,18 +26,19 @@ string = string + '&' + $('#van-sort').map(function() {
 return string;
  }
 $( document ).ready(function() {
-             $("#Rental-Type").val('daily');
-        $("#Customer-Type").val('individual');
-        $("#Pick-Up-Location").val('hirefleet');
-        });
-        var start;
-        var end;
-        var firstdate;
-        var lastdate;
-        var age = '';
-var picker;
-var bothpicker;
-var sortcount = 0;
+	
+	$("#Rental-Type").val('daily');
+	$("#Customer-Type").val('individual');
+	$("#Pick-Up-Location").val('hirefleet');
+	});
+	var start;
+	var end;
+	var firstdate;
+	var lastdate;
+	var age = '';
+	var picker;
+	var bothpicker;
+	var sortcount = 0;
 
 $('.features-block').hide()
 $('.price-amount').attr('data-id', '')
