@@ -91,7 +91,7 @@ $('#both-date').length > 0 ?  $('#both-date').val($('#start-date').val() + " - "
 	$('#van-sort').change();
 	sortcount = sortcount + 1;	
 	}	
-	 }, 600);	 
+	 }, 300);	 
 }
     
     else{ var today = dayjs().format('DD/MM/YYYY'); 
