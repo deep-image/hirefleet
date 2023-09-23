@@ -288,7 +288,7 @@ applypricing(res.applicable_classes);
 //setting available sort if selected before
 console.log(sortcount)		
 if(sortcount > 0) {		
-	for(x=0; x<1; x++) {	
+	for(x=0; x<2; x++) {	
 	/*	
 	$('#van-sort').val() == 'available' ? $('#avail-sort-butt')[0].click() : '';			
 	$('#van-sort').val() == 'price-desc' ? $('#price-sort-butt')[0].click() : '';
