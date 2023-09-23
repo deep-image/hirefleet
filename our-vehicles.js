@@ -295,7 +295,7 @@ if(sortcount > 0) {
 	$('#van-sort').val() == 'price-asc' ? $('#price-sort-butt')[0].click() : '';	
 	*/
 	setTimeout(function() {		
-	//$('#van-sort').change()
+	$('#van-sort').change()
 	}, 75);	
  	}
 }	
