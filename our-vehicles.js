@@ -342,6 +342,7 @@ for(x=loopcount; x< lckcount; x++) {
 bothpicker.setDateRange(nextavail,tomnextavail)	
 $('#end-time').val() == null ? $('#end-time').val($('#end-time option:first').val()) : ''	
 $('#start-time').val($('#start-time option:first').val()).change();
+console.log('next avail start chagne')	
 }
 
 
