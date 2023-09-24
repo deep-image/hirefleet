@@ -136,9 +136,10 @@ var strt = $('#start-time :selected').val();
       var strt = $('#start-time :selected').val();
   var endt = $('#end-time :selected').val();
   age = $('#age :selected').val() == '25' ? 'On' : 'off'; 
- console.log("selection change"); 
+
 if($('#start-time').val() != null && $('#end-time').val() != null) {
   setTimeout( function() {	  
+ console.log("selection change"); 	  
  makecall(date1.toDateString(),date2.toDateString(),strt,endt,age);  
    	   }, 300);
   }
@@ -338,8 +339,6 @@ for(x=loopcount; x< lckcount; x++) {
     }  
 } 
  }	  
-sortcount = 0;	  
-console.log(sortcount)	
 bothpicker.setDateRange(nextavail,tomnextavail)	
 $('#end-time').val() == null ? $('#end-time').val($('#end-time option:first').val()) : ''	
 $('#start-time').val($('#start-time option:first').val()).change();
