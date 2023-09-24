@@ -105,7 +105,6 @@ var strt = $('#start-time :selected').val();
   var endt = $('#end-time :selected').val();
       $("#age").val("25");
   age = $('#age :selected').val() == '25' ? 'On' : 'off';
-     console.log("sec make call");   
     } 
  
 	
@@ -134,7 +133,6 @@ var strt = $('#start-time :selected').val();
 });
 
    picker.on('selected', (date1, date2) => {
-	  console.log("our vehicle seletcted") 
       var strt = $('#start-time :selected').val();
   var endt = $('#end-time :selected').val();
   age = $('#age :selected').val() == '25' ? 'On' : 'off'; 
@@ -178,7 +176,6 @@ $('#start-time').change(function() {
   var strt = $('#start-time :selected').val();
   var endt = $('#end-time :selected').val();
   age = $('#age :selected').val() == '25' ? 'On' : 'off';
-      console.log("thir make call");   
 makecall(picker.getStartDate().toDateString(),picker.getEndDate().toDateString(),strt,endt,age);
 	window.history.replaceState(null, null, addparam());
     }, 100);			
