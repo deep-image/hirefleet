@@ -303,7 +303,10 @@ if(sortcount == 0) {
 	$('#avail-sort-butt')[0].click();	
 	}, 150);
 }
-sortcount = sortcount + 1;		
+sortcount = sortcount + 1;
+if($('#van-sort').val() == 'available' ) {		
+ $('.card-button')[0].text == 'Enquire now' ? $('#avail-sort-butt')[0].click() : ''; 		
+}
 }
     },
     error: function(error) {
