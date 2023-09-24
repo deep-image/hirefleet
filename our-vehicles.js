@@ -138,8 +138,7 @@ var strt = $('#start-time :selected').val();
   age = $('#age :selected').val() == '25' ? 'On' : 'off'; 
 
 if($('#start-time').val() != null && $('#end-time').val() != null) {
-  setTimeout( function() {	  
- $('#avail-sort-butt')[0].click();	  
+  setTimeout( function() {	    
  makecall(date1.toDateString(),date2.toDateString(),strt,endt,age);  
    	   }, 300);
   }
