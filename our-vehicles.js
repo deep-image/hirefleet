@@ -163,8 +163,8 @@ if($('#start-time').val() != null && $('#end-time').val() != null) {
 	},	
 lockDaysFilter: function(date1, date2, pickedDates){	      
 	      if(pickedDates.length == 0) {
-	      const allowedDates = disallowedarr
-				return disallowedarr.includes(date1.format('YYYY-MM-DD'));
+	const allowedDates = disallowedarr
+	return disallowedarr.includes(date1.format('YYYY-MM-DD'));
 		}
 	    }      
       });
@@ -339,7 +339,8 @@ for(x=loopcount; x< lckcount; x++) {
 } 
  }	  
 
-sortcount = 0;		
+sortcount = 0;	
+console.log(sortcount)	
 bothpicker.setDateRange(nextavail,tomnextavail)	
 $('#end-time').val() == null ? $('#end-time').val($('#end-time option:first').val()) : ''	
 $('#start-time').val($('#start-time option:first').val()).change();
