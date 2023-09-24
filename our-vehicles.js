@@ -140,6 +140,7 @@ var strt = $('#start-time :selected').val();
 if($('#start-time').val() != null && $('#end-time').val() != null) {
   setTimeout( function() {	
 sortcount = 0;	  
+console.log(sortcount)	  
  makecall(date1.toDateString(),date2.toDateString(),strt,endt,age);  
    	   }, 300);
   }
