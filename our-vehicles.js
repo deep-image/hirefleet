@@ -305,7 +305,9 @@ if(sortcount == 0) {
 }
 sortcount = sortcount + 1;
 if($('#van-sort').val() == 'available' ) {		
- $('.card-button')[0].text == 'Enquire now' ? $('#avail-sort-butt')[0].click() : ''; 		
+setTimeout(function() {	
+$('.card-button')[0].text == 'Enquire now' ? $('#avail-sort-butt')[0].click() : ''; 		
+}, 175);
 }
 }
     },
