@@ -39,6 +39,7 @@ $( document ).ready(function() {
 	var picker;
 	var bothpicker;
 	var sortcount = 0;
+	var highclick = false;
 
 $('.features-block').hide()
 $('.price-amount').attr('data-id', '')
@@ -48,6 +49,61 @@ $('.days').hide()
 setTimeout(function() {
 postadditional();	
 }, 500);
+
+//sort code starts here
+ //saving initial state
+$('#van-sort').data('pre' , $('#van-sort').val() ) 
+$('#van-sort').change(function() { 
+window.history.replaceState(null, null, addparam());
+var presortval = $('#van-sort').data().pre;
+var selval = $(this).val();
+	if(selval == 'available') {
+	$('#avail-sort-butt')[0].click();
+	$('#van-sort').data('pre' , selval);
+	//adjusting avaialble sort if wrong appears
+	$('.card-button')[0].text == 'Enquire now' ? $('#avail-sort-butt')[0].click() : ''; 
+	}
+	else if(selval == 'price-desc') {
+	$('#price-high-sort-butt')[0].click();
+	presortval == 'price-asc' ?  $('#price-sort-butt')[0].click() : '';
+	( highclick && presortval == 'available' )  ?  $('#price-high-sort-butt')[0].click() : '';
+	$('#van-sort').data('pre' , selval)
+	highclick = true;
+	}
+	else if(selval == 'price-asc') {
+	$('#price-sort-butt')[0].click();
+	presortval == 'price-desc' ?  $('#price-high-sort-butt')[0].click() : '';
+	$('#van-sort').data('pre' , selval);
+	highclick = false;
+	}
+})
+
+
+var customBlogPostsrev = new FsLibrary('.product3-grid')
+
+customBlogPostsrev.sort({
+sortTrigger: '.price-high-sort', // class of the button........
+sortReverse: true, // if you want sort first click to be Z>A.......
+activeClass: 'active', 
+	animation: {
+	enable: false,
+	duration: 100,
+	}
+})
+
+var customBlogPosts = new FsLibrary('.product3-grid')
+
+customBlogPosts.sort({
+sortTrigger: '.available-sort, .price-sort',
+sortReverse: false, // if you want sort first click to be Z>A.......
+activeClass: 'active', 
+	animation: {
+	enable: false,
+	duration: 100,
+	}
+})
+
+
 
 // auto populate form from url parameter
 function getParam(name) { 
