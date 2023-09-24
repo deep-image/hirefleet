@@ -139,7 +139,7 @@ var strt = $('#start-time :selected').val();
 
 if($('#start-time').val() != null && $('#end-time').val() != null) {
   setTimeout( function() {	  
- console.log("selection change"); 	  
+ $('#avail-sort-butt')[0].click();	  
  makecall(date1.toDateString(),date2.toDateString(),strt,endt,age);  
    	   }, 300);
   }
@@ -342,7 +342,6 @@ for(x=loopcount; x< lckcount; x++) {
 bothpicker.setDateRange(nextavail,tomnextavail)	
 $('#end-time').val() == null ? $('#end-time').val($('#end-time option:first').val()) : ''	
 $('#start-time').val($('#start-time option:first').val()).change();
-console.log('next avail start chagne')	
 }
 
 
