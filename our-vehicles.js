@@ -338,12 +338,11 @@ for(x=loopcount; x< lckcount; x++) {
     }  
 } 
  }	  
-	 
-bothpicker.setDateRange(nextavail,tomnextavail)
-	
+
+sortcount = 0;		
+bothpicker.setDateRange(nextavail,tomnextavail)	
 $('#end-time').val() == null ? $('#end-time').val($('#end-time option:first').val()) : ''	
 $('#start-time').val($('#start-time option:first').val()).change();
-sortcount = 0;	
 }
 
 
