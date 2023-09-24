@@ -386,8 +386,6 @@ $('.div-block-45').hide()
 $('.features-block').show()
 $('.price-amount').attr('data-id', 'price')
 $('.days').show()	
-
-console.log('apply price')
 	
 data.forEach(singval => { 
 for(var x=0;x< vandat.length; x++)
