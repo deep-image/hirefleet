@@ -45,7 +45,7 @@ $( document ).ready(function() {
   //saving initial state
  $('#van-sort').data('pre' , $('#van-sort').val() ) 
   $('#van-sort').change(function() { 
-window.history.replaceState(null, null, addparam());
+//window.history.replaceState(null, null, addparam());
   var presortval = $('#van-sort').data().pre;
     var selval = $(this).val();
     console.log(selval, presortval )
