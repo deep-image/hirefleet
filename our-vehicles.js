@@ -347,7 +347,8 @@ if(sortcount > 0) {
 	$('#van-sort').val() == 'price-desc' ? $('#price-sort-butt')[0].click() : '';
 	$('#van-sort').val() == 'price-asc' ? $('#price-sort-butt')[0].click() : '';	
 	*/
-	setTimeout(function() {		
+	setTimeout(function() {	
+	console.log( $('#van-sort').val() )	
 	$('#van-sort').change()
 	}, 75);	
  	}
