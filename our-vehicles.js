@@ -140,8 +140,8 @@ if (window.location.href.indexOf("start-date") > -1) {
     $("#age").val("25");
         } 
 $('#both-date').length > 0 ?  $('#both-date').val($('#start-date').val() + " - " + $('#end-date').val()) : '';		
-console.log( getParam("sort") )
 	setTimeout(function() { 
+	console.log( getParam("sort") )	
 	//if(getParam("sort") != 'available' ) {	 	
 	$('#van-sort').data('pre' , getParam("sort") ) 	 
 	$('#van-sort').val( getParam("sort")  );
