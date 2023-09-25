@@ -510,7 +510,8 @@ addparam();
 
 
 function resetpriceslider() {
-	var slidearr = []
+	var slidearr = [];
+	/*
 	$('.price-amount').each((index) => {
 	let singpr = $('.price-amount').eq(index).text()
 	slidearr.push(Number(singpr.substring(1).replace(',','')))    
@@ -519,8 +520,8 @@ function resetpriceslider() {
 	var prslide = $(".js-range-slider").data("ionRangeSlider")
 	prslide.options.min = slidearr[slidearr.length - 1]
 	prslide.options.max = slidearr[0]
-	prslide.update({ from: (slidearr[slidearr.length - 1] ) , to: slidearr[0] })
-
+	prslide.update({ from: (slidearr[slidearr.length - 1] ) , to: slidearr[0] });
+	*/ 
   }
 
 
