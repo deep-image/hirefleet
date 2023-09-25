@@ -151,7 +151,8 @@ $('#both-date').length > 0 ?  $('#both-date').val($('#start-date').val() + " - "
 	else {
 	$('#van-sort').data('pre' , 'available');
 	$('#van-sort').val('available');
-	$('#van-sort').change();	
+	$('#van-sort').change();
+	console.log( $('#van-sort').val() )	
 	}
 	 }, 300);	 
 }
