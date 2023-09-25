@@ -48,7 +48,6 @@ $( document ).ready(function() {
 window.history.replaceState(null, null, addparam());
   var presortval = $('#van-sort').data().pre;
     var selval = $(this).val();
-    console.log(selval, presortval )
     if(selval == 'available') {
      $('#avail-sort-butt')[0].click();
      $('#van-sort').data('pre' , selval);
@@ -141,7 +140,6 @@ if (window.location.href.indexOf("start-date") > -1) {
         } 
 $('#both-date').length > 0 ?  $('#both-date').val($('#start-date').val() + " - " + $('#end-date').val()) : '';		
 	setTimeout(function() { 
-	console.log( getParam("sort") )	
 	if( getParam("sort") == 'price-desc' || getParam("sort") == 'price-asc' ) {	 	
 	$('#van-sort').data('pre' , getParam("sort") ) 	 
 	$('#van-sort').val( getParam("sort")  );
@@ -152,7 +150,6 @@ $('#both-date').length > 0 ?  $('#both-date').val($('#start-date').val() + " - "
 	$('#van-sort').data('pre' , 'available');
 	$('#van-sort').val('available');
 	$('#van-sort').change();
-	console.log( $('#van-sort').val() )	
 	}
 	 }, 300);	 
 }
@@ -345,8 +342,7 @@ brand_id : 1
 nexavailcount = 0;	  	       
 var res = data.data;
 applypricing(res.applicable_classes);
-//setting available sort if selected before
-console.log(sortcount)		
+//setting available sort if selected before	
 if(sortcount > 0) {		
 	for(x=0; x<2; x++) {	
 	/*	
@@ -355,14 +351,12 @@ if(sortcount > 0) {
 	$('#van-sort').val() == 'price-asc' ? $('#price-sort-butt')[0].click() : '';	
 	*/
 	setTimeout(function() {	
-	console.log( $('#van-sort').val() )	
 	$('#van-sort').change()
 	}, 75);	
  	}
 }	
 if(sortcount == 0) {
 	setTimeout(function() {	
-	console.log('pressed')	
 	$('#avail-sort-butt')[0].click();	
 	}, 150);
 }
