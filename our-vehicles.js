@@ -148,7 +148,7 @@ $('#both-date').length > 0 ?  $('#both-date').val($('#start-date').val() + " - "
 	$('#van-sort').change();
 	sortcount = sortcount + 1;	
 	}
-	else(getParam("sort") == '' || getParam("sort") == null) {
+	else {
 	$('#van-sort').data('pre' , 'available');
 	$('#van-sort').val('available');
 	$('#van-sort').change();	
