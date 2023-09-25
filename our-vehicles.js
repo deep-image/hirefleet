@@ -45,7 +45,7 @@ $( document ).ready(function() {
   //saving initial state
  $('#van-sort').data('pre' , $('#van-sort').val() ) 
   $('#van-sort').change(function() { 
-//window.history.replaceState(null, null, addparam());
+window.history.replaceState(null, null, addparam());
   var presortval = $('#van-sort').data().pre;
     var selval = $(this).val();
     console.log(selval, presortval )
@@ -148,7 +148,7 @@ $('#both-date').length > 0 ?  $('#both-date').val($('#start-date').val() + " - "
 	$('#van-sort').change();
 	sortcount = sortcount + 1;	
 	}
-	else if(getParam("sort") == '' || getParam("sort") == null) {
+	else(getParam("sort") == '' || getParam("sort") == null) {
 	$('#van-sort').data('pre' , 'available');
 	$('#van-sort').val('available');
 	$('#van-sort').change();	
