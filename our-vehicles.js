@@ -305,7 +305,9 @@ vehicle_class_id : 6,
     contentType: "application/json",
     dataType: "json",
     success: function(data){
+	        if(data.data.selected_additional_charges.length != 0) {
 	   young_driver_cost = Number(data.data.selected_additional_charges[0].base_price_with_taxes.amount);  
+		}	   
     },
       error: function(error) {
      console.log(error);
