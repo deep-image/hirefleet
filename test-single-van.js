@@ -1417,7 +1417,7 @@ $('.card-error').removeClass('fields-border-error')
 //$('#Complete').text('Payment failed')	
 	if(sendquote) {
 	console.log( $('.cc-validate-fail').length > 0 )	
-	$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callbooking();
+	$('.cc-validate-fail').length > 0  ? $('#phone-error').eq(0).show() : callbooking();
 	}
 	else if(vanavailable)
 	{
