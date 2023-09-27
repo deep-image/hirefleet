@@ -1414,7 +1414,7 @@ var buscheck = $('#Business_Checkbox').is(':checked') ? $('#Company-Name').val()
 if(emtest && lastname != '' && firstname != '' && dob != '' & phone != '' && address != '' && buscheck )
 {
 $('.card-error').removeClass('fields-border-error')
-$('#Complete').text('Payment failed')	
+//$('#Complete').text('Payment failed')	
 	if(sendquote) {
 	console.log( $('.cc-validate-fail').length > 0 )	
 	$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callbooking();
@@ -1424,7 +1424,7 @@ $('#Complete').text('Payment failed')
 	console.log("form submit runs")	
 	console.log( $('.cc-validate-fail').length > 0 )	
 	userid == '' ? ( $('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callbooking() ) : ( $('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callconfirm(userid) ) ;
-	$('.cc-validate-fail').length > 0  ? $('#phone-error').show() :  $('#detailform').submit();
+	$('.cc-validate-fail').length > 0  ? $('#phone-error').eq(0).show() :  $('#detailform').submit();
 	}
 	else
 	{ 	
