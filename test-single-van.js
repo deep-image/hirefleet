@@ -1392,6 +1392,7 @@ $("#Date-Of-Birth").change(function(){
 
 	
 $("#booking-butt").click(function(event) {
+sendquote = false;	
 $('.payment-container').css('opacity' , 100)
 $('.payment-wrapper').css('opacity' , 100)	
 event.preventDefault();	
@@ -1418,6 +1419,7 @@ $('.card-error').removeClass('fields-border-error')
 	if(sendquote) {
 	console.log( $('.cc-validate-fail').length > 0 )	
 	$('.cc-validate-fail').length > 0  ? $('#phone-error').eq(0).show() : callbooking();
+	$('.cc-validate-fail').length > 0  ? '' : $('#detailform').submit();	
 	}
 	else if(vanavailable)
 	{
