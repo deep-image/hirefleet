@@ -1621,6 +1621,11 @@ vt1 = vt.replace("Start ","");
 vt2 = vt1.replace("Reservation","Quote");
 $('#vantitle').text(vt2);
 gtagaddtocart(res);
+
+	  firebase.auth().signInWithEmailAndPassword( $('#email').val(), 'secretPassword!820' ).then(res => {
+	  console.log('logged in')
+	  })		
+	
 }
 if(sendquote == false ) {
 entitity == 1 ? callconfirm(res.customer.id) : callconfirm(data.data.contact.id); 
