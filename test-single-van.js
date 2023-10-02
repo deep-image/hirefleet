@@ -1620,12 +1620,7 @@ $('#Success-Title').text("Your quote is on its way");
 vt1 = vt.replace("Start ","");
 vt2 = vt1.replace("Reservation","Quote");
 $('#vantitle').text(vt2);
-gtagaddtocart(res);
-	if( $('#logout-block').is(":hidden") ) {
-	firebase.auth().signInWithEmailAndPassword( $('#email').val(), 'secretPassword!820' ).then(res => {
-	console.log('logged in')
-	})		
-	}	
+gtagaddtocart(res);	
 }
 if(sendquote == false ) {
 entitity == 1 ? callconfirm(res.customer.id) : callconfirm(data.data.contact.id); 
@@ -1708,12 +1703,7 @@ $('#info').css('display','none');
 }
 else {
 gtagpurchase(res,ORDER_ID)
-}
-	if( $('#logout-block').is(":hidden") ) {
-		firebase.auth().signInWithEmailAndPassword( $('#email').val(), 'secretPassword!820' ).then(res => {
-		console.log('logged in')
-		})
-	}	
+}	
 },
 error: function(error) {
 }
