@@ -1369,7 +1369,7 @@ if($('.summ-extras-div .extra-quant')[x].innerHTML.charAt(1) != '') {
 additioncharge.push($('.summ-extras-div .extra-id')[x].innerHTML+"_"+ $('.summ-extras-div .extra-quant')[x].innerHTML.charAt(1));
 } }
 }
-$('#age-range').val() == 23 ? additioncharge.push(3) : '';
+//$('#age-range').val() == 23 ? additioncharge.push(3) : '';
 return additioncharge;
 }
 
