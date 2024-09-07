@@ -1410,9 +1410,10 @@ firstname = $('#First-Name').val();
 dob = $('#Date-Of-Birth').val();
 phone = $('#phone').val();
 address = $('#Address').val();
-	
+let addrcount = $('#Primary-Driver-addr_county').val()	
 var buscheck = $('#Business_Checkbox').is(':checked') ? $('#Company-Name').val() != '' : true;
-if(emtest && lastname != '' && firstname != '' && dob != '' & phone != '' && address != '' && buscheck )
+//if(emtest && lastname != '' && firstname != '' && dob != '' & phone != '' && address != '' && buscheck )
+if(emtest && lastname != '' && firstname != '' && dob != '' & phone != '' && address != '' && buscheck && addrcount != '')
 {
 $('.card-error').removeClass('fields-border-error')
 //$('#Complete').text('Payment failed')	
