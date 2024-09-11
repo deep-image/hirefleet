@@ -100,17 +100,17 @@ var extra = $('#Extra-Driver');
 });
 
 
-$crisp.push(['do', 'chat:hide']);
-$crisp.push(["on", "session:loaded", function() {
-$('chat').on('click', function(){
-window.$crisp.push(["do", "chat:open"]);
-alert('red');
-});
-}])
-$crisp.push(["on", "chat:closed", function() {
-    window.$crisp.push(["do", "chat:hide"]);
-    window.$crisp.push(["off", "session:loaded"]);
-}])
+// $crisp.push(['do', 'chat:hide']);
+// $crisp.push(["on", "session:loaded", function() {
+// $('chat').on('click', function(){
+// window.$crisp.push(["do", "chat:open"]);
+// alert('red');
+// });
+// }])
+// $crisp.push(["on", "chat:closed", function() {
+//     window.$crisp.push(["do", "chat:hide"]);
+//     window.$crisp.push(["off", "session:loaded"]);
+// }])
 
 
 window.onload = function() {	
