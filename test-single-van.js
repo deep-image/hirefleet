@@ -1415,8 +1415,7 @@ let addrpost = $('#addr_postcode').val()
 var buscheck = $('#Business_Checkbox').is(':checked') ? $('#Company-Name').val() != '' : true;
 
 //if(emtest && lastname != '' && firstname != '' && dob != '' & phone != '' && address != '' && addrcount != '' && addrpost != ''  && buscheck )
-//if(emtest && lastname != '' && firstname != '' && dob != '' & phone != '' && addrcount != '' && addrpost != ''  && buscheck )
-if(emtest && lastname != '' && firstname != '' && dob != '' & phone != '' && addrcount != '' && buscheck )
+if(emtest && lastname != '' && firstname != '' && dob != '' & phone != '' && addrcount != '' && addrpost != ''  && buscheck )
 {
 $('.card-error').removeClass('fields-border-error')
 //$('#Complete').text('Payment failed')	
