@@ -1579,9 +1579,7 @@ console.log(data)
 	
 function callbooking() {
 var country = getCountryCodeOrName($('#addr_country').val())[0];
-$.ajax({  type: "POST",
-url: "https://hirefleet-328113.nw.r.appspot.com/api/createbooking",
-data: JSON.stringify({
+let callbookobj = {
 pick_up_date: $('#start-date').val(),
 pick_up_time: $('#start-time').val(),
 return_date : $('#end-date').val(),
@@ -1607,7 +1605,10 @@ field_6 : $('#Website').val(),
 field_5 : $('#Company-Name').val(),
 callqoute : sendquote,
 userid : userid
-}),
+};	
+$.ajax({  type: "POST",
+url: "https://hirefleet-328113.nw.r.appspot.com/api/createbooking",
+data: JSON.stringify(callbookobj),
 contentType: "application/json",
 dataType: "json",
 success: function(data){
@@ -1633,10 +1634,24 @@ entitity == 1 ? callconfirm(res.customer.id) : callconfirm(data.data.contact.id)
 }
 },
 error: function(error) {
+	callbookemail(bookobj)
 }
 });
 }
 
+function callbookemail(bookobj) {
+	$.ajax({  type: "POST",
+	url: "https://hirefleet-328113.nw.r.appspot.com/api/logbookerr",
+	data: JSON.stringify(bookobj),
+	contentType: "application/json",
+	dataType: "json",
+	success: function(data){ 
+	}
+	});
+
+}
+
+	
 function updateuserdet()
 {
 callconfirm(userid); 
