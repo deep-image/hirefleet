@@ -1508,10 +1508,10 @@ lastdigits = answer.SAVED_PMT_DIGITS.slice(-4);
 }
 body.style.overflow = "auto";
 $('#sucess-form').show();	
-console.log("detail form submit")	
+console.log("detail form submit")
+userid == '' ? callbooking() : updateuserdet();	
 $('#detailform').submit();
 $('#pay-wrap').hide();
-userid == '' ? callbooking() : updateuserdet(); 
 }
 else{	
 console.log("global pay failed")	
