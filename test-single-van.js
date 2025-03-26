@@ -539,7 +539,7 @@ function changeprices(data)
 var elemid = "extra";		
 var divclass = "extras-div"	
 data.additional_charges.forEach((singval,index) => { 
-divclass = [10,14].includes(singval.id) ? "hidden-extra" : "extras-div";	
+divclass = sinval.description == '<pre>6RuLOnfzWEciV1d</pre>' ? "hidden-extra" : "extras-div";	
 if(singval.selection_type == "multiple") {
 var additelem = '<div class='+ divclass + '><div class="extras-detail"><div class="extras-text">'+singval.label+'</div><div class="extras-detail-text">'+singval.short_description+'</div> <p class="extras-info" style="margin-right:3px;">' + (singval.charge_type == "daily"  ?  '(daily)'  : '(one time)' ) +  '</p> </div>   <div class="checkbox-field-2"><select class="additional w-select addit-select" idattr='+ singval.id +'  indexatt="'+ elemid + index + '" id='+ singval.label.replace(/\s+/g, '-') + '><option value="">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select><div class="radio-label"></div><div class="extras-dropdown-pricing">£'+Number(singval.base_price_with_taxes.amount)+'</div></div></div>'
 	$('.extra-js-accordion-body').append(additelem);
