@@ -526,7 +526,7 @@ applyeve();
 applyextraparam();	
 applyurlchange();
 agechecked();	
-	}, 300);
+	}, 350);
 	    ccvalidation();
     },
 });
