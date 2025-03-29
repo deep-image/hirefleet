@@ -526,7 +526,7 @@ applyeve();
 applyextraparam();	
 applyurlchange();
 agechecked();	
-	}, 400);
+	}, 300);
 	    ccvalidation();
     },
 });
@@ -567,6 +567,7 @@ subdetectchange()
 }
 
 function applyextraparam() {
+/*	
 $('.addit-check').each(function(singelem) {
     if(getParam(this.id) == 1) {
     $('#'+this.id).click()
@@ -579,6 +580,20 @@ $('.addit-select').each(function(singelem) {
     $('#'+this.id).val(paramval).change()
     }
 });
+*/
+$('.addit-check').each(function(singelem) {
+    if(getParam(this.id) == 1) {
+    $('#'+this.id).prop('checked', true);
+    }
+});
+
+$('.addit-select').each(function(singelem) {
+ var paramval = getParam(this.id)
+    if(paramval > 0) {
+    $('#'+this.id).val(paramval);
+    }
+});
+subdetectchange();		
 }
 
 		function applyurlchange() {
