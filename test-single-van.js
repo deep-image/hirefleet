@@ -584,13 +584,16 @@ $('.addit-select').each(function(singelem) {
 $('.addit-check').each(function(singelem) {
     if(getParam(this.id) == 1) {
     $('#'+this.id).prop('checked', true);
+    $('#'+this.id).parent().find('.w-checkbox-input').addClass('w--redirected-checked');	    
     }
 });
 
 $('.addit-select').each(function(singelem) {
- var paramval = getParam(this.id)
+ var paramval = getParam(this.id);
     if(paramval > 0) {
     $('#'+this.id).val(paramval);
+	$('#'+this.id).css('background-color','#89d12b');
+	$('#'+this.id).css('background-color','#89d12b');
     }
 });
 subdetectchange();		
