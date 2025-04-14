@@ -406,7 +406,7 @@ if(data.length != 0) {
 	young_driver_cost = singval.id == 3  ? Number(singval.total_price_with_taxes.amount) : 0;  	
 	let quanclass = singval.selected_quantity == 1 ? "hidden-quan extra-quant" :  "extra-quant";	
 	let extraprice =  Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(singval.total_price_with_taxes.amount);	
-	$('.summ-div-child').append('<div class="summ-extras-div"><div class="extras-text">'+singval.label+'<span class="extra-id" style="display:none">'+singval.id +'</span> <span class="'+quanclass'">x'+   singval.selected_quantity +' </span></div><div class="extras-pricing">'+extraprice+'</div></div>')
+	$('.summ-div-child').append('<div class="summ-extras-div"><div class="extras-text">'+singval.label+'<span class="extra-id" style="display:none">'+singval.id +'</span> <span class="'+quanclass+'">x'+  singval.selected_quantity +' </span></div><div class="extras-pricing">'+extraprice+'</div></div>')
 	})	
 	data.selected_additional_charges.length > 0 ? $('.summary-div').show() : '';
 	$('.summ-extras-div > .extras-text').length == 0 ? $('.summary-div').hide() : '';	    
