@@ -199,7 +199,7 @@ var strt = $('#start-time :selected').val();
 
 if($('#start-time').val() != null && $('#end-time').val() != null) {
   setTimeout( function() {	    
- makecall(date1.toDateString(),date2.toDateString(),strt,endt,age);  
+ makecall(date1,date2,strt,endt,age);  
    	   }, 300);
   }
 });
@@ -236,7 +236,7 @@ $('#start-time').change(function() {
   var strt = $('#start-time :selected').val();
   var endt = $('#end-time :selected').val();
   age = $('#age :selected').val() == '25' ? 'On' : 'off';
-makecall(picker.getStartDate().toDateString(),picker.getEndDate().toDateString(),strt,endt,age);
+makecall(picker.getStartDate(),picker.getEndDate(),strt,endt,age);
 	window.history.replaceState(null, null, addparam());
     }, 100);			
 });
@@ -248,7 +248,7 @@ $('#end-time').change(function() {
  var tod = new Date();
 var tom = new Date(tod.getTime() + (24 * 60 * 60 * 1000));
 var daytom = new Date(tom.getTime() + (24 * 60 * 60 * 1000)); 
-makecall(picker.getStartDate().toDateString(),picker.getEndDate().toDateString(),strt,endt,age);	
+makecall(picker.getStartDate(),picker.getEndDate(),strt,endt,age);	
 window.history.replaceState(null, null, addparam());
 });
 
@@ -333,9 +333,9 @@ $.ajax({
 type: "POST",
 url: "https://hirefleet-328113.nw.r.appspot.com/api",
 data: JSON.stringify({
-pick_up_date: date1,
+pick_up_date: date1.toDateString(),
 pick_up_time: start == null ? '06:00' : $('#start-time').val(),
-return_date : enddate,
+return_date : enddate.toDateString(),
 return_time : end == null ? '00:00' : endtime,
 pick_up_location : 2,
 return_location : 2,
