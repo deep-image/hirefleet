@@ -373,7 +373,7 @@ $.ajax({
     data: JSON.stringify({
 	    pick_up_date: $('#start-date').val(),
 pick_up_time: $('#start-time :selected').val(),
-return_date : enddate,
+return_date : enddate.toDateString(),
 return_time : endtime,
 pick_up_location : 2,
 return_location : 2,
