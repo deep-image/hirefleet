@@ -324,7 +324,7 @@ $('.days').hide();
 
 let endtime = daystrtime;
 let enddate = date2;
-    if( $('#end-time').val() != '08:00') {
+    if($('#end-time').val() != '08:00') {
     enddate.setDate(enddate.getDate() + 1)  
     }
 	
