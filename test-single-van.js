@@ -359,6 +359,13 @@ $('#extra-text').hide();
 $('.summ-div-child').empty();	 	
 let source_coupon = getParam('source_coupon') == '' ? '' : ',' + getParam('source_coupon');	
 source_coupon = getParam('coupon') == '' ? '' : source_coupon;	
+
+let endtime = daystrtime;
+let enddate = picker.getEndDate();
+if( $('#end-time').val() != '08:00') {
+enddate.setDate(enddate.getDate() + 1)  
+}
+	
 $.ajax({
     type: "POST",
     url: "https://hirefleet-328113.nw.r.appspot.com/api/additionalcharges-post",
@@ -366,8 +373,8 @@ $.ajax({
     data: JSON.stringify({
 	    pick_up_date: $('#start-date').val(),
 pick_up_time: $('#start-time :selected').val(),
-return_date : $('#end-date').val(),
-return_time : $('#end-time :selected').val(),
+return_date : enddate,
+return_time : endtime,
 pick_up_location : 2,
 return_location : 2,
 brand_id : 1,
@@ -1017,10 +1024,10 @@ function makecall(date1,date2) {
 	$('.price-amount').attr('data-id', '')
 	$('.days').hide();
 	let endtime = daystrtime;
-let enddate = picker.getEndDate();
-    if( $('#end-time').val() != '08:00') {
-    enddate.setDate(enddate.getDate() + 1)  
-    }
+	let enddate = picker.getEndDate();
+	if( $('#end-time').val() != '08:00') {
+	enddate.setDate(enddate.getDate() + 1)  
+	}
 	//$('.price-amount').hide()
 $.ajax({
     type: "POST",
