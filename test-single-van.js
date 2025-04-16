@@ -83,9 +83,8 @@ function gtagpurchase(data,ORDER_ID) {
 
 
 
-
-$(document).ready(function () {
-let daystrtime = '08:00';	
+let daystrtime = '08:00';
+$(document).ready(function () {	
 $('#country_code').val('GBR')
  $('.sing-features-block .div-block-47').remove()
 $('.sing-features-block .div-block-45').remove()   	
