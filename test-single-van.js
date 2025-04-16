@@ -85,6 +85,7 @@ function gtagpurchase(data,ORDER_ID) {
 
 
 $(document).ready(function () {
+let daystrtime = '08:00';	
 $('#country_code').val('GBR')
  $('.sing-features-block .div-block-47').remove()
 $('.sing-features-block .div-block-45').remove()   	
@@ -1015,7 +1016,12 @@ function makecall(date1,date2) {
 //$('.van-collection').hide();
 	$('.price-amount').text('-----')
 	$('.price-amount').attr('data-id', '')
-	$('.days').hide()
+	$('.days').hide();
+	let endtime = daystrtime;
+let enddate = $('#end-date').val();
+    if( $('#end-time').val() != '08:00') {
+    enddate.setDate(enddate.getDate() + 1)  
+    }
 	//$('.price-amount').hide()
 $.ajax({
     type: "POST",
@@ -1024,8 +1030,8 @@ $.ajax({
     data: JSON.stringify({
 pick_up_date: $('#start-date').val(),
 pick_up_time: $('#start-time').val() == null ? '06:00' : $('#start-time').val(),
-return_date : $('#end-date').val(),
-return_time : $('#end-time').val() == null ? '00:00' : $('#end-time').val(),
+return_date : enddate.toDateString(),
+return_time : $('#end-time').val() == null ? '00:00' : endtime,
 pick_up_location : 2,
 return_location : 2,
 brand_id : 1,
