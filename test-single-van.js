@@ -1017,7 +1017,7 @@ function makecall(date1,date2) {
 	$('.price-amount').attr('data-id', '')
 	$('.days').hide();
 	let endtime = daystrtime;
-let enddate = $('#end-date').val();
+let enddate = picker.getEndDate();
     if( $('#end-time').val() != '08:00') {
     enddate.setDate(enddate.getDate() + 1)  
     }
