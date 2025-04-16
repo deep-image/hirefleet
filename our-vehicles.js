@@ -40,6 +40,7 @@ $( document ).ready(function() {
 	var bothpicker;
 	var sortcount = 0;
  var highclick = false;
+let daystrtime = '08:00';
 
   //sort initial code	
   //saving initial state
@@ -319,7 +320,14 @@ var nexavailcount = 0;
 function makecall(date1,date2,start,end,age) {
 $('.price-amount').text('-----')
 $('.price-amount').attr('data-id', '')
-$('.days').hide()	
+$('.days').hide();
+
+let endtime = daystrtime;
+let enddate = date2;
+    if( $('#end-time').val() != '08:00') {
+    enddate.setDate(enddate.getDate() + 1)  
+    }
+	
 //$('.van-collection').hide();
 $.ajax({
 type: "POST",
@@ -327,8 +335,8 @@ url: "https://hirefleet-328113.nw.r.appspot.com/api",
 data: JSON.stringify({
 pick_up_date: date1,
 pick_up_time: start == null ? '06:00' : $('#start-time').val(),
-return_date : date2,
-return_time : end == null ? '00:00' : $('#end-time').val(),
+return_date : enddate,
+return_time : end == null ? '00:00' : endtime,
 pick_up_location : 2,
 return_location : 2,
 brand_id : 1
