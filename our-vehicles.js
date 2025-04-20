@@ -70,9 +70,9 @@ window.history.replaceState(null, null, addparam());
     }
   })
 
-var last_seg_url = window.location.hash.split('/').pop();
+var last_seg_url = window.location.href.split('/').pop();
 
-if(last_seg_url == 'self-drive-van-hire-vehicles') {
+if(last_seg_url.includes('self-drive-van-hire-vehicles')) {
 		var customBlogPostsrev = new FsLibrary('.product3-grid')
 		
 		customBlogPostsrev.sort({
