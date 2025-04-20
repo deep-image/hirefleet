@@ -70,31 +70,33 @@ window.history.replaceState(null, null, addparam());
     }
   })
 
+var last_seg_url = window.location.hash.split('/').pop();
 
-var customBlogPostsrev = new FsLibrary('.product3-grid')
+if(last_seg_url == 'self-drive-van-hire-vehicles') {
+		var customBlogPostsrev = new FsLibrary('.product3-grid')
+		
+		customBlogPostsrev.sort({
+		sortTrigger: '.price-high-sort', // class of the button........
+		sortReverse: true, // if you want sort first click to be Z>A.......
+		activeClass: 'active', 
+		animation: {
+		enable: false,
+		duration: 100,
+		}
+		})
 
-  customBlogPostsrev.sort({
-    sortTrigger: '.price-high-sort', // class of the button........
-    sortReverse: true, // if you want sort first click to be Z>A.......
-    activeClass: 'active', 
-    animation: {
-    	enable: false,
-      duration: 100,
-    }
-  })
-
-var customBlogPosts = new FsLibrary('.product3-grid')
-
-  customBlogPosts.sort({
-    sortTrigger: '.available-sort, .price-sort',
-    sortReverse: false, // if you want sort first click to be Z>A.......
-    activeClass: 'active', 
-    animation: {
-    	enable: false,
-      duration: 100,
-    }
-  });
-
+		var customBlogPosts = new FsLibrary('.product3-grid')
+		
+		  customBlogPosts.sort({
+		    sortTrigger: '.available-sort, .price-sort',
+		    sortReverse: false, // if you want sort first click to be Z>A.......
+		    activeClass: 'active', 
+		    animation: {
+			enable: false,
+		      duration: 100,
+		    }
+		  });
+}
 $('.features-block').hide()
 $('.price-amount').attr('data-id', '')
 $('.days').hide()
