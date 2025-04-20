@@ -226,7 +226,7 @@ var elemval = $('#'+ additcheck[x].id).is(':checked')
 	 additioncharge.push($('#'+ additcheck[x].id).attr('idattr'))
 	}
 }
-//additageval ? additioncharge.push(3) : '';
+additageval ? additioncharge.push(3) : '';
 extstr =  additageval ? (extstr + ', ' + 'Young Driver Surcharge') : extstr;	
 extstr = extstr.substr(2)
 return additioncharge;
