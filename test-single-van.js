@@ -226,7 +226,7 @@ var elemval = $('#'+ additcheck[x].id).is(':checked')
 	 additioncharge.push($('#'+ additcheck[x].id).attr('idattr'))
 	}
 }
-//additageval ? additioncharge.push(3) : '';
+additageval ? additioncharge.push(3) : '';
 extstr =  additageval ? (extstr + ', ' + 'Young Driver Surcharge') : extstr;	
 extstr = extstr.substr(2)
 return additioncharge;
@@ -1172,7 +1172,7 @@ else
 var days = singval.price.total_days;
 var agecheck = $('#age-range').val() == '25';
 //$('.price-amount')[x].innerHTML = agecheck ? singval.price.base_price_with_taxes.amount_for_display : Number(singval.price.base_price_with_taxes.amount_for_display.slice(1).replace(/,/g, '.')) + young_driver_cost ;	
-$('.price-amount')[x].innerHTML = agecheck ?  Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(singval.price.base_price_with_taxes.amount) :   Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format((Number(singval.price.base_price_with_taxes.amount) + young_driver_cost));
+$('.price-amount')[x].innerHTML = agecheck ?  Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(singval.price.base_price_with_taxes.amount) :   Intl.NumberFormat('en-US', {  style: 'currency',  currency: 'GBP', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format((Number(singval.price.base_price_with_taxes.amount) + getextras));
 days > 1 ? $('.days')[x].innerHTML = days + ' days' :  $('.days')[x].innerHTML = days + ' day'
 var paramstr = addparam();	
 let butturl =document.getElementsByClassName('card-button')[x].href.split("?")[0]; 
