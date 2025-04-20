@@ -457,6 +457,7 @@ function agechangeonsimilar()
 		var tot = Number(pricearr[x].innerText.slice(1).replaceAll(',','.')) + Number(young_driver_cost)
 		pricearr[x].innerText = '£' + tot.toFixed(2);
 		addageparam(x);	
+		console.log('age change runs')	
 		}
 		}
 	}	
