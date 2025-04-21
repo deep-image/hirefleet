@@ -498,6 +498,13 @@ function subdatereformate(pickerid,pickername,errclass) {
 var callcount = 0; 	
 function getsinglevan() {
 $('#extra-text').hide();
+
+let endtime = daystrtime;
+let enddate = picker.getEndDate();
+if( $('#end-time').val() != '08:00') {
+enddate.setDate(enddate.getDate() + 1)  
+}
+		
 $.ajax({
     type: "POST",
     url: "https://hirefleet-328113.nw.r.appspot.com/api/additionalcharges",
@@ -505,8 +512,8 @@ $.ajax({
     data: JSON.stringify({
 	    pick_up_date: $('#start-date').val(),
 pick_up_time: $('#start-time :selected').val(),
-return_date : $('#end-date').val(),
-return_time : $('#end-time :selected').val(),
+return_date : enddate.toDateString(),
+return_time : endtime,
 pick_up_location : 2,
 return_location : 2,
 brand_id : 1,
@@ -1575,7 +1582,14 @@ $("#rxp-frame-1", window.parent.document).height(windchng.iframe.height);
 }
 
 function callcancelemail(answer) {
-	getextras()
+	getextras();
+
+let endtime = daystrtime;
+let enddate = picker.getEndDate();
+if( $('#end-time').val() != '08:00') {
+enddate.setDate(enddate.getDate() + 1)  
+}
+	
 	$.ajax({  type: "POST",
 url: "https://hirefleet-328113.nw.r.appspot.com/api/cancelemail",
 data: JSON.stringify({
@@ -1587,8 +1601,8 @@ address : $('#Address').val(),
 dob : $('#Date-Of-Birth').val(),	
 start_date : $('#start-date').val(),
 start_time : $('#start-time').val(),
-end_date : $('#end-date').val(),
-end_time : $('#end-time').val(),
+end_date : enddate.toDateString(),
+end_time : endtime,
 vehicle : $('.size5-link')[0].innerHTML,
 extras : extstr,
 discount : $('#discount').val(),
@@ -1608,11 +1622,19 @@ console.log(data)
 	
 function callbooking() {
 var country = getCountryCodeOrName($('#addr_country').val())[0];
+
+let endtime = daystrtime;
+let enddate = picker.getEndDate();
+if( $('#end-time').val() != '08:00') {
+enddate.setDate(enddate.getDate() + 1)  
+}
+	
+	
 let callbookobj = {
 pick_up_date: $('#start-date').val(),
 pick_up_time: $('#start-time').val(),
-return_date : $('#end-date').val(),
-return_time : $('#end-time').val(),
+return_date : enddate,
+return_time : endtime,
 pick_up_location : 2,
 return_location : 2,
 brand_id : 1,
@@ -1708,14 +1730,23 @@ function callconfirm(id)
 {
 var price = $('#hidd-total-price').text();
 price = Number(price);
+
+let endtime = daystrtime;
+let enddate = picker.getEndDate();	
+if( $('#end-time').val() != '08:00') {
+enddate.setDate(enddate.getDate() + 1)  
+}
+	
 $.ajax({  type: "POST",
 url: "https://hirefleet-328113.nw.r.appspot.com/api/confirmbook",
 data: JSON.stringify({
 customer_id : id,
 pick_up_date: $('#start-date').val(),
 pick_up_time: $('#start-time').val(),
-return_date : $('#end-date').val(),
-return_time : $('#end-time').val(),
+//return_date : $('#end-date').val(),
+//return_time : $('#end-time').val(),
+return_date : enddate.toDateString(),
+return_time : endtime,
 pick_up_location : 2,
 return_location : 2,
 brand_id : 1,
