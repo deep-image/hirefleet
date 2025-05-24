@@ -548,7 +548,8 @@ addarr = [];
 function changeprices(data)
 {	
 var elemid = "extra";		
-var divclass = "extras-div"	
+var divclass = "extras-div";
+$('.extra-js-accordion-body').empty();	
 data.additional_charges.forEach((singval,index) => { 
 divclass = singval.description == '<pre>6RuLOnfzWEciV1d</pre>' ? "hidden-extra" : "extras-div";	
 if(singval.selection_type == "multiple") {
