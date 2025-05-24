@@ -865,9 +865,7 @@ bothpicker =  new Litepicker({
 				return totalDays - 1;
 				},
 		setup: (bothpicker) => {
-  bothpicker.on('selected', (date1, date2) => {
-console.log(date1, date2)
-console.log(block_arr)	  
+  bothpicker.on('selected', (date1, date2) => {	  
 picker.setDateRange(date1,date2)
   })
 	},		
