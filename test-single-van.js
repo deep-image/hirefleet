@@ -373,7 +373,7 @@ $.ajax({
     data: JSON.stringify({
 	    pick_up_date: $('#start-date').val(),
 pick_up_time: $('#start-time').val() == null ? '06:00' : $('#start-time :selected').val(),
-return_date : enddate,
+return_date : enddate.toDateString(),
 return_time : endtime,
 pick_up_location : 2,
 return_location : 2,
@@ -512,7 +512,7 @@ $.ajax({
     data: JSON.stringify({
 	    pick_up_date: $('#start-date').val(),
 pick_up_time: $('#start-time').val() == null ? '06:00' : $('#start-time :selected').val(),
-return_date : enddate,
+return_date : enddate.toDateString(),
 return_time : endtime,
 pick_up_location : 2,
 return_location : 2,
@@ -1045,7 +1045,7 @@ $.ajax({
     data: JSON.stringify({
 pick_up_date: $('#start-date').val(),
 pick_up_time: $('#start-time').val() == null ? '06:00' : $('#start-time').val(),
-return_date : enddate,
+return_date : enddate.toDateString(),
 return_time : $('#end-time').val() == null ? '00:00' : endtime,
 pick_up_location : 2,
 return_location : 2,
@@ -1065,7 +1065,6 @@ additional_charges : getextras()
     success: function(data) {
 	    // && !disallowedarr.includes(picker.getStartDate().format('YYYY-MM-DD'))
 	    if(data.data.length == 0 ) {
-		   console.log($('#start-date').val(), $('#end-date').val()) 
 	    $('.error-wrapper-2').show()    
 		    nexavailcount < 2 ?  nextavailfunc() : '';   
 		    nexavailcount = nexavailcount + 1;
