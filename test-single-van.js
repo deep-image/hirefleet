@@ -372,8 +372,8 @@ $.ajax({
     // The key needs to match your method's input parameter (case-sensitive).
     data: JSON.stringify({
 	    pick_up_date: $('#start-date').val(),
-pick_up_time: $('#start-time :selected').val(),
-return_date : enddate.toDateString(),
+pick_up_time: $('#start-time').val() == null ? '06:00' : $('#start-time :selected').val(),
+return_date : enddate,
 return_time : endtime,
 pick_up_location : 2,
 return_location : 2,
@@ -511,8 +511,8 @@ $.ajax({
     // The key needs to match your method's input parameter (case-sensitive).
     data: JSON.stringify({
 	    pick_up_date: $('#start-date').val(),
-pick_up_time: $('#start-time :selected').val(),
-return_date : enddate.toDateString(),
+pick_up_time: $('#start-time').val() == null ? '06:00' : $('#start-time :selected').val(),
+return_date : enddate,
 return_time : endtime,
 pick_up_location : 2,
 return_location : 2,
@@ -1045,7 +1045,7 @@ $.ajax({
     data: JSON.stringify({
 pick_up_date: $('#start-date').val(),
 pick_up_time: $('#start-time').val() == null ? '06:00' : $('#start-time').val(),
-return_date : enddate.toDateString(),
+return_date : enddate,
 return_time : $('#end-time').val() == null ? '00:00' : endtime,
 pick_up_location : 2,
 return_location : 2,
