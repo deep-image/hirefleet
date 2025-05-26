@@ -294,7 +294,6 @@ function appdisc(resdata) {
 window.history.replaceState(null, null, urlstr.substring( 0  ,  window.location.href.indexOf('&coupon')   )  );	    
     }
         else {
-	console.log('dic applied')	
 		 $('#discount').css('color','#89d12b')
     $('#discount').css('color','#89d12b')		
     $('#total-discount, #remov_disc').show()
@@ -390,7 +389,6 @@ coupon_code : $('#discount').val() + source_coupon
     dataType: "json",
     success: function(data){
 	    console.log("additional-post-res")
-		console.log(data);
 	    var data = data.data;	 
 
 	    ///////////////////////this needs sorting (updated)//////////////// 
@@ -1104,7 +1102,6 @@ for(x=loopcount; x< lckcount; x++) {
 }
 
  }	 
-console.log(nextavail,tomnextavail)	
 bothpicker.setDateRange(nextavail,tomnextavail) 
 picker.setDateRange(nextavail,tomnextavail) 
 $('#end-time').val() == null ? $('#end-time').val($('#end-time option:first').val()) : ''	
@@ -1115,11 +1112,9 @@ getsinglevan();
 
 function setupunavailable(vehicledata)
 	{
-	console.log( vehicledata )	
 	vehicledata.forEach((singval,x) => { 
 if(singval.vehicle_class_id == $('#class-id').text()) {
 vanavailable = singval.availability.quantity == 0;
-console.log(vanavailable)	
 vanavailable == true ? $('#booking-butt').text('Check Availability') :  $('#booking-butt').text('confirm & pay');
 	//document.getElementsByClassName('available')[x+1].style.display = 'block';
 	if(vanavailable == true){$('#Summary').text("Your enquiry summary");$('#Complete').text("Complete your enquiry");
