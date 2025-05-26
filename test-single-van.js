@@ -531,14 +531,16 @@ vehicle_class_id : $('#class-id').text(),
     dataType: "json",
     success: function(data){
 $('.extra-js-accordion-body').empty();	
-setTimeout(function()  {  	    
-   changeprices(data.data);
-applyeve();	
-applyextraparam();	
-applyurlchange();
-agechecked();	
-	}, 300);
-	    ccvalidation();
+if(data.length > 0 ) {
+	setTimeout(function()  {  	
+	   changeprices(data.data);
+	applyeve();	
+	applyextraparam();	
+	applyurlchange();
+	agechecked();	
+		}, 300);
+}
+	ccvalidation();
     },
 });
 }
