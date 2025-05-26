@@ -517,21 +517,13 @@ return_time : endtime,
 pick_up_location : 2,
 return_location : 2,
 brand_id : 1,
-vehicle_class_id : $('#class-id').text(),
-
-
-	    ///////////////////////this needs sorting//////////////// 
-
-//	    additional_charges : $('#age-range').val() == '25' ? 1 : '', // this needs to be the full lis of selected extras
-
-	    ///////////////////////this needs sorting//////////////// 
-//          additional_charges : getextras()		    
+vehicle_class_id : $('#class-id').text(),	    
     }),
     contentType: "application/json",
     dataType: "json",
     success: function(data){
 $('.extra-js-accordion-body').empty();	
-if(data.length > 0 ) {
+if(Object.keys(data.data).length > 0 ) {
 	setTimeout(function()  {  	
 	   changeprices(data.data);
 	applyeve();	
