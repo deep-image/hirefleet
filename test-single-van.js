@@ -1750,7 +1750,8 @@ orderid : ORDER_ID,
 expmonth : expmonth,
 expyear : expyear,
 brand : brand,
-lastdigits : lastdigits
+lastdigits : lastdigits,
+selreturn : $('#end-date').val() + " @ " + $('#end-time').val()	
 }),
 contentType: "application/json",
 dataType: "json",
