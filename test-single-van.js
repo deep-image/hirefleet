@@ -1751,7 +1751,7 @@ expmonth : expmonth,
 expyear : expyear,
 brand : brand,
 lastdigits : lastdigits,
-selreturn : $('#end-date').val() + " @ " + $('#end-time').val()	
+selreturn : "Selected dropoff : " + $('#end-date').val() + " @ " + $('#end-time').val()	
 }),
 contentType: "application/json",
 dataType: "json",
