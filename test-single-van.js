@@ -1427,6 +1427,15 @@ event.preventDefault();
 subcallbooking();
 });
 
+
+$("#stripe_butt").click(function(event) {
+sendquote = false;	
+$('.payment-container').css('opacity' , 100)
+$('.payment-wrapper').css('opacity' , 100)	
+event.preventDefault();	
+subcallbooking();
+});
+	
 function subcallbooking() {
 //$('#phone-error').hide()	
 additioncharge = [];
@@ -1462,7 +1471,9 @@ $('.card-error').removeClass('fields-border-error')
 	else
 	{ 	
 	console.log( $('.cc-validate-fail').length > 0 )		
-	$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callglobalpay();
+	//$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callglobalpay();
+	//stripe code	
+	$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callconfirmstripe();	
 	}
 }
 }
@@ -1470,7 +1481,7 @@ $('.card-error').removeClass('fields-border-error')
 $('#pay-butt').click(function() {
 $('.rental_checklist').hide();
 $('#total-div').show();
-$('.gp-form').show();
+//$('.gp-form').show();
 });
 
 const body = document.querySelector("body");
@@ -1534,7 +1545,9 @@ lastdigits = answer.SAVED_PMT_DIGITS.slice(-4);
 body.style.overflow = "auto";
 $('#sucess-form').show();	
 console.log("detail form submit")
-userid == '' ? callbooking() : updateuserdet();	
+//userid == '' ? callbooking() : updateuserdet();	
+//stripe code
+userid == '' ? callbooking() : updateuserdet();		
 $('#detailform').submit();
 $('#pay-wrap').hide();
 }
@@ -1670,7 +1683,9 @@ $('#vantitle').text(vt2);
 gtagaddtocart(res);	
 }
 if(sendquote == false ) {
-entitity == 1 ? callconfirm(res.customer.id) : callconfirm(data.data.contact.id); 
+//entitity == 1 ? callconfirm(res.customer.id) : callconfirm(data.data.contact.id);
+//stripe code	
+entitity == 1 ? callconfirmstripe(res.customer.id) : callconfirmstripe(data.data.contact.id); 
 }
 },
 error: function(error) {
@@ -1715,6 +1730,80 @@ success: function(data){
 });
 }
 
+$("#remov_disc").click(function() {
+
+});
+
+	
+function callconfirmstripe(id)
+{
+var price = $('#hidd-total-price').text();
+price = Number(price);
+
+let endtime = daystrtime;
+let enddate = picker.getEndDate();	
+if( $('#end-time').val() != '08:00') {
+enddate.setDate(enddate.getDate() + 1)  
+}
+	
+$.ajax({  type: "POST",
+url: "https://hirefleet-328113.nw.r.appspot.com/api/confirmbookstripe",
+data: JSON.stringify({
+customer_id : id,
+pick_up_date: $('#start-date').val(),
+pick_up_time: $('#start-time').val(),
+return_date : enddate.format('DD-MM-YYYY'),
+return_time : endtime,
+pick_up_location : 2,
+return_location : 2,
+brand_id : 1,
+comments : $('#Additional-Info-Requests').val(),
+vehicle_class_id: $('#class-id').text(),
+additional_charges: getcharges(),
+confirm_as_pending : vanavailable,
+price : price,
+coupon_code : $('#discount').val(),	
+comments : $('#Additional-Info-Requests').val(),
+//orderid : ORDER_ID,
+//expmonth : expmonth,
+//expyear : expyear,
+//brand : brand,
+//lastdigits : lastdigits,
+selreturn : "Selected dropoff : " + $('#end-date').val() + " @ " + $('#end-time').val()	
+}),
+contentType: "application/json",
+dataType: "json",
+success: function(data){
+var res = data.data;
+console.log(res);
+$('#iframe_stripe').show();
+$('#iframe_strp').attr('src',res.transaction.payment_link);
+var sde = Number(res.data.total.security_deposit_excess.amount).toFixed(2);
+$('#security_deposit_excess2').text('£' + sde);
+var sd = Number(res.data.total.security_deposit.amount).toFixed(2);
+$('#security-deposit').text('£' + sd);
+$('#email_sent').text(res.data.customer.email);
+vt1 = vt.replace("Start ","");
+$('#vantitle').text(vt1);
+if(vanavailable == true ) {
+gtagwishlist(res)
+vt2 = vt1.replace("Reservation","Enquiry");
+$('#vantitle').text(vt2);
+$('#Success-Title').text("Your enquiry has been submitted!");
+$('#Info-Block').css('display','block');	
+$('#info').css('display','none');
+}
+else {
+gtagpurchase(res,ORDER_ID)
+}	
+},
+error: function(error) {
+}
+});
+}
+});
+
+	
 function callconfirm(id)
 {
 var price = $('#hidd-total-price').text();
