@@ -1801,7 +1801,6 @@ error: function(error) {
 }
 });
 }
-});
 
 	
 function callconfirm(id)
