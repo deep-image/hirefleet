@@ -1473,7 +1473,7 @@ $('.card-error').removeClass('fields-border-error')
 	console.log( $('.cc-validate-fail').length > 0 )		
 	//$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callglobalpay();
 	//stripe code	
-	$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callconfirmstripe();	
+	$('.cc-validate-fail').length > 0  ? $('#phone-error').show() : callconfirmstripe(userid);	
 	}
 }
 }
