@@ -1813,7 +1813,7 @@ let enddate = picker.getEndDate();
 if( $('#end-time').val() != '08:00') {
 enddate.setDate(enddate.getDate() + 1)  
 }
-	
+$('#pay-wrap').show();	
 $.ajax({  type: "POST",
 url: "https://hirefleet-328113.nw.r.appspot.com/api/confirmbook",
 data: JSON.stringify({
