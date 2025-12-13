@@ -1480,7 +1480,8 @@ $('.card-error').removeClass('fields-border-error')
 
 $('#pay-butt').click(function() {
 $('.rental_checklist').hide();
-$('#total-div').show();
+$('#iframe_stripe').show();	
+//$('#total-div').show();
 //$('.gp-form').show();
 });
 
@@ -1739,7 +1740,7 @@ function callconfirmstripe(id)
 {
 var price = $('#hidd-total-price').text();
 price = Number(price);
-
+$('#total-price2').text()
 let endtime = daystrtime;
 let enddate = picker.getEndDate();	
 if( $('#end-time').val() != '08:00') {
@@ -1776,7 +1777,6 @@ dataType: "json",
 success: function(data){
 var res = data.data;
 console.log(res);
-$('#iframe_stripe').show();
 $('#iframe_strp').attr('src',res.data.transaction.payment_link);
 var sde = Number(res.data.total.security_deposit_excess.amount).toFixed(2);
 $('#security_deposit_excess2').text('£' + sde);
