@@ -1745,7 +1745,7 @@ let enddate = picker.getEndDate();
 if( $('#end-time').val() != '08:00') {
 enddate.setDate(enddate.getDate() + 1)  
 }
-	
+$('#pay-wrap').show();		
 $.ajax({  type: "POST",
 url: "https://hirefleet-328113.nw.r.appspot.com/api/confirmbookstripe",
 data: JSON.stringify({
@@ -1777,7 +1777,7 @@ success: function(data){
 var res = data.data;
 console.log(res);
 $('#iframe_stripe').show();
-$('#iframe_strp').attr('src',res.transaction.payment_link);
+$('#iframe_strp').attr('src',res.data.transaction.payment_link);
 var sde = Number(res.data.total.security_deposit_excess.amount).toFixed(2);
 $('#security_deposit_excess2').text('£' + sde);
 var sd = Number(res.data.total.security_deposit.amount).toFixed(2);
@@ -1813,7 +1813,6 @@ let enddate = picker.getEndDate();
 if( $('#end-time').val() != '08:00') {
 enddate.setDate(enddate.getDate() + 1)  
 }
-$('#pay-wrap').show();	
 $.ajax({  type: "POST",
 url: "https://hirefleet-328113.nw.r.appspot.com/api/confirmbook",
 data: JSON.stringify({
