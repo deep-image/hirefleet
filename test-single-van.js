@@ -1815,7 +1815,7 @@ error: function(error) {
 		location.reload();
 		}
 		if( seconds > 0 ) {
-            setTimeout(tick, 1000);
+            setTimeout(strp_tick, 1000);
         } else {
             if(mins > 1){
                 strpotpcount(mins-1);           
