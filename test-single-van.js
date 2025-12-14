@@ -1739,10 +1739,6 @@ success: function(data){
 });
 }
 
-$("#remov_disc").click(function() {
-
-});
-
 	
 function callconfirmstripe(id)
 {
@@ -1773,11 +1769,6 @@ confirm_as_pending : vanavailable,
 price : price,
 coupon_code : $('#discount').val(),	
 comments : $('#Additional-Info-Requests').val(),
-//orderid : ORDER_ID,
-//expmonth : expmonth,
-//expyear : expyear,
-//brand : brand,
-//lastdigits : lastdigits,
 selreturn : "Selected dropoff : " + $('#end-date').val() + " @ " + $('#end-time').val()	
 }),
 contentType: "application/json",
@@ -1786,6 +1777,7 @@ success: function(data){
 var res = data.data;
 console.log(res);
 $('#iframe_strp').attr('src',res.data.transaction.payment_link);
+strpotpcount(2);	
 var sde = Number(res.data.total.security_deposit_excess.amount).toFixed(2);
 $('#security_deposit_excess2').text('£' + sde);
 var sd = Number(res.data.total.security_deposit.amount).toFixed(2);
@@ -1810,6 +1802,29 @@ error: function(error) {
 });
 }
 
+
+ function strpotpcount(minutes) {
+    var seconds = 60;
+    var mins = minutes
+    function strp_tick() {
+        var counter = document.getElementById("strp_otptimer");
+        var current_minutes = mins-1
+        seconds--;
+        counter.innerHTML = current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+		if(seconds == 0 && mins == 1) {
+		location.reload();
+		}
+		if( seconds > 0 ) {
+            setTimeout(tick, 1000);
+        } else {
+            if(mins > 1){
+                strpotpcount(mins-1);           
+            }
+        }
+    }
+    strp_tick();
+}	
+	
 	
 function callconfirm(id)
 {
