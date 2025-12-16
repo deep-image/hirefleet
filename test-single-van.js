@@ -1769,7 +1769,8 @@ confirm_as_pending : vanavailable,
 price : price,
 coupon_code : $('#discount').val(),	
 comments : $('#Additional-Info-Requests').val(),
-selreturn : "Selected dropoff : " + $('#end-date').val() + " @ " + $('#end-time').val()	
+selreturn : "Selected dropoff : " + $('#end-date').val() + " @ " + $('#end-time').val(),
+test_strpbool : true	
 }),
 contentType: "application/json",
 dataType: "json",
@@ -1802,6 +1803,19 @@ error: function(error) {
 });
 }
 
+
+function queuerescall() {
+
+$.ajax({
+        url: "https://hirefleet-328113.nw.r.appspot.com/api/addreservequeue?id=5383",
+        type: 'GET',
+        dataType: 'json', // added data type
+		success: function(res) {
+		console.log(res);
+		}
+		});	
+
+}
 
  function strpotpcount(minutes) {
     var seconds = 60;
