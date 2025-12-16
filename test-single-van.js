@@ -1808,7 +1808,7 @@ error: function(error) {
 function queuerescall(id) {
 
 $.ajax({
-        url: "https://hirefleet-328113.nw.r.appspot.com/api/addreservequeue?id="+id+"&min="7,
+        url: "https://hirefleet-328113.nw.r.appspot.com/api/addreservequeue?id="+id+"&min="+7,
         type: 'GET',
         dataType: 'json', // added data type
 		success: function(res) {
