@@ -1778,7 +1778,8 @@ success: function(data){
 var res = data.data;
 console.log(res);
 $('#iframe_strp').attr('src',res.data.transaction.payment_link);
-strpotpcount(6);	
+strpotpcount(6);
+queuerescall(res.data.reservation.id);	
 var sde = Number(res.data.total.security_deposit_excess.amount).toFixed(2);
 $('#security_deposit_excess2').text('£' + sde);
 var sd = Number(res.data.total.security_deposit.amount).toFixed(2);
@@ -1804,10 +1805,10 @@ error: function(error) {
 }
 
 
-function queuerescall() {
+function queuerescall(id) {
 
 $.ajax({
-        url: "https://hirefleet-328113.nw.r.appspot.com/api/addreservequeue?id=5383",
+        url: "https://hirefleet-328113.nw.r.appspot.com/api/addreservequeue?id="+id,
         type: 'GET',
         dataType: 'json', // added data type
 		success: function(res) {
