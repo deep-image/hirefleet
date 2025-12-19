@@ -1694,6 +1694,7 @@ if(sendquote == false ) {
 //entitity == 1 ? callconfirm(res.customer.id) : callconfirm(data.data.contact.id);
 //stripe code	
 entitity == 1 ? callconfirmstripe(res.customer.id) : callconfirmstripe(data.data.contact.id); 
+entitity == 1 ? creatlogtoken(res.customer.id) : creatlogtoken(data.data.contact.id); 
 }
 },
 error: function(error) {
@@ -1702,6 +1703,8 @@ error: function(error) {
 });
 }
 
+
+	
 function callbookemail(bookobj) {
 	$.ajax({  type: "POST",
 	url: "https://hirefleet-328113.nw.r.appspot.com/api/logbookerr",
@@ -1739,6 +1742,19 @@ success: function(data){
 });
 }
 
+function creatlogtoken(id) {
+		$.ajax({  type: "POST",
+		url: "https://hirefleet-328113.nw.r.appspot.com/api/createlogtoken",
+		data: JSON.stringify({
+		"uuid" : id	
+		}),
+		contentType: "application/json",
+		dataType: "json",
+		success: function(data){ 
+		firebase.auth().signInWithCustomToken(data);	
+		}
+		});
+}	
 	
 function callconfirmstripe(id)
 {
