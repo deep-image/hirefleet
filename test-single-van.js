@@ -1700,8 +1700,8 @@ gtagaddtocart(res);
 if(sendquote == false ) {
 //entitity == 1 ? callconfirm(res.customer.id) : callconfirm(data.data.contact.id);
 //stripe code	
+entitity == 1 ? creatlogtoken(res.customer.id+"-3") : creatlogtoken(data.data.contact.id+"-4"); 	
 entitity == 1 ? callconfirmstripe(res.customer.id) : callconfirmstripe(data.data.contact.id); 
-entitity == 1 ? creatlogtoken(res.customer.id+"-3") : creatlogtoken(data.data.contact.id+"-4"); 
 }
 },
 error: function(error) {
