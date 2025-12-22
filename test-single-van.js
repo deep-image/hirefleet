@@ -796,7 +796,7 @@ if (window.location.href.indexOf("start-date") > -1) {
 $('#both-date').val($('#start-date').val() + " - " + $('#end-date').val());
    if(getParam('payexpire') == 'true') { 
 	   $('#payexpire_modal').css('display','flex');
-		window.history.replaceState(null, null,remQueryParam(addparam(), 'payexpire'));	
+		//window.history.replaceState(null, null,remQueryParam(addparam(), 'payexpire'));	
    		}			 
     }
 // if the time is after 10am then set the pickup day to tomorrow
