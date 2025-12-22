@@ -796,8 +796,7 @@ if (window.location.href.indexOf("start-date") > -1) {
 $('#both-date').val($('#start-date').val() + " - " + $('#end-date').val());
    if(getParam('payexpire') == 'true') { 
 	   $('#payexpire_modal').css('display','flex');
-		//let paramstr = addparam() + "&payexpire=true";
-		//window.history.replaceState(null, null,paramstr);	
+		window.history.replaceState(null, null,remQueryParam(addparam(), 'payexpire'));	
    		}			 
     }
 // if the time is after 10am then set the pickup day to tomorrow
@@ -985,8 +984,11 @@ $('#start-time, #end-time, #age-range').change(function() {
 });
 
 
-
-
+function remQueryParam(queryString, paramToRemove) {
+    const params = new URLSearchParams(queryString);
+    params.delete(paramToRemove);
+    return '?' + params.toString();
+}
 
 
 function subdetectchange() {
@@ -1799,7 +1801,7 @@ success: function(data){
 var res = data.data;
 console.log(res);
 $('#iframe_strp').attr('src',res.data.transaction.payment_link);
-strpotpcount(6);
+strpotpcount(2);
 queuerescall(res.data.reservation.id);	
 var sde = Number(res.data.total.security_deposit_excess.amount).toFixed(2);
 $('#security_deposit_excess2').text('£' + sde);
