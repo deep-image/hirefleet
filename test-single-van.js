@@ -1843,6 +1843,8 @@ $.ajax({
         seconds--;
         counter.innerHTML = current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
 		if(seconds == 0 && mins == 1) {
+		let paramstr = addparam() + "&payexpire=true";
+		window.history.replaceState(null, null,paramstr);	
 		location.reload();
 		}
 		if( seconds > 0 ) {
