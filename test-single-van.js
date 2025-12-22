@@ -1758,6 +1758,7 @@ function creatlogtoken(id) {
 		contentType: "application/json",
 		dataType: "json",
 		success: function(data){ 
+		console.log(data)	
 		firebase.auth().signInWithCustomToken(data);	
 		}
 		});
