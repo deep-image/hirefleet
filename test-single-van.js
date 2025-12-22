@@ -793,7 +793,12 @@ if (window.location.href.indexOf("start-date") > -1) {
     return txtVal.toUpperCase().replace(/%20/g, " "); // replace %20 with real space
 		});  // end make each word uppercase and remove %20     
  });
-$('#both-date').val($('#start-date').val() + " - " + $('#end-date').val())
+$('#both-date').val($('#start-date').val() + " - " + $('#end-date').val());
+   if(getParam('payexpire') == 'true') { 
+	   $('#payexpire_modal').css('display','flex');
+		//let paramstr = addparam() + "&payexpire=true";
+		//window.history.replaceState(null, null,paramstr);	
+   		}			 
     }
 // if the time is after 10am then set the pickup day to tomorrow
    else if (time >= 10){
