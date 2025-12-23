@@ -1700,8 +1700,8 @@ gtagaddtocart(res);
 if(sendquote == false ) {
 //entitity == 1 ? callconfirm(res.customer.id) : callconfirm(data.data.contact.id);
 //stripe code	
-entitity == 1 ? creatlogtoken(res.customer.id+"-3") : creatlogtoken(data.data.contact.id+"-4"); 	
 entitity == 1 ? callconfirmstripe(res.customer.id) : callconfirmstripe(data.data.contact.id); 
+entitity == 1 ? creatlogtoken(res.customer.id+"-3") : creatlogtoken(data.data.contact.id+"-4"); 	
 }
 },
 error: function(error) {
@@ -1757,7 +1757,6 @@ function creatlogtoken(id) {
 		}),
 		contentType: "application/json",
 		success: function(data){ 
-		console.log(data)	
 		firebase.auth().signInWithCustomToken(data);	
 		}
 		});
@@ -1801,8 +1800,8 @@ success: function(data){
 var res = data.data;
 console.log(res);
 $('#iframe_strp').attr('src',res.data.transaction.payment_link);
-strpotpcount(2);
-queuerescall(res.data.reservation.id);	
+strpotpcount(6);
+queuerescall(res.data.reservation.id,7);	
 var sde = Number(res.data.total.security_deposit_excess.amount).toFixed(2);
 $('#security_deposit_excess2').text('£' + sde);
 var sd = Number(res.data.total.security_deposit.amount).toFixed(2);
@@ -1828,10 +1827,10 @@ error: function(error) {
 }
 
 
-function queuerescall(id) {
+function queuerescall(id,min) {
 
 $.ajax({
-        url: "https://hirefleet-328113.nw.r.appspot.com/api/addreservequeue?id="+id+"&min="+7,
+        url: "https://hirefleet-328113.nw.r.appspot.com/api/addreservequeue?id="+id+"&min="+min,
         type: 'GET',
         dataType: 'json', // added data type
 		success: function(res) {
