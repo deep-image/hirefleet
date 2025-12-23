@@ -1801,16 +1801,6 @@ dataType: "json",
 success: function(data){
 var res = data.data;
 console.log(res);
-$('#iframe_strp').attr('src',res.data.transaction.payment_link);
-strpotpcount(6);
-queuerescall(res.data.reservation.id,7);	
-var sde = Number(res.data.total.security_deposit_excess.amount).toFixed(2);
-$('#security_deposit_excess2').text('£' + sde);
-var sd = Number(res.data.total.security_deposit.amount).toFixed(2);
-$('#security-deposit').text('£' + sd);
-$('#email_sent').text(res.data.customer.email);
-vt1 = vt.replace("Start ","");
-$('#vantitle').text(vt1);
 if(vanavailable == true ) {
 gtagwishlist(res)
 vt2 = vt1.replace("Reservation","Enquiry");
@@ -1820,7 +1810,17 @@ $('#Info-Block').css('display','block');
 $('#info').css('display','none');
 }
 else {
-gtagpurchase(res,ORDER_ID)
+$('#iframe_strp').attr('src',res.data.transaction.payment_link);
+strpotpcount(6);
+queuerescall(res.data.reservation.id,7);	
+var sde = Number(res.data.total.security_deposit_excess.amount).toFixed(2);
+$('#security_deposit_excess2').text('£' + sde);
+var sd = Number(res.data.total.security_deposit.amount).toFixed(2);
+$('#security-deposit').text('£' + sd);
+$('#email_sent').text(res.data.customer.email);
+vt1 = vt.replace("Start ","");
+$('#vantitle').text(vt1);	
+gtagpurchase(res,res.data.reservation.id);
 }	
 },
 error: function(error) {
