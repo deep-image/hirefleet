@@ -1801,6 +1801,7 @@ dataType: "json",
 success: function(data){
 var res = data.data;
 console.log(res);
+vt1 = vt.replace("Start ","");	
 if(vanavailable == true ) {
 gtagwishlist(res)
 vt2 = vt1.replace("Reservation","Enquiry");
@@ -1818,7 +1819,6 @@ $('#security_deposit_excess2').text('£' + sde);
 var sd = Number(res.data.total.security_deposit.amount).toFixed(2);
 $('#security-deposit').text('£' + sd);
 $('#email_sent').text(res.data.customer.email);
-vt1 = vt.replace("Start ","");
 $('#vantitle').text(vt1);	
 gtagpurchase(res,res.data.reservation.id);
 }	
@@ -1917,7 +1917,7 @@ vt1 = vt.replace("Start ","");
 $('#vantitle').text(vt1);
 if(vanavailable == true ) {
 gtagwishlist(res)
-//vt2 = vt1.replace("Reservation","Enquiry");
+vt2 = vt1.replace("Reservation","Enquiry");
 //$('#vantitle').text(vt2);
 $('#Success-Title').text("Your enquiry has been submitted!");
 $('#Info-Block').css('display','block');	
