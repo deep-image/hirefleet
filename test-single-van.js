@@ -1802,6 +1802,10 @@ success: function(data){
 var res = data.data;
 console.log(res);
 vt1 = vt.replace("Start ","");	
+var sde = Number(res.data.total.security_deposit_excess.amount).toFixed(2);
+$('#security_deposit_excess2').text('£' + sde);
+var sd = Number(res.data.total.security_deposit.amount).toFixed(2);
+$('#security-deposit').text('£' + sd);	
 if(vanavailable == true ) {
 gtagwishlist(res)
 vt2 = vt1.replace("Reservation","Enquiry");
