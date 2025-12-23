@@ -1774,7 +1774,7 @@ let enddate = picker.getEndDate();
 if( $('#end-time').val() != '08:00') {
 enddate.setDate(enddate.getDate() + 1)  
 }
-$('#pay-wrap').show();		
+vanavailable ? '' : $('#pay-wrap').show();		
 $.ajax({  type: "POST",
 url: "https://hirefleet-328113.nw.r.appspot.com/api/confirmbookstripe",
 data: JSON.stringify({
@@ -1917,8 +1917,8 @@ vt1 = vt.replace("Start ","");
 $('#vantitle').text(vt1);
 if(vanavailable == true ) {
 gtagwishlist(res)
-vt2 = vt1.replace("Reservation","Enquiry");
-$('#vantitle').text(vt2);
+//vt2 = vt1.replace("Reservation","Enquiry");
+//$('#vantitle').text(vt2);
 $('#Success-Title').text("Your enquiry has been submitted!");
 $('#Info-Block').css('display','block');	
 $('#info').css('display','none');
