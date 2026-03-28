@@ -1,4 +1,3 @@
-<script>
 (function () {
   var STORAGE_KEY = "fs_cookie_preferences_v2";
   var ROOT_ID = "fs-cookie-root";
@@ -627,4 +626,3 @@
     boot();
   }
 })();
-</script>
